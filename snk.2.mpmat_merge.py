@@ -27,9 +27,10 @@ rule all:
         expand("../mpmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}.mpmat",sample=SAMPLES, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1]),
         expand("../mpmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{c}2{d}.mpmat",sample=SAMPLES, rep=REP,c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
         expand("../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.mpmat",sample=SAMPLES, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
-#         expand("../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat",sample=SAMPLES, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
-#         expand("../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam", sample=SAMPLES, rep=REP),
-#         expand("../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json", sample=SAMPLES, rep=REP)
+        expand("../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat",sample=SAMPLES, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
+        # todo
+        expand("../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam", sample=SAMPLES, rep=REP),
+        expand("../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json", sample=SAMPLES, rep=REP)
 rule mpmat_merge:
     input:
         "../mpmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}.mpmat",
@@ -40,27 +41,28 @@ rule mpmat_merge:
         """
         cat {input[0]} {input[1]} > {output}
         """
-# rule sort_mpmat:
-#     input:
-#         "../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.mpmat"
-#     output:
-#         "../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat"
-#     shell:
-#         """
-#         {BEDTOOLS} sort -i {input} -g {GENOME_FAI} > {output}
-#         """   
-# rule count_genome_background:
-#     input:
-#         "../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam"
-#     output:
-#         "../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json"
-#     log:
-#         "../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json.log"
-#     shell:
-#         """
-#         {PYTHON2} ./program/calculate-mut-stats-V02.py \
-#         -i {input} \
-#         -r {GENOME} \
-#         -p 24 \
-#         -o {output} 2>{log}
-#         """
+# todo
+rule sort_mpmat:
+    input:
+        "../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.mpmat"
+    output:
+        "../mpmat_merge/293T-bat_{sample}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat"
+    shell:
+        """
+        {BEDTOOLS} sort -i {input} -g {GENOME_FAI} > {output}
+        """   
+rule count_genome_background:
+    input:
+        "../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam"
+    output:
+        "../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json"
+    log:
+        "../json/293T-bat_{sample}_{rep}_hg38.MAPQ20.background.json.log"
+    shell:
+        """
+        {PYTHON2} ./program/calculate-mut-stats-V02.py \
+        -i {input} \
+        -r {GENOME} \
+        -p 24 \
+        -o {output} 2>{log}
+        """

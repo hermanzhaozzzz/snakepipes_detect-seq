@@ -1,2 +1,0 @@
-SyntaxError in line 110 of /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/snk.1.bam2mpmat.py:
-Unexpected keyword if in rule definition (snk.1.bam2mpmat.py, line 110)
