@@ -8,14 +8,6 @@ REP = [
     'rep2'
 ]
 
-
-MPMAT_MERGE = [['C'],['T'],['G'],['A']]  # mpmat_merge list means C2T.mpmat + G2A.mpmat == CT_merge_GA.mpmat
-# # MPMAT_MERGE = [['A'],['G'],['T'],['C']]  # mpmat_merge list means A2G.mpmat + T2C.mpmat == AG_merge_TC.mpmat
-
-
-
-
-
 PYTHON2 = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python"
 BEDTOOLS = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools"
 SAMTOOLS = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/samtools"
@@ -85,7 +77,7 @@ rule select_bmat:
         """
         awk '$3 == "{params.fbase}" {params.awk}' {input} > {output} 
         """
-rule bmat2pmat:
+rule select_bmat2pmat:
     input:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat"
     output:
@@ -113,9 +105,9 @@ rule pmat_merge:
         TB = '{tbase}'
     shell:
         """
-        FB = {params.FB}
-        TB = {params.TB}
-        if [$FB = $TB]; then
+        FB={params.FB}
+        TB={params.TB}
+        if [ $FB = $TB ]; then
         echo "from base == to base, skip..." > {log}
         touch {output}
         else
