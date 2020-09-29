@@ -1,0 +1,2 @@
+SyntaxError in line 30 of /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/snk.3.poisson-test_select_plot-art.py:
+Unexpected keyword expand in rule definition (snk.3.poisson-test_select_plot-art.py, line 30)

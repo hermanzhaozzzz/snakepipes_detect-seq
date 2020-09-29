@@ -1,0 +1,12 @@
+Building DAG of jobs...
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.select.T2G.mpmat

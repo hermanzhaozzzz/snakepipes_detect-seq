@@ -1,0 +1,9 @@
+Building DAG of jobs...
+MissingInputException in line 25 of /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/snk.2.mpmat_merge.py:
+Missing input files for rule all:
+../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.C2T_merge_G2A.mpmat
+../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.select.C2T_merge_G2A.mpmat
+../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.select.C2T_merge_G2A.mpmat
+../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.C2T_merge_G2A.mpmat
+../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.select.C2T_merge_G2A.mpmat
+../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.C2T_merge_G2A.mpmat

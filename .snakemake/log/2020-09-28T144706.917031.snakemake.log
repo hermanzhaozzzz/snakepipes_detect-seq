@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 40 of /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/snk.3.poisson-test_select_plot-art.py:
+Wildcards in input files cannot be determined from output files:
+'a'

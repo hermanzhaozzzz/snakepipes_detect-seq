@@ -1,1 +1,0 @@
-# snakepipes_detect-seq_fastq_bam_plot

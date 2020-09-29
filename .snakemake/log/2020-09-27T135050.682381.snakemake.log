@@ -1,0 +1,635 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	4	bmat2pmat
+	60	pmat_merge
+	65
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+    jobid: 125
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=A, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+    jobid: 139
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=T, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat.log
+    jobid: 153
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=T, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+    jobid: 105
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=T, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+    jobid: 126
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=A, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+    jobid: 140
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=T, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat.log
+    jobid: 154
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=T, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+    jobid: 106
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=T, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+    jobid: 127
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=A, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat.log
+    jobid: 141
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=A, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat.log
+    jobid: 155
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=T, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+    jobid: 93
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=A, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+    jobid: 107
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=T, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+    jobid: 128
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=A, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:50 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat.log
+    jobid: 142
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=A, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat.log
+    jobid: 156
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=T, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+    jobid: 94
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=A, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+    jobid: 108
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=T, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat.log
+    jobid: 143
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=A, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+    jobid: 95
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=A, to_base=C
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+    jobid: 137
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=T, to_base=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat.log
+    jobid: 144
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, from_base=A, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+    jobid: 96
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, from_base=A, to_base=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+        
+
+[Sun Sep 27 13:50:51 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+    jobid: 138
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, from_base=T, to_base=G
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+        
+Terminating processes on user request, this might take some time.
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 105
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 153
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 144
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 154
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2G.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 125
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 140
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 128
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 106
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 138
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2G.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 137
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 143
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2C.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 141
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 107
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 96
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 127
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 139
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.T2C.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 142
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.A2G.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 126
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 95
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2C.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 156
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 93
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2A.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 94
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A         -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Sun Sep 27 14:08:44 2020]
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.A2G.mpmat
+Error in rule pmat_merge:
+    jobid: 108
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.select.T2T.mpmat
+[Sun Sep 27 14:08:44 2020]
+Error in rule pmat_merge:
+    jobid: 155
+    output: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat
+    log: ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T         -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T.pmat         -o ../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat         -d 50 -D 100 --NoMutNumCutoff 2 --OmitTandemNumCutoff 2 --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf 2>../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job pmat_merge since they might be corrupted:
+../mpileup_pmat_bmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.select.T2C.mpmat
