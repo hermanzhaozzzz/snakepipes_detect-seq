@@ -112,8 +112,8 @@ rule pmat_merge:
         touch {output}
         else
         {PYTHON2} ./program/pmat-merge-V04.py \
-        -f C -t T \
-        -r hg38.fa \
+        -f {params.FB} -t {params.TB} \
+        -r {GENOME} \
         --OutHeader False \
         -i {input} \
         -o {output} \
