@@ -36,7 +36,7 @@ rule all:
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.pmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM),
-        expand("../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.pmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM,tbase=SELECT_BASES_TO)
+        expand("../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.mpmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM,tbase=SELECT_BASES_TO)
 rule bam2mpileup:
     input:
         "../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam"
@@ -97,9 +97,9 @@ rule pmat_merge:
     input:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.pmat"
     output:
-        "../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.pmat"
+        "../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.mpmat"
     log:
-        "../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.pmat.log"
+        "../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.mpmat.log"
     params:
         FB = '{fbase}',
         TB = '{tbase}'

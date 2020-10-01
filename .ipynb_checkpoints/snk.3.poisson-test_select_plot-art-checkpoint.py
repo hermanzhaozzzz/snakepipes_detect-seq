@@ -28,7 +28,7 @@ HG38_JSON = "./lib/hg38.json"
 rule all:
     input:
         # merge_sort_mpmat (treat)
-        expand("../mpmat_merge/293T-bat_{treat}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat",treat=TREAT, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
+        expand("../mpmat_merge/293T-bat_{treat}_{rep}_hg38.filtered.{a}2{b}_merge_{c}2{d}.sort.mpmat",treat=TREAT, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3]),
         # ctrl_sort_bam
         expand("../bam/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.bam", ctrl=CTRL, rep=REP),
         # treat_sort_bam
@@ -38,18 +38,18 @@ rule all:
         # bg_treat_json
         expand("../json/293T-bat_{treat}_{rep}_hg38.MAPQ20.background.json", treat=TREAT, rep=REP),
         # output table of poisson test
-        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}_select.{a}2{b}_merge_{c}2{d}.tsv",ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3])
+        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered.{a}2{b}_merge_{c}2{d}.tsv",ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3])
 rule poisson_test:
     input:
-        merge_sort_mpmat = "../mpmat_merge/293T-bat_{treat}_{rep}_hg38.MAPQ20.select.{a}2{b}_merge_{c}2{d}.sort.mpmat",
+        merge_sort_mpmat = "../mpmat_merge/293T-bat_{treat}_{rep}_hg38.filtered.{a}2{b}_merge_{c}2{d}.sort.mpmat",
         ctrl_sort_bam = "../bam/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.bam",
         treat_sort_bam = "../bam/293T-bat_{treat}_{rep}_hg38.MAPQ20.bam",
         bg_ctrl_json = "../json/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.background.json",
         bg_treat_json = "../json/293T-bat_{treat}_{rep}_hg38.MAPQ20.background.json"
     output:
-        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}_select.{a}2{b}_merge_{c}2{d}.tsv"
+        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered.{a}2{b}_merge_{c}2{d}.tsv"
     log:
-        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}_select.{a}2{b}_merge_{c}2{d}.tsv.log"
+        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered.{a}2{b}_merge_{c}2{d}.tsv.log"
     params:
         mut_type = "{a}{b},{c}{d}"
     shell:
@@ -64,7 +64,7 @@ rule poisson_test:
         -g {HG38_JSON} \
         -o {output} \
         --region_mutation_min_cutoff 2 \
-        --query_mutation_type CT,GA \
+        --query_mutation_type {params.mut_type} \
         --query_mutation_min_cutoff 2 \
         --query_mutation_max_cutoff 18 \
         --other_mutation_max_cutoff 12 \
