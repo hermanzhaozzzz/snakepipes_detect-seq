@@ -9,3 +9,5 @@ snakemake --jobs 24 --snakefile snk.1.bam2mpmat.py -pr
 ```
 snakemake --jobs 4 --snakefile snk.2.mpmat_merge.py -pr
 ```
+# snk.3.poisson-test_select_plot-art.py
+注意biopython版本一定是1.72

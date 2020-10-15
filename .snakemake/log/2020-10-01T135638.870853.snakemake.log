@@ -1,0 +1,103 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	4	intersect_select_mpmat
+	4	poisson_test
+	9
+
+[Thu Oct  1 13:56:38 2020]
+rule poisson_test:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.background.json
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A.tsv
+    log: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A.tsv.log
+    jobid: 2
+    reason: Updated input files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-All-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/find-significant-mpmat-V02.py         -i ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat         -c ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam         -t ../bam/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -m ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json         -n ../json/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.background.json         -g ./lib/hg38.json         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A.tsv         --region_mutation_min_cutoff 2         --query_mutation_type CT,GA         --query_mutation_min_cutoff 2         --query_mutation_max_cutoff 18         --other_mutation_max_cutoff 12         --total_mutation_max_cutoff 26         --mpmat_header False >../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A.tsv.log 2>&1
+        
+
+[Thu Oct  1 13:56:39 2020]
+rule poisson_test:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.background.json
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A.tsv
+    log: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A.tsv.log
+    jobid: 3
+    reason: Updated input files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-sgRNADel-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/find-significant-mpmat-V02.py         -i ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam         -t ../bam/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -m ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json         -n ../json/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.background.json         -g ./lib/hg38.json         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A.tsv         --region_mutation_min_cutoff 2         --query_mutation_type CT,GA         --query_mutation_min_cutoff 2         --query_mutation_max_cutoff 18         --other_mutation_max_cutoff 12         --total_mutation_max_cutoff 26         --mpmat_header False >../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A.tsv.log 2>&1
+        
+
+[Thu Oct  1 13:56:39 2020]
+rule poisson_test:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.background.json
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv
+    log: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv.log
+    jobid: 4
+    reason: Updated input files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-sgRNADel-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/find-significant-mpmat-V02.py         -i ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat         -c ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam         -t ../bam/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -m ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json         -n ../json/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.background.json         -g ./lib/hg38.json         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv         --region_mutation_min_cutoff 2         --query_mutation_type CT,GA         --query_mutation_min_cutoff 2         --query_mutation_max_cutoff 18         --other_mutation_max_cutoff 12         --total_mutation_max_cutoff 26         --mpmat_header False >../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv.log 2>&1
+        
+
+[Thu Oct  1 13:56:39 2020]
+rule poisson_test:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.background.json
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A.tsv
+    log: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A.tsv.log
+    jobid: 1
+    reason: Updated input files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-All-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/find-significant-mpmat-V02.py         -i ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam         -t ../bam/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -m ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json         -n ../json/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.background.json         -g ./lib/hg38.json         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A.tsv         --region_mutation_min_cutoff 2         --query_mutation_type CT,GA         --query_mutation_min_cutoff 2         --query_mutation_max_cutoff 18         --other_mutation_max_cutoff 12         --total_mutation_max_cutoff 26         --mpmat_header False >../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A.tsv.log 2>&1
+        
+[Thu Oct  1 13:57:54 2020]
+Finished job 4.
+1 of 9 steps (11%) done
+
+[Thu Oct  1 13:57:54 2020]
+rule intersect_select_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    log: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat.log
+    jobid: 8
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv
+    wildcards: treat=VEGFA-sgRNADel-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect         -a ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat         -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv         -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat >../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat.log 2>&1
+        
+[Thu Oct  1 13:57:55 2020]
+Error in rule intersect_select_mpmat:
+    jobid: 8
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    log: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect         -a ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat         -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv         -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat >../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat.log 2>&1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job intersect_select_mpmat since they might be corrupted:
+../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+[Thu Oct  1 13:57:58 2020]
+Finished job 3.
+2 of 9 steps (22%) done
+[Thu Oct  1 13:57:59 2020]
+Finished job 2.
+3 of 9 steps (33%) done
+[Thu Oct  1 13:58:20 2020]
+Finished job 1.
+4 of 9 steps (44%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-10-01T135638.870853.snakemake.log

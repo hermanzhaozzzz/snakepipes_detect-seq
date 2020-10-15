@@ -1,0 +1,108 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	4	sgRNA_alignment
+	5
+
+[Thu Oct  1 16:23:23 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 13
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+
+[Thu Oct  1 16:23:23 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 14
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+
+[Thu Oct  1 16:23:23 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 15
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-sgRNADel-PD, ctrl=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+
+[Thu Oct  1 16:23:23 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 16
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-sgRNADel-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+[Thu Oct  1 16:23:24 2020]
+[Thu Oct  1 16:23:24 2020]
+[Thu Oct  1 16:23:24 2020]
+Error in rule sgRNA_alignment:
+Error in rule sgRNA_alignment:
+Error in rule sgRNA_alignment:
+    jobid: 13
+[Thu Oct  1 16:23:24 2020]
+    jobid: 15
+    jobid: 16
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+Error in rule sgRNA_alignment:
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    jobid: 14
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+
+
+Removing output files of failed job sgRNA_alignment since they might be corrupted:
+../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V04.py         -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job sgRNA_alignment since they might be corrupted:
+../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+Removing output files of failed job sgRNA_alignment since they might be corrupted:
+../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+Removing output files of failed job sgRNA_alignment since they might be corrupted:
+../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-10-01T162323.721825.snakemake.log

@@ -1,0 +1,201 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	6	mpmat_merge
+	6	sort_mpmat
+	13
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-All-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 15
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 17
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 14
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-All-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 16
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule mpmat_merge:
+    input: ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    jobid: 18
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T.mpmat ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.G2A.mpmat > ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+        
+[Thu Oct  1 13:55:29 2020]
+Finished job 13.
+1 of 13 steps (8%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 15.
+2 of 13 steps (15%) done
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 19
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-All-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 21
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+[Thu Oct  1 13:55:29 2020]
+Finished job 16.
+3 of 13 steps (23%) done
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 22
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+[Thu Oct  1 13:55:29 2020]
+Finished job 14.
+4 of 13 steps (31%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 18.
+5 of 13 steps (38%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 17.
+6 of 13 steps (46%) done
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 24
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-All-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+
+[Thu Oct  1 13:55:29 2020]
+rule sort_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    output: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat
+    wildcards: sample=VEGFA-sgRNADel-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        
+[Thu Oct  1 13:55:29 2020]
+Finished job 22.
+7 of 13 steps (54%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 24.
+8 of 13 steps (62%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 23.
+9 of 13 steps (69%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 21.
+10 of 13 steps (77%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 20.
+11 of 13 steps (85%) done
+[Thu Oct  1 13:55:29 2020]
+Finished job 19.
+12 of 13 steps (92%) done
+
+[Thu Oct  1 13:55:29 2020]
+localrule all:
+    input: ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.G2A.mpmat, ../mpmat/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.G2A.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.G2A.mpmat, ../mpmat/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.G2A.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.G2A.mpmat, ../mpmat/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.background.json
+    jobid: 0
+    reason: Input files updated by another job: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+
+[Thu Oct  1 13:55:29 2020]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-10-01T135529.413032.snakemake.log

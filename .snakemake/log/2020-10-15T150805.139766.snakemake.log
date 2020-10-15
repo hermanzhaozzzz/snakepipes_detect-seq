@@ -1,0 +1,198 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	4	intersect_select_mpmat
+	3	select_significant_region
+	8
+
+[Thu Oct 15 15:08:05 2020]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 10
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv; Updated input files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-All-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        
+
+[Thu Oct 15 15:08:05 2020]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 11
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv; Updated input files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-sgRNADel-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        
+
+[Thu Oct 15 15:08:05 2020]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 9
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv; Updated input files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=VEGFA-Vector-PD, treat=VEGFA-All-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Oct 15 15:08:05 2020]
+Finished job 10.
+1 of 8 steps (12%) done
+[Thu Oct 15 15:08:05 2020]
+Finished job 11.
+2 of 8 steps (25%) done
+
+[Thu Oct 15 15:08:05 2020]
+rule intersect_select_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 16
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    wildcards: treat=VEGFA-sgRNADel-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+
+[Thu Oct 15 15:08:05 2020]
+rule intersect_select_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 15
+    reason: Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=VEGFA-sgRNADel-PD, ctrl=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+
+[Thu Oct 15 15:08:05 2020]
+rule intersect_select_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 14
+    reason: Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+[Thu Oct 15 15:08:05 2020]
+Finished job 16.
+3 of 8 steps (38%) done
+[Thu Oct 15 15:08:05 2020]
+Finished job 9.
+4 of 8 steps (50%) done
+
+[Thu Oct 15 15:08:05 2020]
+rule intersect_select_mpmat:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 13
+    reason: Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+[Thu Oct 15 15:08:05 2020]
+Finished job 15.
+5 of 8 steps (62%) done
+[Thu Oct 15 15:08:05 2020]
+[Thu Oct 15 15:08:05 2020]
+Error in rule intersect_select_mpmat:
+Error in rule intersect_select_mpmat:
+    jobid: 14
+    jobid: 13
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    shell:
+        
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    shell:
+        
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then
+        echo "table is empty"
+        echo "will touch a empty file"
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools intersect
+        -a ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat
+        -b ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv
+        -wa > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-10-15T150805.139766.snakemake.log

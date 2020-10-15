@@ -1,0 +1,66 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	sgRNA_alignment
+	3
+
+[Thu Oct 15 15:38:15 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 17
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep1, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat |wc -l` -eq 0 ]]; then 
+        echo "Sign mpmat is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        else
+        echo "Sign mpmat is ok!"
+        echo "run sgRNA_alignment/[mpmat to art]"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V03-zhn.py -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        fi
+        
+
+[Thu Oct 15 15:38:15 2020]
+rule sgRNA_alignment:
+    input: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 18
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    wildcards: treat=VEGFA-All-PD, ctrl=VEGFA-Vector-PD, rep=rep2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat |wc -l` -eq 0 ]]; then 
+        echo "Sign mpmat is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        else
+        echo "Sign mpmat is ok!"
+        echo "run sgRNA_alignment/[mpmat to art]"
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-to-art-V03-zhn.py -i ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa --sgRNA GACCCCCTCCACCCCGCCTCCGG > ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+        fi
+        
+[Thu Oct 15 15:38:21 2020]
+Finished job 18.
+1 of 3 steps (33%) done
+[Thu Oct 15 15:38:21 2020]
+Finished job 17.
+2 of 3 steps (67%) done
+
+[Thu Oct 15 15:38:21 2020]
+localrule all:
+    input: ../mpmat_merge/293T-bat_VEGFA-All-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-All-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../mpmat_merge/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.bam, ../bam/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.bam, ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-Vector-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-All-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-All-PD_rep2_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_VEGFA-sgRNADel-PD_rep2_hg38.MAPQ20.background.json, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-All-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep1.filtered.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-VEGFA-sgRNADel-PD_rep2.filtered.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-sgRNADel-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+    jobid: 0
+    reason: Input files updated by another job: ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep2_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art, ../mpmat_merge_Sign/293T-bat_TREAT-VEGFA-All-PD_CTRL-VEGFA-Vector-PD_rep1_hg38.filtered.C2T_merge_G2A.sort.Sign_poisson.art
+
+[Thu Oct 15 15:38:21 2020]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/10.2020-09_0923_Practice_for_detect-seq-data/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-10-15T153814.919096.snakemake.log
