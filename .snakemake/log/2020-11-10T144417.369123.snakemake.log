@@ -1,0 +1,137 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 48
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	6	mpmat_filter
+	7
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    jobid: 4
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 14:44:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=3, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 14:44:32 2020]
+Finished job 3.
+1 of 7 steps (14%) done
+[Tue Nov 10 14:44:33 2020]
+Finished job 6.
+2 of 7 steps (29%) done
+Terminating processes on user request, this might take some time.
+[Tue Nov 10 14:45:46 2020]
+Error in rule mpmat_filter:
+    jobid: 4
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job mpmat_filter since they might be corrupted:
+../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+[Tue Nov 10 14:45:46 2020]
+Error in rule mpmat_filter:
+    jobid: 5
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job mpmat_filter since they might be corrupted:
+../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.G2A.mpmat
+[Tue Nov 10 14:45:46 2020]
+Error in rule mpmat_filter:
+    jobid: 2
+[Tue Nov 10 14:45:46 2020]
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+Error in rule mpmat_filter:
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    jobid: 1
+
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+Removing output files of failed job mpmat_filter since they might be corrupted:
+../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum 3         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job mpmat_filter since they might be corrupted:
+../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-3.C2T.mpmat
+Complete log: /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-11-10T144417.369123.snakemake.log

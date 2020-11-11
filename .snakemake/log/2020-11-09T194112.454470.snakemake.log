@@ -1,0 +1,381 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	18	pmat_merge
+	19
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log
+    jobid: 38
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=T, tbase=G
+
+
+        FB=T
+        TB=G
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t G         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log
+    jobid: 52
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=T, tbase=T
+
+
+        FB=T
+        TB=T
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log
+    jobid: 54
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=T, tbase=G
+
+
+        FB=T
+        TB=G
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t G         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2G.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log
+    jobid: 48
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=A, tbase=T
+
+
+        FB=A
+        TB=T
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log 2>&1
+        fi
+        
+[Mon Nov  9 19:41:12 2020]
+Finished job 52.
+1 of 19 steps (5%) done
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log
+    jobid: 31
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=A, tbase=A
+
+
+        FB=A
+        TB=A
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat.log
+    jobid: 45
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=G, tbase=C
+
+
+        FB=G
+        TB=C
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f G -t C         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2C.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log
+    jobid: 33
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=A, tbase=C
+
+
+        FB=A
+        TB=C
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t C         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log
+    jobid: 47
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=A, tbase=A
+
+
+        FB=A
+        TB=A
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2A.mpmat.log 2>&1
+        fi
+        
+[Mon Nov  9 19:41:12 2020]
+Finished job 31.
+2 of 19 steps (11%) done
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log
+    jobid: 35
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=T, tbase=A
+
+
+        FB=T
+        TB=A
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log
+    jobid: 49
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=A, tbase=C
+
+
+        FB=A
+        TB=C
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t C         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2C.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log
+    jobid: 37
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=T, tbase=C
+
+
+        FB=T
+        TB=C
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t C         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log 2>&1
+        fi
+        
+[Mon Nov  9 19:41:12 2020]
+Finished job 47.
+3 of 19 steps (16%) done
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log
+    jobid: 51
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=T, tbase=A
+
+
+        FB=T
+        TB=A
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2A.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat.log
+    jobid: 39
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=C, tbase=A
+
+
+        FB=C
+        TB=A
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f C -t A         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2A.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log
+    jobid: 53
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=T, tbase=C
+
+
+        FB=T
+        TB=C
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t C         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.T2C.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log
+    jobid: 50
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, fbase=A, tbase=G
+
+
+        FB=A
+        TB=G
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t G         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log
+    jobid: 32
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=A, tbase=T
+
+
+        FB=A
+        TB=T
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2T.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log
+    jobid: 34
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=A, tbase=G
+
+
+        FB=A
+        TB=G
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f A -t G         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.A2G.mpmat.log 2>&1
+        fi
+        
+
+[Mon Nov  9 19:41:12 2020]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log
+    jobid: 36
+    reason: Missing output files: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, fbase=T, tbase=T
+
+
+        FB=T
+        TB=T
+        if [ $FB = $TB ]; then
+        echo "from base == to base, skip..." > ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log
+        touch ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat
+        else
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/pmat-merge-V04.py         -f T -t T         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         --OutHeader False         -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T.pmat         -o ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat         -d 50 -D 100         --NoMutNumCutoff 2         --OmitTandemNumCutoff 2         --SNP /home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf >../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.T2T.mpmat.log 2>&1
+        fi
+        
+[Mon Nov  9 19:41:12 2020]
+Finished job 36.
+4 of 19 steps (21%) done

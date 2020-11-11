@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 41 of /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/snk.1.bam2mpmat.py:
+Missing input files for rule bam2mpileup:
+../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_rep1_hg38_bwa_sort_rmdup.MAPQ20.bam

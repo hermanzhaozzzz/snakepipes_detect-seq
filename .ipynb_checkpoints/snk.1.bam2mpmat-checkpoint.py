@@ -1,16 +1,23 @@
+# log:
+# 到bmat pmat都是没问题的
+# 打算先跑这个，因为是限速步骤
+# 跑到pmat_merge的时候最好少几个jobs，可能会出IO错误
+
 SAMPLES = [
-    'VEGFA-All-PD',
-    'VEGFA-Vector-PD',
-    'VEGFA-sgRNADel-PD'
-]
-REP = [
-    'rep1',
-    'rep2'
+    "GBEmini-AP-RNF2-All-PD",
+    "GBEmini-dU-RNF2-All-PD",
+    "test",
 ]
 
-PYTHON2 = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python"
-BEDTOOLS = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools"
-SAMTOOLS = "/home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/samtools"
+REP = ["rep1"]
+
+
+
+import os
+PATH = "/home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/"
+PYTHON2 = os.path.join(PATH, 'python')
+BEDTOOLS = os.path.join(PATH, 'bedtools')
+SAMTOOLS = os.path.join(PATH, 'samtools')
 GENOME = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa"
 GENOME_FAI = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai"
 DB_SNP_HSA = "/home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf"
@@ -31,7 +38,7 @@ SELECT_BASES_TO = [
 ]
 rule all:
     input:
-        expand("../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam",sample=SAMPLES,rep=REP),
+        expand("../bam/293T-bat_{sample}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.mpileup",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM),
@@ -39,7 +46,7 @@ rule all:
         expand("../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.mpmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM,tbase=SELECT_BASES_TO)
 rule bam2mpileup:
     input:
-        "../bam/293T-bat_{sample}_{rep}_hg38.MAPQ20.bam"
+        "../bam/293T-bat_{sample}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam"
     output:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.mpileup"
     log:
@@ -82,8 +89,6 @@ rule select_bmat2pmat:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat"
     output:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.pmat"
-    log:
-        "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.pmat.log"
     shell:
         """
         {PYTHON2} ./program/bmat2pmat-V02.py \
@@ -91,7 +96,7 @@ rule select_bmat2pmat:
         -o {output} \
         --InHeader False \
         --InLikeBED False \
-        --OutHeader True >{log} 2>&1
+        --OutHeader True
         """
 rule pmat_merge:
     input:

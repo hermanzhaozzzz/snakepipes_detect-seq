@@ -1,0 +1,1511 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	count_genome_background
+	48	mpmat_filter
+	24	mpmat_filter_merge
+	24	sort_mpmat
+	100
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 27
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 7
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 28
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 29
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 30
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 31
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 25
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule count_genome_background:
+    input: ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json
+    log: ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json.log
+    jobid: 97
+    reason: Missing output files: ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/calculate-mut-stats-V02.py         -i ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         -o ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json 2>../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json.log
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 32
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 26
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+
+[Tue Nov 10 15:45:30 2020]
+rule count_genome_background:
+    input: ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json
+    log: ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json.log
+    jobid: 98
+    reason: Missing output files: ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/calculate-mut-stats-V02.py         -i ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         -o ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json 2>../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json.log
+        
+[Tue Nov 10 15:54:08 2020]
+Finished job 98.
+1 of 100 steps (1%) done
+
+[Tue Nov 10 15:54:08 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:54:50 2020]
+Finished job 7.
+2 of 100 steps (2%) done
+
+[Tue Nov 10 15:54:50 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:54:57 2020]
+Finished job 29.
+3 of 100 steps (3%) done
+
+[Tue Nov 10 15:54:57 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:17 2020]
+Finished job 30.
+4 of 100 steps (4%) done
+
+[Tue Nov 10 15:55:17 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 4
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:21 2020]
+Finished job 32.
+5 of 100 steps (5%) done
+
+[Tue Nov 10 15:55:21 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:28 2020]
+Finished job 31.
+6 of 100 steps (6%) done
+
+[Tue Nov 10 15:55:28 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:36 2020]
+Finished job 1.
+7 of 100 steps (7%) done
+
+[Tue Nov 10 15:55:36 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 34
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:38 2020]
+Finished job 26.
+8 of 100 steps (8%) done
+
+[Tue Nov 10 15:55:38 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 35
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:40 2020]
+Finished job 25.
+9 of 100 steps (9%) done
+
+[Tue Nov 10 15:55:40 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 36
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:43 2020]
+Finished job 28.
+10 of 100 steps (10%) done
+
+[Tue Nov 10 15:55:43 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 37
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:55:43 2020]
+Finished job 27.
+11 of 100 steps (11%) done
+
+[Tue Nov 10 15:55:43 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 38
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 15:59:37 2020]
+Finished job 97.
+12 of 100 steps (12%) done
+
+[Tue Nov 10 15:59:37 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 39
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:00:01 2020]
+Finished job 36.
+13 of 100 steps (13%) done
+
+[Tue Nov 10 16:00:01 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 40
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:00:02 2020]
+Finished job 35.
+14 of 100 steps (14%) done
+
+[Tue Nov 10 16:00:02 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 33
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:00:02 2020]
+Finished job 37.
+15 of 100 steps (15%) done
+
+[Tue Nov 10 16:00:02 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:00:03 2020]
+Finished job 38.
+16 of 100 steps (16%) done
+
+[Tue Nov 10 16:00:03 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 14
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:00:06 2020]
+Finished job 34.
+17 of 100 steps (17%) done
+
+[Tue Nov 10 16:00:06 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 15
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:01:09 2020]
+Finished job 8.
+18 of 100 steps (18%) done
+
+[Tue Nov 10 16:01:09 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 9
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:02:14 2020]
+Finished job 3.
+19 of 100 steps (19%) done
+
+[Tue Nov 10 16:02:14 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 16
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:02:21 2020]
+Finished job 2.
+20 of 100 steps (20%) done
+
+[Tue Nov 10 16:02:21 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 10
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:02:31 2020]
+Finished job 5.
+21 of 100 steps (21%) done
+
+[Tue Nov 10 16:02:31 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:02:35 2020]
+Finished job 4.
+22 of 100 steps (22%) done
+
+[Tue Nov 10 16:02:35 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:02:40 2020]
+Finished job 6.
+23 of 100 steps (23%) done
+
+[Tue Nov 10 16:02:40 2020]
+rule count_genome_background:
+    input: ../bam/293T-bat_test_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json
+    log: ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json.log
+    jobid: 99
+    reason: Missing output files: ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json
+    wildcards: sample=test, rep=rep1
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/calculate-mut-stats-V02.py         -i ../bam/293T-bat_test_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         -o ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json 2>../json/293T-bat_test_rep1_hg38.MAPQ20.background.json.log
+        
+[Tue Nov 10 16:03:58 2020]
+Finished job 39.
+24 of 100 steps (24%) done
+
+[Tue Nov 10 16:03:58 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 49
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:03:58 2020]
+Finished job 49.
+25 of 100 steps (25%) done
+
+[Tue Nov 10 16:03:58 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 73
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:04:13 2020]
+Finished job 73.
+26 of 100 steps (26%) done
+
+[Tue Nov 10 16:04:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 51
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:04:13 2020]
+Finished job 51.
+27 of 100 steps (27%) done
+
+[Tue Nov 10 16:04:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 75
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:04:20 2020]
+Finished job 14.
+28 of 100 steps (28%) done
+
+[Tue Nov 10 16:04:20 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 41
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:26 2020]
+Finished job 75.
+29 of 100 steps (29%) done
+
+[Tue Nov 10 16:04:26 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 42
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:29 2020]
+Finished job 13.
+30 of 100 steps (30%) done
+
+[Tue Nov 10 16:04:29 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 48
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:31 2020]
+Finished job 40.
+31 of 100 steps (31%) done
+
+[Tue Nov 10 16:04:31 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 43
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:32 2020]
+Finished job 15.
+32 of 100 steps (32%) done
+
+[Tue Nov 10 16:04:32 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 44
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:37 2020]
+Finished job 41.
+33 of 100 steps (33%) done
+
+[Tue Nov 10 16:04:37 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 45
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:42 2020]
+Finished job 42.
+34 of 100 steps (34%) done
+
+[Tue Nov 10 16:04:42 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    jobid: 46
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:42 2020]
+Finished job 33.
+35 of 100 steps (35%) done
+
+[Tue Nov 10 16:04:42 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    jobid: 47
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=G, bd=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat         -f G -t A         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:45 2020]
+Finished job 48.
+36 of 100 steps (36%) done
+
+[Tue Nov 10 16:04:45 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 21
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:48 2020]
+Finished job 44.
+37 of 100 steps (37%) done
+
+[Tue Nov 10 16:04:48 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 22
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:48 2020]
+Finished job 43.
+38 of 100 steps (38%) done
+
+[Tue Nov 10 16:04:48 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:53 2020]
+Finished job 45.
+39 of 100 steps (39%) done
+
+[Tue Nov 10 16:04:53 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:58 2020]
+Finished job 46.
+40 of 100 steps (40%) done
+
+[Tue Nov 10 16:04:58 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 24
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 4         --SiteCoverNum 10         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:04:58 2020]
+Finished job 47.
+41 of 100 steps (41%) done
+
+[Tue Nov 10 16:04:58 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 17
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:05:00 2020]
+Finished job 21.
+42 of 100 steps (42%) done
+
+[Tue Nov 10 16:05:00 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    jobid: 18
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 5         --SiteMutRatio 0.1         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:05:03 2020]
+Finished job 22.
+43 of 100 steps (43%) done
+
+[Tue Nov 10 16:05:03 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    jobid: 19
+    reason: Missing output files: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, ac=C, bd=T
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat         -f C -t T         --SiteMutNum 2         --SiteCoverNum 10         --SiteMutRatio 0.01         --RegionPassNum 2         --RegionToleranceNum False         --InHeader False         --OutHeader False
+        
+[Tue Nov 10 16:05:04 2020]
+Finished job 20.
+44 of 100 steps (44%) done
+
+[Tue Nov 10 16:05:04 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 50
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:04 2020]
+Finished job 50.
+45 of 100 steps (45%) done
+
+[Tue Nov 10 16:05:04 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 74
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:08 2020]
+Finished job 23.
+46 of 100 steps (46%) done
+
+[Tue Nov 10 16:05:08 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 52
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:08 2020]
+Finished job 52.
+47 of 100 steps (47%) done
+
+[Tue Nov 10 16:05:08 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 76
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:12 2020]
+Finished job 74.
+48 of 100 steps (48%) done
+
+[Tue Nov 10 16:05:12 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 53
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:12 2020]
+Finished job 53.
+49 of 100 steps (49%) done
+
+[Tue Nov 10 16:05:12 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 77
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:12 2020]
+Finished job 77.
+50 of 100 steps (50%) done
+
+[Tue Nov 10 16:05:12 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 55
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:12 2020]
+Finished job 55.
+51 of 100 steps (51%) done
+
+[Tue Nov 10 16:05:12 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 79
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 79.
+52 of 100 steps (52%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 68
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 68.
+53 of 100 steps (53%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 92
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 92.
+54 of 100 steps (54%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 61
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 61.
+55 of 100 steps (55%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 85
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 85.
+56 of 100 steps (56%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 63
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 63.
+57 of 100 steps (57%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 87
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 87.
+58 of 100 steps (58%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 54
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 54.
+59 of 100 steps (59%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 78
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 24.
+60 of 100 steps (60%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 56
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 56.
+61 of 100 steps (61%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 80
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 78.
+62 of 100 steps (62%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 62
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 62.
+63 of 100 steps (63%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 86
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 80.
+64 of 100 steps (64%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 69
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 86.
+65 of 100 steps (65%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 71
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:13 2020]
+Finished job 69.
+66 of 100 steps (66%) done
+
+[Tue Nov 10 16:05:13 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 93
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 71.
+67 of 100 steps (67%) done
+
+[Tue Nov 10 16:05:14 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 95
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 93.
+68 of 100 steps (68%) done
+
+[Tue Nov 10 16:05:14 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 70
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 70.
+69 of 100 steps (69%) done
+
+[Tue Nov 10 16:05:14 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 94
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 95.
+70 of 100 steps (70%) done
+
+[Tue Nov 10 16:05:14 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 72
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 94.
+71 of 100 steps (71%) done
+[Tue Nov 10 16:05:14 2020]
+Finished job 72.
+72 of 100 steps (72%) done
+
+[Tue Nov 10 16:05:14 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 96
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:14 2020]
+Finished job 96.
+73 of 100 steps (73%) done
+[Tue Nov 10 16:05:15 2020]
+Finished job 76.
+74 of 100 steps (74%) done
+[Tue Nov 10 16:05:15 2020]
+Finished job 17.
+75 of 100 steps (75%) done
+
+[Tue Nov 10 16:05:15 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 65
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:15 2020]
+Finished job 65.
+76 of 100 steps (76%) done
+
+[Tue Nov 10 16:05:15 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 89
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:16 2020]
+Finished job 89.
+77 of 100 steps (77%) done
+[Tue Nov 10 16:05:16 2020]
+Finished job 18.
+78 of 100 steps (78%) done
+
+[Tue Nov 10 16:05:16 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 66
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:16 2020]
+Finished job 66.
+79 of 100 steps (79%) done
+
+[Tue Nov 10 16:05:16 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 90
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:17 2020]
+Finished job 90.
+80 of 100 steps (80%) done
+[Tue Nov 10 16:05:19 2020]
+Finished job 19.
+81 of 100 steps (81%) done
+
+[Tue Nov 10 16:05:19 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 67
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:19 2020]
+Finished job 67.
+82 of 100 steps (82%) done
+
+[Tue Nov 10 16:05:19 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 91
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=test, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:20 2020]
+Finished job 91.
+83 of 100 steps (83%) done
+[Tue Nov 10 16:05:47 2020]
+Finished job 9.
+84 of 100 steps (84%) done
+
+[Tue Nov 10 16:05:47 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 57
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:05:47 2020]
+Finished job 57.
+85 of 100 steps (85%) done
+
+[Tue Nov 10 16:05:47 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 81
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:05:51 2020]
+Finished job 81.
+86 of 100 steps (86%) done
+[Tue Nov 10 16:06:35 2020]
+Finished job 16.
+87 of 100 steps (87%) done
+
+[Tue Nov 10 16:06:35 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 64
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:06:35 2020]
+Finished job 64.
+88 of 100 steps (88%) done
+
+[Tue Nov 10 16:06:35 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 88
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:06:36 2020]
+Finished job 88.
+89 of 100 steps (89%) done
+[Tue Nov 10 16:06:58 2020]
+Finished job 12.
+90 of 100 steps (90%) done
+
+[Tue Nov 10 16:06:58 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 60
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:06:58 2020]
+Finished job 60.
+91 of 100 steps (91%) done
+
+[Tue Nov 10 16:06:58 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 84
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:06:59 2020]
+Finished job 10.
+92 of 100 steps (92%) done
+
+[Tue Nov 10 16:06:59 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 58
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:06:59 2020]
+Finished job 84.
+93 of 100 steps (93%) done
+[Tue Nov 10 16:06:59 2020]
+Finished job 58.
+94 of 100 steps (94%) done
+
+[Tue Nov 10 16:06:59 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 82
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=5, SMR=0.1, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:07:03 2020]
+Finished job 82.
+95 of 100 steps (95%) done
+[Tue Nov 10 16:07:04 2020]
+Finished job 11.
+96 of 100 steps (96%) done
+
+[Tue Nov 10 16:07:04 2020]
+rule mpmat_filter_merge:
+    input: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    jobid: 59
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat; Input files updated by another job: ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        cat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+        
+[Tue Nov 10 16:07:05 2020]
+Finished job 59.
+97 of 100 steps (97%) done
+
+[Tue Nov 10 16:07:05 2020]
+rule sort_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    output: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+    jobid: 83
+    reason: Missing output files: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat; Input files updated by another job: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=2, SCN=10, SMR=0.01, RPN=2, RTN=False, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/miniconda3/envs/snakepipes_detect-seq_fastq_bam_plot/bin/bedtools sort -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat -g /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai > ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat
+        
+[Tue Nov 10 16:07:06 2020]
+Finished job 83.
+98 of 100 steps (98%) done
+[Tue Nov 10 16:07:08 2020]
+Finished job 99.
+99 of 100 steps (99%) done
+
+[Tue Nov 10 16:07:08 2020]
+localrule all:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_test_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_test_rep1_hg38.select.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_test_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json, ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json
+    jobid: 0
+    reason: Input files updated by another job: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.background.json, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.background.json, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../json/293T-bat_test_rep1_hg38.MAPQ20.background.json, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.1_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T_merge_G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.01_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat, ../mpmat_filter/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-10_SMR-0.1_RPN-2_RTN-False.G2A.mpmat, ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-2_SCN-5_SMR-0.01_RPN-2_RTN-False.C2T.mpmat
+
+[Tue Nov 10 16:07:08 2020]
+Finished job 0.
+100 of 100 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-11-10T154530.572436.snakemake.log

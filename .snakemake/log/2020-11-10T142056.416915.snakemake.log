@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	96	mpmat_filter
+	97
+
+[Tue Nov 10 14:20:56 2020]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-3_SMR-0.05_RPN-1_RTN-1.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-3_SMR-0.05_RPN-1_RTN-1.C2T.mpmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=3, SMR=0.05, RPN=1, RTN=1, ac=C, bd=T
+
+RuleException in line 57 of /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/snk.2.mpmat_merge.py:
+'Params' object has no attribute 'SiteCoverNum'
+  File "/home/zhaohuanan/miniconda3/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 115, in run_jobs
+  File "/home/zhaohuanan/miniconda3/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 120, in run
+  File "/home/zhaohuanan/miniconda3/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 131, in _run
+  File "/home/zhaohuanan/miniconda3/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 151, in printjob
+  File "/home/zhaohuanan/miniconda3/lib/python3.7/site-packages/snakemake/executors/__init__.py", line 137, in printjob

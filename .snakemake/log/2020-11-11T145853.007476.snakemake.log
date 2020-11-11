@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	count_genome_background
+	2
+
+[Wed Nov 11 14:58:53 2020]
+rule count_genome_background:
+    input: ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json
+    log: ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json.log
+    jobid: 3
+    reason: Missing output files: ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json
+    wildcards: sample=VEGFA-Vector-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/calculate-mut-stats-V02.py         -i ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         -o ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json 2>../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json.log
+        
+[Wed Nov 11 14:59:01 2020]
+Error in rule count_genome_background:
+    jobid: 3
+    output: ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json
+    log: ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json.log (check log file(s) for error message)
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/calculate-mut-stats-V02.py         -i ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         -o ../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json 2>../json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.background.json.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/.snakemake/log/2020-11-11T145853.007476.snakemake.log
