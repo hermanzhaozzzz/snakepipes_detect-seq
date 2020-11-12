@@ -148,6 +148,7 @@ rule select_significant_region:
         "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.Sign.tsv"
     params:
         """'{if($NF<0.05 && $13>1 && $10<3) print $0}'"""
+#         """'{if($NF<0.05 && $13>1 && $10<3) print $0}'"""
     shell:
         """
         cat {input} | awk -F '\t' {params} > {output}

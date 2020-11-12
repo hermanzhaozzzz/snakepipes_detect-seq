@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 157 of /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/snk.3.poisson-test_select_plot-art.py:
-Missing input files for rule intersect_select_mpmat:
-../mpmat_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-1_SCN-5_SMR-0.01_RPN-2_RTN-2.C2T_merge_G2A.sort.mpmat

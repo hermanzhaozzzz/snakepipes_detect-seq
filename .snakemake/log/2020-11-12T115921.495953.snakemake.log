@@ -1,0 +1,670 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 50
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	50	split_bmat
+	51
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+    jobid: 11
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=11
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr11")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+    jobid: 33
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=8
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr8")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+    jobid: 3
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=3
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr3")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+    jobid: 18
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=18
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr18")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+    jobid: 26
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=1
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr1")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+    jobid: 41
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=16
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr16")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+    jobid: 48
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=X
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrX")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+    jobid: 4
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=4
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr4")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+    jobid: 12
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=12
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr12")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+    jobid: 19
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=19
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr19")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+    jobid: 27
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=2
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr2")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+    jobid: 34
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=9
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr9")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+    jobid: 42
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=17
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr17")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+    jobid: 49
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=Y
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrY")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+    jobid: 5
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=5
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr5")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+    jobid: 13
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=13
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr13")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+    jobid: 20
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=20
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr20")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+    jobid: 28
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=3
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr3")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+    jobid: 35
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=10
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr10")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+    jobid: 43
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=18
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr18")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+    jobid: 50
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=M
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrM")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+    jobid: 6
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=6
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr6")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+
+[Thu Nov 12 11:59:21 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+    jobid: 14
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=14
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr14")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+    jobid: 21
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=21
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr21")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+    jobid: 29
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=4
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr4")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+    jobid: 36
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=11
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr11")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+    jobid: 44
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=19
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr19")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+    jobid: 7
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=7
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr7")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+    jobid: 15
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=15
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr15")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+    jobid: 22
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=22
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr22")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+    jobid: 30
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=5
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr5")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+    jobid: 37
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=12
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr12")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+    jobid: 45
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=20
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr20")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+    jobid: 1
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=1
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr1")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+    jobid: 8
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=8
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr8")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+    jobid: 16
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=16
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr16")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+    jobid: 23
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=X
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrX")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+    jobid: 31
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=6
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr6")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+    jobid: 38
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=13
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr13")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+    jobid: 46
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=21
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr21")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+    jobid: 2
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=2
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr2")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+    jobid: 9
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=9
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr9")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+    jobid: 17
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=17
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr17")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+    jobid: 24
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=Y
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrY")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+    jobid: 32
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=7
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr7")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+    jobid: 39
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=14
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr14")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+    jobid: 47
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=22
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr22")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+    jobid: 10
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=10
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr10")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+    jobid: 25
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1, chr_=M
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chrM")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+
+[Thu Nov 12 11:59:22 2020]
+rule split_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+    jobid: 40
+    reason: Missing output files: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1, chr_=15
+
+sed '1d' ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat | awk -F '	' '{if($1=="chr15")print $0}' > ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat
+[Thu Nov 12 12:57:42 2020]
+Finished job 49.
+1 of 51 steps (2%) done
+[Thu Nov 12 12:57:57 2020]
+Finished job 47.
+2 of 51 steps (4%) done
+[Thu Nov 12 12:58:00 2020]
+Finished job 50.
+3 of 51 steps (6%) done
+[Thu Nov 12 12:58:22 2020]
+Finished job 42.
+4 of 51 steps (8%) done
+[Thu Nov 12 12:58:24 2020]
+Finished job 45.
+5 of 51 steps (10%) done
+[Thu Nov 12 12:58:32 2020]
+Finished job 46.
+6 of 51 steps (12%) done
+[Thu Nov 12 12:58:32 2020]
+Finished job 41.
+7 of 51 steps (14%) done
+[Thu Nov 12 12:58:33 2020]
+Finished job 44.
+8 of 51 steps (16%) done
+[Thu Nov 12 12:58:42 2020]
+Finished job 40.
+9 of 51 steps (18%) done
+[Thu Nov 12 12:58:49 2020]
+Finished job 38.
+10 of 51 steps (20%) done
+[Thu Nov 12 12:58:50 2020]
+Finished job 35.
+11 of 51 steps (22%) done
+[Thu Nov 12 12:58:50 2020]
+Finished job 39.
+12 of 51 steps (24%) done
+[Thu Nov 12 12:58:57 2020]
+Finished job 32.
+13 of 51 steps (25%) done
+[Thu Nov 12 12:59:01 2020]
+Finished job 36.
+14 of 51 steps (27%) done
+[Thu Nov 12 12:59:04 2020]
+Finished job 48.
+15 of 51 steps (29%) done
+[Thu Nov 12 12:59:06 2020]
+Finished job 43.
+16 of 51 steps (31%) done
+[Thu Nov 12 12:59:09 2020]
+Finished job 33.
+17 of 51 steps (33%) done
+[Thu Nov 12 12:59:22 2020]
+Finished job 34.
+18 of 51 steps (35%) done
+[Thu Nov 12 12:59:31 2020]
+Finished job 30.
+19 of 51 steps (37%) done
+[Thu Nov 12 12:59:34 2020]
+Finished job 28.
+20 of 51 steps (39%) done
+[Thu Nov 12 12:59:35 2020]
+Finished job 37.
+21 of 51 steps (41%) done
+[Thu Nov 12 12:59:38 2020]
+Finished job 31.
+22 of 51 steps (43%) done
+[Thu Nov 12 12:59:41 2020]
+Finished job 27.
+23 of 51 steps (45%) done
+[Thu Nov 12 12:59:43 2020]
+Finished job 29.
+24 of 51 steps (47%) done
+[Thu Nov 12 13:00:03 2020]
+Finished job 26.
+25 of 51 steps (49%) done
+[Thu Nov 12 13:02:42 2020]
+Finished job 21.
+26 of 51 steps (51%) done
+[Thu Nov 12 13:02:53 2020]
+Finished job 24.
+27 of 51 steps (53%) done
+[Thu Nov 12 13:03:04 2020]
+Finished job 19.
+28 of 51 steps (55%) done
+[Thu Nov 12 13:03:05 2020]
+Finished job 23.
+29 of 51 steps (57%) done
+[Thu Nov 12 13:03:11 2020]
+Finished job 17.
+30 of 51 steps (59%) done
+[Thu Nov 12 13:03:14 2020]
+Finished job 16.
+31 of 51 steps (61%) done
+[Thu Nov 12 13:03:15 2020]
+Finished job 25.
+32 of 51 steps (63%) done
+[Thu Nov 12 13:03:27 2020]
+Finished job 14.
+33 of 51 steps (65%) done
+[Thu Nov 12 13:03:28 2020]
+Finished job 13.
+34 of 51 steps (67%) done
+[Thu Nov 12 13:03:28 2020]
+Finished job 18.
+35 of 51 steps (69%) done
+[Thu Nov 12 13:03:33 2020]
+Finished job 12.
+36 of 51 steps (71%) done
+[Thu Nov 12 13:03:36 2020]
+Finished job 9.
+37 of 51 steps (73%) done
+[Thu Nov 12 13:03:47 2020]
+Finished job 10.
+38 of 51 steps (75%) done
+[Thu Nov 12 13:03:58 2020]
+Finished job 20.
+39 of 51 steps (76%) done
+[Thu Nov 12 13:04:00 2020]
+Finished job 11.
+40 of 51 steps (78%) done
+[Thu Nov 12 13:04:00 2020]
+Finished job 5.
+41 of 51 steps (80%) done
+[Thu Nov 12 13:04:03 2020]
+Finished job 8.
+42 of 51 steps (82%) done
+[Thu Nov 12 13:04:04 2020]
+Finished job 6.
+43 of 51 steps (84%) done
+[Thu Nov 12 13:04:08 2020]
+Finished job 4.
+44 of 51 steps (86%) done
+[Thu Nov 12 13:04:13 2020]
+Finished job 7.
+45 of 51 steps (88%) done
+[Thu Nov 12 13:04:13 2020]
+Finished job 1.
+46 of 51 steps (90%) done
+[Thu Nov 12 13:04:16 2020]
+Finished job 15.
+47 of 51 steps (92%) done
+[Thu Nov 12 13:04:17 2020]
+Finished job 3.
+48 of 51 steps (94%) done
+[Thu Nov 12 13:04:19 2020]
+Finished job 2.
+49 of 51 steps (96%) done
+[Thu Nov 12 13:05:58 2020]
+Finished job 22.
+50 of 51 steps (98%) done
+
+[Thu Nov 12 13:05:59 2020]
+localrule all:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat
+    jobid: 0
+    reason: Input files updated by another job: ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr7.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr5.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr17.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr21.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr1.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr3.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrM.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr11.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr15.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr9.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr18.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr4.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr16.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr12.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr6.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr2.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr8.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr10.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr13.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr22.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrY.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr20.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20_chr19.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chrX.bmat, ../mpileup_pmat_bmat/split_chr/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20_chr14.bmat
+
+[Thu Nov 12 13:05:59 2020]
+Finished job 0.
+51 of 51 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq/.snakemake/log/2020-11-12T115921.495953.snakemake.log

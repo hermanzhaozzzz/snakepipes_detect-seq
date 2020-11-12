@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in line 98 of /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq_fastq_bam_plot/snk.3.poisson-test_select_plot-art.py:
-Wildcards in input files cannot be determined from output files:
-'SMN'
