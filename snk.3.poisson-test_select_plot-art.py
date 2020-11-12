@@ -25,13 +25,17 @@ MPMAT_MERGE = [['C'],['G'],['G'],['C']]  # mpmat_merge list means C2T.mpmat + G2
 
 
 
-SiteMutNum = [1,2,3,4,5,6,7,8] # 师兄的M4 建议多跑几个range
-SiteCoverNum = [5,10] # 师兄的C10
+# SiteMutNum = [1,2,3,4,5,6,7,8] # 师兄的M4 建议多跑几个range
+# SiteCoverNum = [5,10] # 师兄的C10
+# SiteMutRatio = [0.01,0.1] # 影响不大
+# RegionPassNum = [2] # 师兄的R2
+# RegionToleranceNum = [2] # 影响不大，师兄建议设置成2
+
+SiteMutNum = [4] # 师兄的M4 建议多跑几个range
+SiteCoverNum = [10] # 师兄的C10
 SiteMutRatio = [0.01,0.1] # 影响不大
 RegionPassNum = [2] # 师兄的R2
 RegionToleranceNum = [2] # 影响不大，师兄建议设置成2
-
-
 
 
 

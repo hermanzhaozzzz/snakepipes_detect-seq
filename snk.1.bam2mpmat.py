@@ -41,6 +41,7 @@ rule all:
         expand("../bam/293T-bat_{sample}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.mpileup",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat",sample=SAMPLES,rep=REP),
+        expand("../bmat_info_tsv/293T-bat_{sample}_{rep}_hg38.MAPQ20.tsv",sample=SAMPLES,rep=REP),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM),
         expand("../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.pmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM),
         expand("../mpmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}2{tbase}.mpmat",sample=SAMPLES,rep=REP,fbase=SELECT_BASES_FROM,tbase=SELECT_BASES_TO)
@@ -72,6 +73,15 @@ rule mpileup2bmat:
         -o {output} \
         -p 24 -n 0 >{log} 2>&1
         """
+rule bmat_mutation_count:
+    input:
+        "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat"
+    output:
+        "../bmat_info_tsv/293T-bat_{sample}_{rep}_hg38.MAPQ20.tsv"
+    shell:
+        """
+        {PYTHON2} ./program/bmat_mutation_count.py -i {input} -o {output} --header False
+        """
 rule select_bmat:
     input:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat"
@@ -83,7 +93,7 @@ rule select_bmat:
     shell:
         """
         awk '$3 == "{params.fbase}" {params.awk}' {input} > {output} 
-        """
+        """        
 rule select_bmat2pmat:
     input:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.select.{fbase}.bmat"

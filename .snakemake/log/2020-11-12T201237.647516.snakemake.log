@@ -1,0 +1,77 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	bmat_mutation_count
+	4
+
+[Thu Nov 12 20:12:37 2020]
+rule bmat_mutation_count:
+    input: ../mpileup_pmat_bmat/293T-bat_test_rep1_hg38.MAPQ20.bmat
+    output: ../bmat_info_tsv/293T-bat_test_rep1_hg38.MAPQ20.tsv
+    jobid: 9
+    reason: Missing output files: ../bmat_info_tsv/293T-bat_test_rep1_hg38.MAPQ20.tsv
+    wildcards: sample=test, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_test_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_test_rep1_hg38.MAPQ20.tsv --header False
+        
+
+[Thu Nov 12 20:12:37 2020]
+rule bmat_mutation_count:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../bmat_info_tsv/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    jobid: 7
+    reason: Missing output files: ../bmat_info_tsv/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    wildcards: sample=GBEmini-AP-RNF2-All-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.tsv --header False
+        
+
+[Thu Nov 12 20:12:38 2020]
+rule bmat_mutation_count:
+    input: ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat
+    output: ../bmat_info_tsv/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    jobid: 8
+    reason: Missing output files: ../bmat_info_tsv/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    wildcards: sample=GBEmini-dU-RNF2-All-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.tsv --header False
+        
+Terminating processes on user request, this might take some time.
+[Thu Nov 12 20:19:50 2020]
+Error in rule bmat_mutation_count:
+    jobid: 7
+    output: ../bmat_info_tsv/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.tsv --header False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Nov 12 20:19:50 2020]
+Error in rule bmat_mutation_count:
+    jobid: 8
+    output: ../bmat_info_tsv/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.tsv
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.tsv --header False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Nov 12 20:19:50 2020]
+Error in rule bmat_mutation_count:
+    jobid: 9
+    output: ../bmat_info_tsv/293T-bat_test_rep1_hg38.MAPQ20.tsv
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/bmat_mutation_count.py -i ../mpileup_pmat_bmat/293T-bat_test_rep1_hg38.MAPQ20.bmat -o ../bmat_info_tsv/293T-bat_test_rep1_hg38.MAPQ20.tsv --header False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: /gpfs/user/zhaohuanan/3.project/20.2020-11_1109_GBE_DETECT-Seq_old_protocol/snakepipes_detect-seq/.snakemake/log/2020-11-12T201237.647516.snakemake.log
