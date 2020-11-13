@@ -1,0 +1,117 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	input_json____mpmat_block
+	3	poisson_test
+	7
+
+[Fri Nov 13 14:51:05 2020]
+rule input_json____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.json
+    output: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=GBEmini-AP-RNF2-All-PD, rep=rep1, ctrl=VEGFA-Vector-PD, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         --ctrl_bmat_split_json ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json         --treat_bmat_split_json ../Split_Bmat_Json/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_hg38.MAPQ20.json         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+
+[Fri Nov 13 14:51:05 2020]
+rule input_json____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.json
+    output: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=GBEmini-dU-RNF2-All-PD, rep=rep1, ctrl=VEGFA-Vector-PD, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         --ctrl_bmat_split_json ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json         --treat_bmat_split_json ../Split_Bmat_Json/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_hg38.MAPQ20.json         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+
+[Fri Nov 13 14:51:05 2020]
+rule input_json____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_test_rep1_hg38.MAPQ20.json
+    output: ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=test, rep=rep1, ctrl=VEGFA-Vector-PD, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_test_rep1_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         --ctrl_bmat_split_json ../Split_Bmat_Json/293T-bat_VEGFA-Vector-PD_rep1_hg38.MAPQ20.json         --treat_bmat_split_json ../Split_Bmat_Json/293T-bat_test_rep1_hg38.MAPQ20.json         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Fri Nov 13 16:20:28 2020]
+Finished job 3.
+1 of 7 steps (14%) done
+
+[Fri Nov 13 16:20:29 2020]
+rule poisson_test:
+    input: ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_test_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-test_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 6
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-test_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv; Input files updated by another job: ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=test, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_with_block_info/293T-bat_TREAT-test_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-test_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_test_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index 13         --mpmat_block_info_col_index 14         --seq_reads_length 150         --poisson_method mutation
+        
+[Fri Nov 13 16:31:27 2020]
+Finished job 6.
+2 of 7 steps (29%) done
+[Fri Nov 13 17:12:25 2020]
+Finished job 2.
+3 of 7 steps (43%) done
+
+[Fri Nov 13 17:12:26 2020]
+rule poisson_test:
+    input: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-dU-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 5
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-dU-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv; Input files updated by another job: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=GBEmini-dU-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-dU-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index 13         --mpmat_block_info_col_index 14         --seq_reads_length 150         --poisson_method mutation
+        
+[Fri Nov 13 17:14:24 2020]
+Finished job 1.
+4 of 7 steps (57%) done
+
+[Fri Nov 13 17:14:25 2020]
+rule poisson_test:
+    input: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat, ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-AP-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 4
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-AP-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv; Input files updated by another job: ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: ctrl=VEGFA-Vector-PD, treat=GBEmini-AP-RNF2-All-PD, rep=rep1, SMN=4, SCN=10, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-AP-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index 13         --mpmat_block_info_col_index 14         --seq_reads_length 150         --poisson_method mutation
+        
+[Fri Nov 13 17:26:05 2020]
+Error in rule poisson_test:
+    jobid: 5
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-dU-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-dU-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-dU-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_GBEmini-dU-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index 13         --mpmat_block_info_col_index 14         --seq_reads_length 150         --poisson_method mutation
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Nov 13 17:31:15 2020]
+Error in rule poisson_test:
+    jobid: 4
+    output: ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-AP-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_with_block_info/293T-bat_TREAT-GBEmini-AP-RNF2-All-PD_rep1_CTRL-VEGFA-Vector-PD_hg38.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-GBEmini-AP-RNF2-All-PD_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_VEGFA-Vector-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_GBEmini-AP-RNF2-All-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index 13         --mpmat_block_info_col_index 14         --seq_reads_length 150         --poisson_method mutation
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/21.2020-11_1109_GBE_DETECT-Seq_new_protocol/snakepipes_detect-seq/.snakemake/log/2020-11-13T145104.882034.snakemake.log

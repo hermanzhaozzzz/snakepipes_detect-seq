@@ -56,23 +56,29 @@ rule all:
         ############################
         # the aim mpmat regions!
         ############################
+        # mpmat
         expand("../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.mpmat",
                treat=TREAT, rep=REP, a=MPMAT_MERGE[0], b=MPMAT_MERGE[1], c=MPMAT_MERGE[2], d=MPMAT_MERGE[3],
                SMN=SiteMutNum, SCN=SiteCoverNum, SMR=SiteMutRatio, RPN=RegionPassNum, RTN=RegionToleranceNum),
+        ############################
+        #
+        #
         # output block info mpmat
         expand("../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
                ctrl=CTRL, treat=TREAT, rep=REP, a=MPMAT_MERGE[0], b=MPMAT_MERGE[1], c=MPMAT_MERGE[2], d=MPMAT_MERGE[3],
                SMN=SiteMutNum, SCN=SiteCoverNum, SMR=SiteMutRatio, RPN=RegionPassNum, RTN=RegionToleranceNum),
         # poisson_test
-        # bam
+        # input bam
         expand("../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam", 
                ctrl=CTRL, rep=REP),
         expand("../bam/293T-bat_{treat}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam", 
                treat=TREAT, rep=REP),
+        #
+        #
         # tsv
-#         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv",
-#                ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
-#                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
+        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv",
+               ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
+               SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
 #         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.tsv",
 #                ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
 #                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
@@ -111,8 +117,6 @@ rule all:
 #         -T {input.treat_bmat} \
 #         -r {GENOME} \
 #         -p 24 \
-#         --keep_mpmat_temp_file False \
-#         --keep_bmat_temp_file False \
 #         --query_mutation_type CT,GA
 #         """
 # block if use bmat
@@ -132,8 +136,6 @@ rule input_json____mpmat_block:
         --treat_bmat_split_json {input.treat_json} \
         -r {GENOME} \
         -p 24 \
-        --keep_mpmat_temp_file False \
-        --keep_bmat_temp_file False \
         --query_mutation_type CT,GA
         """
 # next step
@@ -143,6 +145,7 @@ rule poisson_test:
         ctrl_bam = "../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",
         treat_bam = "../bam/293T-bat_{treat}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam"
     output:
+        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv"
     shell:
         """
         {PYTHON2} ./program/find-significant-mpmat-V05.py \

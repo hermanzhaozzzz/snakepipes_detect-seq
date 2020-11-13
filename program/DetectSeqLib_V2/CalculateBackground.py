@@ -347,7 +347,7 @@ def count_split_chrom_mut_bg(bmat_filename,
 # FUN
 #################################################################################
 # function split files
-def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=True, log_verbose=3):
+def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=True, log_verbose=3, out_gzip=False):
     """
     INPUT
         <input_bmat_filename>
@@ -420,7 +420,7 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
     # make record dict
     # --------------------------------------------------->>>>>>
     record_dict = {
-        "chr_name_order": []
+        "chr_name_order": [],
     }
 
     # --------------------------------------------------->>>>>>
@@ -457,12 +457,19 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
                 random.sample(string.ascii_letters + string.digits, 16))
             temp_file_name = os.path.join(temp_dir, temp_file_basename)
 
+            if out_gzip:
+                temp_file_name += ".gz"
+
             # record info into dict
             record_dict["chr_name_order"].append(cur_chr_name)
             record_dict[cur_chr_name] = temp_file_name
 
             # write
-            cur_out_file = open(temp_file_name, "wb")
+            if not out_gzip:
+                cur_out_file = open(temp_file_name, "wb")
+            else:
+                cur_out_file = gzip.open(temp_file_name, "wb")
+
             cur_out_file.write(line)
 
         elif cur_chr_name == chr_name:
@@ -482,12 +489,19 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
                 random.sample(string.ascii_letters + string.digits, 16))
             temp_file_name = os.path.join(temp_dir, temp_file_basename)
 
+            if out_gzip:
+                temp_file_name += ".gz"
+
             # record info into dict
             record_dict["chr_name_order"].append(cur_chr_name)
             record_dict[cur_chr_name] = temp_file_name
 
             # write
-            cur_out_file = open(temp_file_name, "wb")
+            if not out_gzip:
+                cur_out_file = open(temp_file_name, "wb")
+            else:
+                cur_out_file = gzip.open(temp_file_name, "wb")
+
             cur_out_file.write(line)
 
     # close all files
@@ -1217,6 +1231,21 @@ def calculate_bg_scale_dict(meta_data_dict, to_large_state=False, scale_reads_co
         treat_scale_factor = meta_data_dict["treat"]["total"]["all_align_count"] / 1.0 / int(scale_reads_count)
 
     for ref_name in meta_data_dict["ctrl"].keys():
+        # make all count scale factor
+        ctrl_all_count = meta_data_dict["ctrl"][ref_name]["all_align_count"]
+        treat_all_count = meta_data_dict["treat"][ref_name]["all_align_count"]
+
+        if to_large_state:
+            all_scale_count = max(ctrl_all_count, treat_all_count)
+        else:
+            all_scale_count = min(ctrl_all_count, treat_all_count)
+
+        if all_scale_count == 0:
+            raise ValueError("%s all_align_count is 0!!!" % ref_name)
+
+        ctrl_all_scale_factor = ctrl_all_count / 1.0 / all_scale_count
+        treat_all_scale_factor = treat_all_count / 1.0 / all_scale_count
+
         # make dict
         if scale_dict["ctrl"].get(ref_name) is None:
             scale_dict["ctrl"][ref_name] = {}
@@ -1235,7 +1264,15 @@ def calculate_bg_scale_dict(meta_data_dict, to_large_state=False, scale_reads_co
                     scale_value = min(ctrl_count, treat_count)
 
                 if scale_value == 0:
-                    raise ValueError("scale_value is 0!!!")
+                    if key in select_key_list:
+                        raise ValueError("%s %s scale_value is 0!!!" % (ref_name, key))
+
+                    else:
+                        sys.stderr.write("Warning %s %s scale_value is 0!!!\n" % (ref_name, key))
+                        sys.stderr.write("Use all_align_count scale info instead." + "\n")
+                        ctrl_scale_factor = ctrl_all_scale_factor
+                        treat_scale_factor = treat_all_scale_factor
+
                 else:
                     ctrl_scale_factor = ctrl_count / 1.0 / scale_value
                     treat_scale_factor = treat_count / 1.0 / scale_value

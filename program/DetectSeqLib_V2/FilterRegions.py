@@ -1,5 +1,5 @@
 # _*_ coding: UTF-8 _*_
-
+import gzip
 import logging
 import sys
 import multiprocessing
@@ -495,8 +495,18 @@ def add_block_info_to_mpmat(
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     try:
         chr_mpmat_file = open(chr_mpmat_filename, "rb")
-        chr_bmat_ctrl_file = open(chr_bmat_ctrl_filename, "rb")
-        chr_bmat_treat_file = open(chr_bmat_treat_filename, "rb")
+
+        # open ctrl bmat file
+        if (chr_bmat_ctrl_filename[-3:] == ".gz") or (chr_bmat_ctrl_filename[-5:] == ".gzip"):
+            chr_bmat_ctrl_file = gzip.open(chr_bmat_ctrl_filename, "rb")
+        else:
+            chr_bmat_ctrl_file = open(chr_bmat_ctrl_filename, "rb")
+
+        # open treat bmat file
+        if (chr_bmat_treat_filename[-3:] == ".gz") or (chr_bmat_treat_filename[-5:] == ".gzip"):
+            chr_bmat_treat_file = gzip.open(chr_bmat_treat_filename, "rb")
+        else:
+            chr_bmat_treat_file = open(chr_bmat_treat_filename, "rb")
 
         if out_chr_mpmat_filename == "stdout":
             out_chr_mpmat_file = sys.stdout
@@ -553,6 +563,7 @@ def add_block_info_to_mpmat(
         for site_idx in ctrl_bmat_res_dict["site_index_list"]:
             if ctrl_bmat_res_dict[site_idx] is None:
                 ctrl_site_hard_filter_state.append(False)
+
                 # NS means 'Non sequencing data'
                 ctrl_site_hard_filter_reason.append("NS")
 
@@ -593,6 +604,7 @@ def add_block_info_to_mpmat(
         for site_idx in treat_bmat_res_dict["site_index_list"]:
             if treat_bmat_res_dict[site_idx] is None:
                 treat_site_hard_filter_state.append(True)
+
                 # NS means 'Non sequencing data'
                 treat_site_hard_filter_reason.append("NS")
 
