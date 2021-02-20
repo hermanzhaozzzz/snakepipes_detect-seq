@@ -1,0 +1,817 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 6
+Job counts:
+	count	jobs
+	1	all
+	14	del_first_row_of_table
+	14	input_bmat____mpmat_block
+	14	intersect_select_mpmat
+	14	poisson_test
+	14	select_significant_region
+	71
+
+[Thu Feb  4 16:50:23 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 13 with external jobid '198414'.
+
+[Thu Feb  4 16:50:24 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 1 with external jobid '198415'.
+
+[Thu Feb  4 16:50:24 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 3 with external jobid '198416'.
+
+[Thu Feb  4 16:50:24 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-VEGFA-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 8 with external jobid '198417'.
+
+[Thu Feb  4 16:50:24 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 10
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=M2-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 10 with external jobid '198418'.
+
+[Thu Feb  4 16:50:25 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 12 with external jobid '198419'.
+[Thu Feb  4 16:50:34 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 1
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198415
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 1, external: 198415, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+
+[Thu Feb  4 16:50:34 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 2 with external jobid '198420'.
+[Thu Feb  4 16:50:34 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 10
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198418
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 10, external: 198418, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 10.
+
+[Thu Feb  4 16:50:34 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 10
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=M2-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 10 with external jobid '198421'.
+[Thu Feb  4 16:50:45 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 2
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198420
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 2, external: 198420, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 2.
+
+[Thu Feb  4 16:50:45 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:45 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 13
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198414
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 13, external: 198414, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+Submitted job 2 with external jobid '198422'.
+
+[Thu Feb  4 16:50:45 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:45 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 3
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198416
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 3, external: 198416, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 3.
+[Thu Feb  4 16:50:45 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 8
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198417
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 8, external: 198417, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+Submitted job 6 with external jobid '198423'.
+
+[Thu Feb  4 16:50:45 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:46 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 12
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198419
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 12, external: 198419, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 12.
+Submitted job 13 with external jobid '198424'.
+
+[Thu Feb  4 16:50:46 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:46 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 10
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198421
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 10, external: 198421, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 10.
+Submitted job 1 with external jobid '198425'.
+
+[Thu Feb  4 16:50:46 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 11 with external jobid '198426'.
+
+[Thu Feb  4 16:50:46 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 5 with external jobid '198427'.
+[Thu Feb  4 16:50:56 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 2
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198422
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 2, external: 198422, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 2.
+
+[Thu Feb  4 16:50:56 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:56 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 6
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198423
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 6, external: 198423, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 6.
+Submitted job 3 with external jobid '198428'.
+
+[Thu Feb  4 16:50:56 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:56 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 13
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198424
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 13, external: 198424, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+Submitted job 6 with external jobid '198429'.
+[Thu Feb  4 16:50:57 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 1
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198425
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 1, external: 198425, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+
+[Thu Feb  4 16:50:57 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-VEGFA-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 8 with external jobid '198430'.
+
+[Thu Feb  4 16:50:57 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:50:57 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 5
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198427
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 5, external: 198427, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 5.
+Submitted job 12 with external jobid '198431'.
+
+[Thu Feb  4 16:50:57 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 10
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=M2-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 10 with external jobid '198432'.
+[Thu Feb  4 16:51:07 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 3
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198428
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 3, external: 198428, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 3.
+
+[Thu Feb  4 16:51:07 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:07 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 6
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198429
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 6, external: 198429, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 6.
+Submitted job 3 with external jobid '198433'.
+
+[Thu Feb  4 16:51:08 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+[Thu Feb  4 16:51:08 2021]
+
+Error in rule input_bmat____mpmat_block:
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+    jobid: 8
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198430
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 8, external: 198430, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+[Thu Feb  4 16:51:08 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 11
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198426
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 11, external: 198426, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 11.
+Submitted job 6 with external jobid '198434'.
+
+[Thu Feb  4 16:51:08 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:08 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 12
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198431
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 12, external: 198431, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 12.
+Submitted job 11 with external jobid '198435'.
+
+[Thu Feb  4 16:51:08 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:08 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 10
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198432
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 10, external: 198432, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 10.
+Submitted job 1 with external jobid '198436'.
+
+[Thu Feb  4 16:51:08 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 13 with external jobid '198437'.
+
+[Thu Feb  4 16:51:09 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 5 with external jobid '198438'.
+[Thu Feb  4 16:51:18 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 3
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198433
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 3, external: 198433, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 3.
+
+[Thu Feb  4 16:51:18 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-VEGFA-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:18 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 6
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198434
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 6, external: 198434, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 6.
+Submitted job 8 with external jobid '198439'.
+
+[Thu Feb  4 16:51:19 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:19 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 1
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198436
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 1, external: 198436, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+Submitted job 6 with external jobid '198440'.
+
+[Thu Feb  4 16:51:19 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=All-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:19 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 13
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198437
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 13, external: 198437, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+Submitted job 12 with external jobid '198441'.
+
+[Thu Feb  4 16:51:19 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 10
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=M2-EMX1-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:19 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 5
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198438
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 5, external: 198438, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 5.
+Submitted job 10 with external jobid '198442'.
+
+[Thu Feb  4 16:51:20 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 3
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=YE1-VEGFA-PD, rep=rep1, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+Submitted job 3 with external jobid '198443'.
+[Thu Feb  4 16:51:29 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 8
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198439
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 8, external: 198439, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+
+[Thu Feb  4 16:51:30 2021]
+rule input_bmat____mpmat_block:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    wildcards: treat=33A-VEGFA-PD, rep=rep2, ctrl=Vector-VEGFA-PD, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+[Thu Feb  4 16:51:30 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 6
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198440
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 6, external: 198440, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Submitted job 8 with external jobid '198444'.
+[Thu Feb  4 16:51:30 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 12
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198441
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 12, external: 198441, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 12.
+[Thu Feb  4 16:51:30 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 11
+    output: ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-All-EMX1-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198435
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 11, external: 198435, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 11.
+[Thu Feb  4 16:51:30 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 10
+    output: ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-M2-EMX1-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198442
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 10, external: 198442, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 16:51:30 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 3
+    output: ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-YE1-VEGFA-PD_rep1_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198443
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 3, external: 198443, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 16:51:41 2021]
+Error in rule input_bmat____mpmat_block:
+    jobid: 8
+    output: ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-block-V02.1.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../mpmat_with_block_info/293T-bat_TREAT-33A-VEGFA-PD_rep2_CTRL-Vector-VEGFA-PD_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.block_info.mpmat         -C ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -T ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198444
+
+Error executing rule input_bmat____mpmat_block on cluster (jobid: 8, external: 198444, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.eu9_qqqv/snakejob.input_bmat____mpmat_block.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/log/2021-02-04T165023.588380.snakemake.log

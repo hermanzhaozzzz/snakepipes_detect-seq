@@ -1,15 +1,22 @@
+# use R before this protocol
+
+
 
 TREAT = [
-    "GBEmini-AP-RNF2-All-PD",
-    "GBEmini-dU-RNF2-All-PD",
-    "test",
+    "YE1-EMX1-PD",
+    "YE1-VEGFA-PD",
+    "33A-EMX1-PD",
+    "33A-VEGFA-PD",
+    "M2-EMX1-PD",
+    "All-EMX1-PD",
+#     "test",
 ]
 
 CTRL = [
-    "VEGFA-Vector-PD", # CBE!
+    "Vector-VEGFA-PD",
 ]
 
-REP = ["rep1"]
+REP = ["rep1","rep2"]
 
 # mpmat_merge list means C2T.mpmat + G2A.mpmat == CT_merge_GA.mpmat
 MPMAT_MERGE = [['C'],['T'],['G'],['A']]
@@ -38,35 +45,42 @@ GENOME_FAI = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromos
     
 
 # 这里填step.02的heatmap选好的cutoff来跑第三步！
-SiteMutNum = [4]                 # M:  [影响较大]   建议多跑几个range, 1~10
-SiteCoverNum = [10]              # C:  [影响较大]   不要太小就行，一般设置10，要call点准确的话可以加高
-RegionPassNum = [1]              # R:  [影响较大]   region的pass的CtoT的个数，越高越严格，但是不能很大，2-3个就可以了，不要超过10
-SiteMutRatio = [0.1]             #  :  [影响较小]   影响不如count大，先考虑count再考虑ratio，coverage非常高的时候可以试试卡ratio，call不出点可以小点，比如0.02，正常CBE就0.1
-RegionToleranceNum = [2]         #  :  [影响较大]   Detect region可以容忍的false的C的个数，越低越严格, 影响比较大，探索时，可以设为False，False时取值为10000, 建议设置成2 
+# SiteMutNum = [4]                 # M:  [影响较大]   建议多跑几个range, 1~10
+# SiteCoverNum = [10]              # C:  [影响较大]   不要太小就行，一般设置10，要call点准确的话可以加高
+# RegionPassNum = [1]              # R:  [影响较大]   region的pass的CtoT的个数，越高越严格，但是不能很大，2-3个就可以了，不要超过10
+# SiteMutRatio = [0.1]             #  :  [影响较小]   影响不如count大，先考虑count再考虑ratio，coverage非常高的时候可以试试卡ratio，call不出点可以小点，比如0.02，正常CBE就0.1
+# RegionToleranceNum = [2]         #  :  [影响较大]   Detect region可以容忍的false的C的个数，越低越严格, 影响比较大，探索时，可以设为False，False时取值为10000, 建议设置成2 
+# explore
+SiteMutNum = [3]         
+SiteCoverNum = [6]       
+RegionPassNum = [1]      
+SiteMutRatio = [0.1]     
+RegionToleranceNum = [2] 
+
 
 rule all:
     input:
         ############################
         # block them if use json
-#         expand("../mpileup_pmat_bmat/293T-bat_{treat}_{rep}_hg38.MAPQ20.bmat", treat=TREAT, rep=REP),
-#         expand("../mpileup_pmat_bmat/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.bmat", ctrl=CTRL, rep=REP),
-        # block tiem if use bmat
-        expand("../Split_Bmat_Json/293T-bat_{treat}_{rep}_hg38.MAPQ20.json", treat=TREAT, rep=REP),
-        expand("../Split_Bmat_Json/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.json", ctrl=TREAT, rep=REP),
+        expand("../mpileup_pmat_bmat/293T-bat_{treat}_{rep}_hg38.MAPQ20.bmat", treat=TREAT, rep=REP),
+        expand("../mpileup_pmat_bmat/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.bmat", ctrl=CTRL, rep=REP),
+        # block them if use bmat
+#         expand("../Split_Bmat_Json/293T-bat_{treat}_{rep}_hg38.MAPQ20.json", treat=TREAT, rep=REP),
+#         expand("../Split_Bmat_Json/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.json", ctrl=TREAT, rep=REP),
         ############################
         # the aim mpmat regions!
         ############################
         # mpmat
-        expand("../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.mpmat",
+        expand("../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.intersected.mpmat",
                treat=TREAT, rep=REP, a=MPMAT_MERGE[0], b=MPMAT_MERGE[1], c=MPMAT_MERGE[2], d=MPMAT_MERGE[3],
                SMN=SiteMutNum, SCN=SiteCoverNum, SMR=SiteMutRatio, RPN=RegionPassNum, RTN=RegionToleranceNum),
         ############################
         #
         #
         # output block info mpmat
-        expand("../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
-               ctrl=CTRL, treat=TREAT, rep=REP, a=MPMAT_MERGE[0], b=MPMAT_MERGE[1], c=MPMAT_MERGE[2], d=MPMAT_MERGE[3],
-               SMN=SiteMutNum, SCN=SiteCoverNum, SMR=SiteMutRatio, RPN=RegionPassNum, RTN=RegionToleranceNum),
+#         expand("../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
+#                ctrl=CTRL, treat=TREAT, rep=REP, a=MPMAT_MERGE[0], b=MPMAT_MERGE[1], c=MPMAT_MERGE[2], d=MPMAT_MERGE[3],
+#                SMN=SiteMutNum, SCN=SiteCoverNum, SMR=SiteMutRatio, RPN=RegionPassNum, RTN=RegionToleranceNum),
         # poisson_test
         # input bam
         expand("../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam", 
@@ -79,19 +93,19 @@ rule all:
         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv",
                ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
-        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_call_peaks.tsv",
-       ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
-       SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
-#         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.tsv",
-#                ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
-#                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
-#         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.Sign.tsv",
-#                ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
-#                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
-#         # Sign mpmat
-#         expand("../mpmat_merge_Sign/293T-bat_TREAT-{treat}_CTRL-{ctrl}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.Sign_poisson.mpmat",
-#                treat=TREAT, ctrl=CTRL, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
-#                SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
+#         expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_call_peaks.tsv",
+#        ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
+#        SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
+        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.tsv",
+               ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
+               SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
+        expand("../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_noHeader.Sign.tsv",
+               ctrl=CTRL,treat=TREAT,rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
+               SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
+        # Sign mpmat
+        expand("../mpmat_merge_Sign/293T-bat_TREAT-{treat}_CTRL-{ctrl}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.Sign_poisson.mpmat",
+               treat=TREAT, ctrl=CTRL, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
+               SMN=SiteMutNum,SCN=SiteCoverNum,SMR=SiteMutRatio,RPN=RegionPassNum,RTN=RegionToleranceNum),
 #         #
 #         expand("../mpmat_merge_Sign/293T-bat_TREAT-{treat}_CTRL-{ctrl}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.Sign_poisson.art",
 #                treat=TREAT, ctrl=CTRL, rep=REP,a=MPMAT_MERGE[0],b=MPMAT_MERGE[1],c=MPMAT_MERGE[2],d=MPMAT_MERGE[3],
@@ -123,28 +137,28 @@ rule all:
 #         --query_mutation_type CT,GA
 #         """
 # block if use bmat
-rule input_json____mpmat_block:
-    input:
-        mpmat = "../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.mpmat",
-        ctrl_json = "../Split_Bmat_Json/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.json",
-        treat_json = "../Split_Bmat_Json/293T-bat_{treat}_{rep}_hg38.MAPQ20.json"
-    output:
-        "../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat"
-    shell:
-        """
-        {PYTHON2} ./program/mpmat-block-V02.1.py \
-        -i {input.mpmat} \
-        -o {output} \
-        --ctrl_bmat_split_json {input.ctrl_json} \
-        --treat_bmat_split_json {input.treat_json} \
-        -r {GENOME} \
-        -p 24 \
-        --query_mutation_type CT,GA
-        """
+# rule input_json____mpmat_block:
+#     input:
+#         mpmat = "../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.mpmat",
+#         ctrl_json = "../Split_Bmat_Json/293T-bat_{ctrl}_{rep}_hg38.MAPQ20.json",
+#         treat_json = "../Split_Bmat_Json/293T-bat_{treat}_{rep}_hg38.MAPQ20.json"
+#     output:
+#         "../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat"
+#     shell:
+#         """
+#         {PYTHON2} ./program/mpmat-block-V02.1.py \
+#         -i {input.mpmat} \
+#         -o {output} \
+#         --ctrl_bmat_split_json {input.ctrl_json} \
+#         --treat_bmat_split_json {input.treat_json} \
+#         -r {GENOME} \
+#         -p 24 \
+#         --query_mutation_type CT,GA
+#         """
 # next step
 rule poisson_test:
     input:
-        blocked_mpmat = "../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
+        blocked_mpmat =  "../mpmat_filter_merge/293T-bat_{treat}_{rep}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.sort.intersected.mpmat",
         ctrl_bam = "../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",
         treat_bam = "../bam/293T-bat_{treat}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam"
     output:
@@ -159,34 +173,34 @@ rule poisson_test:
         -r {GENOME} \
         -p 24 \
         --query_mutation_type CT,GA \
-        --mpmat_filter_info_col_index 13 \
-        --mpmat_block_info_col_index 14 \
+        --mpmat_filter_info_col_index -1 \
+        --mpmat_block_info_col_index -1 \
         --seq_reads_length 150 \
         --poisson_method mutation
-        """
+        """# filter col 13 block col 14
 # usually block it unless you need it
-rule call_peaks_macs2:
-    input:
-        blocked_mpmat = "../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
-        ctrl_bam = "../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",
-        treat_bam = "../bam/293T-bat_{treat}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam"
-    output:
-        "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_call_peaks.tsv"
-    shell:
-        """
-        {PYTHON2} ./program/find-significant-mpmat-V05.py \
-        -i {input.blocked_mpmat} \
-        -o {output} \
-        -c {input.ctrl_bam} \
-        -t {input.treat_bam} \
-        -r {GENOME} \
-        -p 24 \
-        --query_mutation_type CT,GA \
-        --mpmat_filter_info_col_index 13 \
-        --mpmat_block_info_col_index 14 \
-        --seq_reads_length 150 \
-        --poisson_method all
-        """
+# rule call_peaks_macs2:
+#     input:
+#         blocked_mpmat = "../mpmat_with_block_info/293T-bat_TREAT-{treat}_{rep}_CTRL-{ctrl}_hg38.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.block_info.mpmat",
+#         ctrl_bam = "../bam/293T-bat_{ctrl}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam",
+#         treat_bam = "../bam/293T-bat_{treat}_{rep}_bwa_hg38_sort_rmdup_MAPQ20.bam"
+#     output:
+#         "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}_call_peaks.tsv"
+#     shell:
+#         """
+#         {PYTHON2} ./program/find-significant-mpmat-V05.py \
+#         -i {input.blocked_mpmat} \
+#         -o {output} \
+#         -c {input.ctrl_bam} \
+#         -t {input.treat_bam} \
+#         -r {GENOME} \
+#         -p 24 \
+#         --query_mutation_type CT,GA \
+#         --mpmat_filter_info_col_index 13 \
+#         --mpmat_block_info_col_index 14 \
+#         --seq_reads_length 150 \
+#         --poisson_method all
+#         """
 rule del_first_row_of_table:
     input:
         "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv"

@@ -1,0 +1,291 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 6
+Job counts:
+	count	jobs
+	1	all
+	16	poisson_test
+	17
+
+[Sun Feb  7 18:37:03 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 7
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 7 with external jobid '198744'.
+
+[Sun Feb  7 18:37:04 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 9
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 9 with external jobid '198745'.
+
+[Sun Feb  7 18:37:04 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 8
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 8 with external jobid '198746'.
+
+[Sun Feb  7 18:37:04 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 2
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 2 with external jobid '198747'.
+
+[Sun Feb  7 18:37:05 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 6
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 6 with external jobid '198748'.
+
+[Sun Feb  7 18:37:05 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 10
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 10 with external jobid '198749'.
+[Sun Feb  7 18:49:45 2021]
+Finished job 2.
+1 of 17 steps (6%) done
+[Sun Feb  7 18:49:56 2021]
+Finished job 9.
+2 of 17 steps (12%) done
+[Sun Feb  7 18:50:28 2021]
+Finished job 10.
+3 of 17 steps (18%) done
+[Sun Feb  7 18:50:39 2021]
+Finished job 6.
+4 of 17 steps (24%) done
+[Sun Feb  7 18:55:08 2021]
+Finished job 8.
+5 of 17 steps (29%) done
+[Sun Feb  7 19:02:16 2021]
+Finished job 7.
+6 of 17 steps (35%) done
+
+[Sun Feb  7 19:02:16 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 13
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 13 with external jobid '198754'.
+
+[Sun Feb  7 19:02:19 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 11
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-VEGFA-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 11 with external jobid '198755'.
+
+[Sun Feb  7 19:02:19 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 1
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 1 with external jobid '198756'.
+
+[Sun Feb  7 19:02:19 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 3
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 3 with external jobid '198757'.
+
+[Sun Feb  7 19:02:20 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 5
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 5 with external jobid '198758'.
+
+[Sun Feb  7 19:02:20 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep1_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 15
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep1
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep1_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 15 with external jobid '198759'.
+[Sun Feb  7 19:14:56 2021]
+Finished job 5.
+7 of 17 steps (41%) done
+[Sun Feb  7 19:15:18 2021]
+Finished job 1.
+8 of 17 steps (47%) done
+[Sun Feb  7 19:17:27 2021]
+Finished job 15.
+9 of 17 steps (53%) done
+[Sun Feb  7 19:17:58 2021]
+Finished job 3.
+10 of 17 steps (59%) done
+[Sun Feb  7 19:18:40 2021]
+Finished job 11.
+11 of 17 steps (65%) done
+[Sun Feb  7 19:21:23 2021]
+Finished job 13.
+12 of 17 steps (71%) done
+
+[Sun Feb  7 19:21:23 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 14
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 14 with external jobid '198761'.
+
+[Sun Feb  7 19:21:23 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 12
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-VEGFA-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 12 with external jobid '198762'.
+
+[Sun Feb  7 19:21:23 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 16
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 16 with external jobid '198763'.
+
+[Sun Feb  7 19:21:24 2021]
+rule poisson_test:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    log: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log
+    jobid: 4
+    reason: Missing output files: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep2
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep2_hg38.sort.mpmat         -o ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation > ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv.log 2>&1
+        
+Submitted job 4 with external jobid '198764'.
+[Sun Feb  7 19:34:34 2021]
+Finished job 16.
+13 of 17 steps (76%) done
+[Sun Feb  7 19:37:54 2021]
+Finished job 4.
+14 of 17 steps (82%) done
+[Sun Feb  7 19:38:57 2021]
+Finished job 12.
+15 of 17 steps (88%) done
+[Sun Feb  7 19:39:38 2021]
+Finished job 14.
+16 of 17 steps (94%) done
+
+[Sun Feb  7 19:39:38 2021]
+localrule all:
+    input: ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-EMX1-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-YE1-VEGFA-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-EMX1-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-33A-VEGFA-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-EMX1-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-EMX1-PD_rep2_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep1_hg38.sort.mpmat, ../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-All-VEGFA-PD_rep2_hg38.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+    jobid: 0
+    reason: Input files updated by another job: ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-VEGFA-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv, ../table_faker/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2_C6M3R1_SMR0.1RT2.tsv
+
+[Sun Feb  7 19:39:38 2021]
+Finished job 0.
+17 of 17 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/log/2021-02-07T183703.332699.snakemake.log

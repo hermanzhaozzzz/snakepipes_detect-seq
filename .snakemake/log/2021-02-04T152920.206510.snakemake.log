@@ -1,0 +1,1487 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	29	mpmat_filter
+	16	mpmat_filter_merge
+	16	sort_mpmat
+	62
+
+[Thu Feb  4 15:29:20 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 5 with external jobid '198282'.
+
+[Thu Feb  4 15:29:20 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 7
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 7 with external jobid '198283'.
+
+[Thu Feb  4 15:29:21 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 22
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 22 with external jobid '198284'.
+
+[Thu Feb  4 15:29:21 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 21
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 21 with external jobid '198285'.
+
+[Thu Feb  4 15:29:21 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 14
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 14 with external jobid '198286'.
+
+[Thu Feb  4 15:29:21 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 29
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 29 with external jobid '198287'.
+
+[Thu Feb  4 15:29:22 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 6 with external jobid '198288'.
+
+[Thu Feb  4 15:29:22 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 18
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 18 with external jobid '198289'.
+
+[Thu Feb  4 15:29:22 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 12 with external jobid '198290'.
+
+[Thu Feb  4 15:29:23 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 27
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 27 with external jobid '198291'.
+[Thu Feb  4 15:29:30 2021]
+Error in rule mpmat_filter:
+    jobid: 5
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198282
+
+Error executing rule mpmat_filter on cluster (jobid: 5, external: 198282, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 5.
+
+[Thu Feb  4 15:29:30 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 28
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:30 2021]
+Error in rule mpmat_filter:
+    jobid: 7
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198283
+
+Error executing rule mpmat_filter on cluster (jobid: 7, external: 198283, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 7.
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 22
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198284
+
+Error executing rule mpmat_filter on cluster (jobid: 22, external: 198284, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 22.
+Submitted job 28 with external jobid '198292'.
+
+[Thu Feb  4 15:29:31 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 21
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198285
+
+Error executing rule mpmat_filter on cluster (jobid: 21, external: 198285, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 21.
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 14
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198286
+
+Error executing rule mpmat_filter on cluster (jobid: 14, external: 198286, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 14.
+Submitted job 11 with external jobid '198293'.
+
+[Thu Feb  4 15:29:31 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 29
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198287
+
+Error executing rule mpmat_filter on cluster (jobid: 29, external: 198287, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.29.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 29.
+Submitted job 2 with external jobid '198294'.
+
+[Thu Feb  4 15:29:31 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 6
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198288
+
+Error executing rule mpmat_filter on cluster (jobid: 6, external: 198288, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 6.
+Submitted job 1 with external jobid '198295'.
+[Thu Feb  4 15:29:31 2021]
+Error in rule mpmat_filter:
+    jobid: 18
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198289
+
+Error executing rule mpmat_filter on cluster (jobid: 18, external: 198289, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 18.
+
+[Thu Feb  4 15:29:31 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 30
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:32 2021]
+Error in rule mpmat_filter:
+    jobid: 12
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198290
+
+Error executing rule mpmat_filter on cluster (jobid: 12, external: 198290, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 12.
+Submitted job 30 with external jobid '198296'.
+
+[Thu Feb  4 15:29:32 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 25
+    reason: Missing output files: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=M2-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:32 2021]
+Error in rule mpmat_filter:
+    jobid: 27
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198291
+
+Error executing rule mpmat_filter on cluster (jobid: 27, external: 198291, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 27.
+Submitted job 25 with external jobid '198297'.
+
+[Thu Feb  4 15:29:32 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 8 with external jobid '198298'.
+
+[Thu Feb  4 15:29:32 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 7
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 7 with external jobid '198299'.
+
+[Thu Feb  4 15:29:33 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 5
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 5 with external jobid '198300'.
+
+[Thu Feb  4 15:29:33 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 22
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 22 with external jobid '198301'.
+[Thu Feb  4 15:29:42 2021]
+Error in rule mpmat_filter:
+    jobid: 28
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198292
+
+Error executing rule mpmat_filter on cluster (jobid: 28, external: 198292, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.28.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 28.
+
+[Thu Feb  4 15:29:42 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:42 2021]
+Error in rule mpmat_filter:
+    jobid: 11
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198293
+
+Error executing rule mpmat_filter on cluster (jobid: 11, external: 198293, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 11.
+Submitted job 13 with external jobid '198302'.
+
+[Thu Feb  4 15:29:42 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:42 2021]
+Error in rule mpmat_filter:
+    jobid: 2
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198294
+
+Error executing rule mpmat_filter on cluster (jobid: 2, external: 198294, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 2.
+[Thu Feb  4 15:29:43 2021]
+Error in rule mpmat_filter:
+    jobid: 1
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198295
+
+Error executing rule mpmat_filter on cluster (jobid: 1, external: 198295, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+Submitted job 20 with external jobid '198303'.
+
+[Thu Feb  4 15:29:43 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 26
+    reason: Missing output files: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:43 2021]
+Error in rule mpmat_filter:
+    jobid: 30
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198296
+
+Error executing rule mpmat_filter on cluster (jobid: 30, external: 198296, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 30.
+Submitted job 26 with external jobid '198304'.
+
+[Thu Feb  4 15:29:43 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 17
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:43 2021]
+Error in rule mpmat_filter:
+    jobid: 25
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198297
+
+Error executing rule mpmat_filter on cluster (jobid: 25, external: 198297, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 25.
+[Thu Feb  4 15:29:43 2021]
+Error in rule mpmat_filter:
+    jobid: 8
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198298
+
+Error executing rule mpmat_filter on cluster (jobid: 8, external: 198298, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+Submitted job 17 with external jobid '198305'.
+
+[Thu Feb  4 15:29:43 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:43 2021]
+Error in rule mpmat_filter:
+    jobid: 7
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198299
+
+Error executing rule mpmat_filter on cluster (jobid: 7, external: 198299, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 7.
+Submitted job 11 with external jobid '198306'.
+[Thu Feb  4 15:29:44 2021]
+Error in rule mpmat_filter:
+    jobid: 5
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198300
+
+
+Error executing rule mpmat_filter on cluster (jobid: 5, external: 198300, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:29:44 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+Trying to restart job 5.
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:44 2021]
+Error in rule mpmat_filter:
+    jobid: 22
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198301
+
+Error executing rule mpmat_filter on cluster (jobid: 22, external: 198301, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 22.
+Submitted job 2 with external jobid '198307'.
+
+[Thu Feb  4 15:29:44 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 23 with external jobid '198308'.
+
+[Thu Feb  4 15:29:44 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 4
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 4 with external jobid '198309'.
+
+[Thu Feb  4 15:29:45 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 30
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 30 with external jobid '198310'.
+
+[Thu Feb  4 15:29:45 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 8 with external jobid '198311'.
+[Thu Feb  4 15:29:54 2021]
+Error in rule mpmat_filter:
+    jobid: 13
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198302
+
+Error executing rule mpmat_filter on cluster (jobid: 13, external: 198302, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+
+[Thu Feb  4 15:29:54 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:54 2021]
+Error in rule mpmat_filter:
+    jobid: 20
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198303
+
+Error executing rule mpmat_filter on cluster (jobid: 20, external: 198303, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 20.
+Submitted job 13 with external jobid '198312'.
+
+[Thu Feb  4 15:29:54 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:54 2021]
+Error in rule mpmat_filter:
+    jobid: 26
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198304
+
+Error executing rule mpmat_filter on cluster (jobid: 26, external: 198304, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 26.
+[Thu Feb  4 15:29:55 2021]
+Error in rule mpmat_filter:
+    jobid: 17
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198305
+
+Error executing rule mpmat_filter on cluster (jobid: 17, external: 198305, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 17.
+Submitted job 20 with external jobid '198313'.
+
+[Thu Feb  4 15:29:55 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 26
+    reason: Missing output files: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:55 2021]
+Error in rule mpmat_filter:
+    jobid: 11
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198306
+
+Error executing rule mpmat_filter on cluster (jobid: 11, external: 198306, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 11.
+Submitted job 26 with external jobid '198314'.
+
+[Thu Feb  4 15:29:55 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 9
+    reason: Missing output files: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=M2-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:55 2021]
+Error in rule mpmat_filter:
+    jobid: 2
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198307
+
+Error executing rule mpmat_filter on cluster (jobid: 2, external: 198307, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 2.
+[Thu Feb  4 15:29:55 2021]
+Error in rule mpmat_filter:
+    jobid: 23
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198308
+
+Error executing rule mpmat_filter on cluster (jobid: 23, external: 198308, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 23.
+Submitted job 9 with external jobid '198315'.
+
+[Thu Feb  4 15:29:55 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 19
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:55 2021]
+Error in rule mpmat_filter:
+    jobid: 4
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198309
+
+Error executing rule mpmat_filter on cluster (jobid: 4, external: 198309, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 4.
+Submitted job 19 with external jobid '198316'.
+
+[Thu Feb  4 15:29:56 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:56 2021]
+Error in rule mpmat_filter:
+    jobid: 30
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198310
+
+Error executing rule mpmat_filter on cluster (jobid: 30, external: 198310, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 30.
+Submitted job 1 with external jobid '198317'.
+
+[Thu Feb  4 15:29:56 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:29:56 2021]
+Error in rule mpmat_filter:
+    jobid: 8
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198311
+
+Error executing rule mpmat_filter on cluster (jobid: 8, external: 198311, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+Submitted job 23 with external jobid '198318'.
+
+[Thu Feb  4 15:29:56 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 4
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 4 with external jobid '198319'.
+
+[Thu Feb  4 15:29:56 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 30
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 30 with external jobid '198320'.
+
+[Thu Feb  4 15:29:57 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 8 with external jobid '198321'.
+[Thu Feb  4 15:30:06 2021]
+Error in rule mpmat_filter:
+    jobid: 13
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198312
+
+Error executing rule mpmat_filter on cluster (jobid: 13, external: 198312, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+
+[Thu Feb  4 15:30:06 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:06 2021]
+Error in rule mpmat_filter:
+    jobid: 20
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198313
+
+Error executing rule mpmat_filter on cluster (jobid: 20, external: 198313, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 20.
+Submitted job 13 with external jobid '198322'.
+
+[Thu Feb  4 15:30:06 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:06 2021]
+Error in rule mpmat_filter:
+    jobid: 26
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198314
+
+Error executing rule mpmat_filter on cluster (jobid: 26, external: 198314, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 26.
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 9
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198315
+
+Error executing rule mpmat_filter on cluster (jobid: 9, external: 198315, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 9.
+Submitted job 20 with external jobid '198323'.
+
+[Thu Feb  4 15:30:07 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 19
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198316
+
+Error executing rule mpmat_filter on cluster (jobid: 19, external: 198316, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 19.
+Submitted job 11 with external jobid '198324'.
+
+[Thu Feb  4 15:30:07 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 1
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198317
+
+Error executing rule mpmat_filter on cluster (jobid: 1, external: 198317, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 23
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198318
+
+Error executing rule mpmat_filter on cluster (jobid: 23, external: 198318, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 23.
+Submitted job 2 with external jobid '198325'.
+
+[Thu Feb  4 15:30:07 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 26
+    reason: Missing output files: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 4
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198319
+
+Error executing rule mpmat_filter on cluster (jobid: 4, external: 198319, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 4.
+Submitted job 26 with external jobid '198326'.
+
+[Thu Feb  4 15:30:07 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:07 2021]
+Error in rule mpmat_filter:
+    jobid: 30
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198320
+
+Error executing rule mpmat_filter on cluster (jobid: 30, external: 198320, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 30.
+[Thu Feb  4 15:30:08 2021]
+Error in rule mpmat_filter:
+    jobid: 8
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198321
+
+Error executing rule mpmat_filter on cluster (jobid: 8, external: 198321, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 8.
+Submitted job 1 with external jobid '198327'.
+
+[Thu Feb  4 15:30:08 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 23 with external jobid '198328'.
+
+[Thu Feb  4 15:30:08 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 4
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 4 with external jobid '198329'.
+
+[Thu Feb  4 15:30:08 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 30
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 30 with external jobid '198330'.
+
+[Thu Feb  4 15:30:09 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 8
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 8 with external jobid '198331'.
+[Thu Feb  4 15:30:18 2021]
+Error in rule mpmat_filter:
+    jobid: 13
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198322
+
+Error executing rule mpmat_filter on cluster (jobid: 13, external: 198322, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 13.
+
+[Thu Feb  4 15:30:18 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 13
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:18 2021]
+Error in rule mpmat_filter:
+    jobid: 20
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198323
+
+Error executing rule mpmat_filter on cluster (jobid: 20, external: 198323, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 20.
+Submitted job 13 with external jobid '198332'.
+
+[Thu Feb  4 15:30:18 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:18 2021]
+Error in rule mpmat_filter:
+    jobid: 11
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198324
+
+Error executing rule mpmat_filter on cluster (jobid: 11, external: 198324, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 11.
+[Thu Feb  4 15:30:18 2021]
+Error in rule mpmat_filter:
+    jobid: 2
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198325
+
+Error executing rule mpmat_filter on cluster (jobid: 2, external: 198325, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 2.
+Submitted job 20 with external jobid '198333'.
+
+[Thu Feb  4 15:30:19 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 19
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:19 2021]
+Error in rule mpmat_filter:
+    jobid: 26
+    output: ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198326
+
+Error executing rule mpmat_filter on cluster (jobid: 26, external: 198326, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 26.
+Submitted job 19 with external jobid '198334'.
+
+[Thu Feb  4 15:30:19 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 2
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:19 2021]
+Error in rule mpmat_filter:
+    jobid: 1
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198327
+
+Error executing rule mpmat_filter on cluster (jobid: 1, external: 198327, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 1.
+[Thu Feb  4 15:30:19 2021]
+Error in rule mpmat_filter:
+    jobid: 23
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198328
+
+Error executing rule mpmat_filter on cluster (jobid: 23, external: 198328, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 23.
+Submitted job 2 with external jobid '198335'.
+
+[Thu Feb  4 15:30:19 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 11
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:19 2021]
+Error in rule mpmat_filter:
+    jobid: 4
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198329
+
+Error executing rule mpmat_filter on cluster (jobid: 4, external: 198329, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 4.
+Submitted job 11 with external jobid '198336'.
+
+[Thu Feb  4 15:30:19 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 1
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+[Thu Feb  4 15:30:19 2021]
+Error in rule mpmat_filter:
+    jobid: 30
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198330
+
+Error executing rule mpmat_filter on cluster (jobid: 30, external: 198330, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:20 2021]
+Error in rule mpmat_filter:
+    jobid: 8
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198331
+
+Error executing rule mpmat_filter on cluster (jobid: 8, external: 198331, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Submitted job 1 with external jobid '198337'.
+
+[Thu Feb  4 15:30:20 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 23
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+Submitted job 23 with external jobid '198338'.
+[Thu Feb  4 15:30:30 2021]
+Error in rule mpmat_filter:
+    jobid: 13
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198332
+
+Error executing rule mpmat_filter on cluster (jobid: 13, external: 198332, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:30 2021]
+Error in rule mpmat_filter:
+    jobid: 20
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198333
+
+Error executing rule mpmat_filter on cluster (jobid: 20, external: 198333, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:30 2021]
+Error in rule mpmat_filter:
+    jobid: 19
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198334
+
+Error executing rule mpmat_filter on cluster (jobid: 19, external: 198334, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 19.
+[Thu Feb  4 15:30:30 2021]
+Error in rule mpmat_filter:
+    jobid: 2
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198335
+
+Error executing rule mpmat_filter on cluster (jobid: 2, external: 198335, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:31 2021]
+Error in rule mpmat_filter:
+    jobid: 11
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198336
+
+Error executing rule mpmat_filter on cluster (jobid: 11, external: 198336, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:31 2021]
+Error in rule mpmat_filter:
+    jobid: 1
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198337
+
+Error executing rule mpmat_filter on cluster (jobid: 1, external: 198337, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Feb  4 15:30:31 2021]
+Error in rule mpmat_filter:
+    jobid: 23
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    shell:
+        
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader False         --OutHeader False
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 198338
+
+Error executing rule mpmat_filter on cluster (jobid: 23, external: 198338, jobscript: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/tmp.8ici904m/snakejob.mpmat_filter.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/log/2021-02-04T152920.206510.snakemake.log

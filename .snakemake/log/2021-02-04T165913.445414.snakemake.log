@@ -1,0 +1,1030 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 6
+Job counts:
+	count	jobs
+	1	all
+	14	del_first_row_of_table
+	14	intersect_select_mpmat
+	14	poisson_test
+	14	select_significant_region
+	57
+
+[Thu Feb  4 16:59:13 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 1
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 1 with external jobid '198471'.
+
+[Thu Feb  4 16:59:14 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 2
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 2 with external jobid '198472'.
+
+[Thu Feb  4 16:59:14 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 3
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 3 with external jobid '198473'.
+
+[Thu Feb  4 16:59:14 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 8
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 8 with external jobid '198474'.
+
+[Thu Feb  4 16:59:14 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 10
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 10 with external jobid '198475'.
+
+[Thu Feb  4 16:59:15 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 12
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 12 with external jobid '198476'.
+[Thu Feb  4 17:12:45 2021]
+Finished job 1.
+1 of 57 steps (2%) done
+
+[Thu Feb  4 17:12:46 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 15
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+[Thu Feb  4 17:12:46 2021]
+Finished job 2.
+2 of 57 steps (4%) done
+Submitted job 15 with external jobid '198477'.
+
+[Thu Feb  4 17:12:47 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 16
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 16 with external jobid '198478'.
+[Thu Feb  4 17:12:58 2021]
+Finished job 15.
+3 of 57 steps (5%) done
+
+[Thu Feb  4 17:12:58 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 29
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Feb  4 17:12:58 2021]
+Finished job 16.
+4 of 57 steps (7%) done
+Submitted job 29 with external jobid '198479'.
+
+[Thu Feb  4 17:12:58 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 30
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 30 with external jobid '198480'.
+[Thu Feb  4 17:13:09 2021]
+Finished job 29.
+5 of 57 steps (9%) done
+
+[Thu Feb  4 17:13:09 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 6
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+[Thu Feb  4 17:13:09 2021]
+Finished job 30.
+6 of 57 steps (11%) done
+Submitted job 6 with external jobid '198481'.
+
+[Thu Feb  4 17:13:09 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 44
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=YE1-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 44 with external jobid '198482'.
+[Thu Feb  4 17:15:00 2021]
+Finished job 10.
+7 of 57 steps (12%) done
+
+[Thu Feb  4 17:15:00 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 14
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 14 with external jobid '198483'.
+[Thu Feb  4 17:15:00 2021]
+Finished job 44.
+8 of 57 steps (14%) done
+[Thu Feb  4 17:21:45 2021]
+Finished job 3.
+9 of 57 steps (16%) done
+
+[Thu Feb  4 17:21:45 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 43
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=YE1-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 43 with external jobid '198484'.
+
+[Thu Feb  4 17:21:45 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 7
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 7 with external jobid '198485'.
+[Thu Feb  4 17:21:56 2021]
+Finished job 43.
+10 of 57 steps (18%) done
+[Thu Feb  4 17:25:47 2021]
+Finished job 12.
+11 of 57 steps (19%) done
+
+[Thu Feb  4 17:25:47 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 13
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 13 with external jobid '198486'.
+
+[Thu Feb  4 17:25:47 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 4
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 4 with external jobid '198487'.
+[Thu Feb  4 17:28:56 2021]
+Finished job 14.
+12 of 57 steps (21%) done
+
+[Thu Feb  4 17:28:56 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 28
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 28 with external jobid '198488'.
+[Thu Feb  4 17:29:18 2021]
+Finished job 6.
+13 of 57 steps (23%) done
+
+[Thu Feb  4 17:29:18 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 26
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 26 with external jobid '198489'.
+[Thu Feb  4 17:29:29 2021]
+Finished job 26.
+14 of 57 steps (25%) done
+
+[Thu Feb  4 17:29:29 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 40
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Feb  4 17:29:29 2021]
+Finished job 28.
+15 of 57 steps (26%) done
+Submitted job 40 with external jobid '198490'.
+
+[Thu Feb  4 17:29:29 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 42
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 42 with external jobid '198491'.
+[Thu Feb  4 17:29:40 2021]
+Finished job 40.
+16 of 57 steps (28%) done
+
+[Thu Feb  4 17:29:40 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 54
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=All-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+[Thu Feb  4 17:29:40 2021]
+Finished job 42.
+17 of 57 steps (30%) done
+Submitted job 54 with external jobid '198492'.
+
+[Thu Feb  4 17:29:40 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 56
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=All-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 56 with external jobid '198493'.
+[Thu Feb  4 17:29:51 2021]
+Finished job 54.
+18 of 57 steps (32%) done
+[Thu Feb  4 17:29:52 2021]
+Finished job 56.
+19 of 57 steps (33%) done
+[Thu Feb  4 17:33:59 2021]
+Finished job 8.
+20 of 57 steps (35%) done
+
+[Thu Feb  4 17:34:00 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 22
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 22 with external jobid '198495'.
+
+[Thu Feb  4 17:34:00 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 20
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 20 with external jobid '198496'.
+
+[Thu Feb  4 17:34:00 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 5
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 5 with external jobid '198497'.
+[Thu Feb  4 17:34:10 2021]
+Finished job 22.
+21 of 57 steps (37%) done
+
+[Thu Feb  4 17:34:10 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 36
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 36 with external jobid '198498'.
+[Thu Feb  4 17:34:11 2021]
+Finished job 20.
+22 of 57 steps (39%) done
+
+[Thu Feb  4 17:34:11 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 34
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 34 with external jobid '198499'.
+[Thu Feb  4 17:44:12 2021]
+Finished job 13.
+23 of 57 steps (40%) done
+
+[Thu Feb  4 17:44:12 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 27
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 27 with external jobid '198500'.
+[Thu Feb  4 17:44:34 2021]
+Finished job 27.
+24 of 57 steps (42%) done
+
+[Thu Feb  4 17:44:34 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 41
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Feb  4 17:44:34 2021]
+Finished job 36.
+25 of 57 steps (44%) done
+Submitted job 41 with external jobid '198501'.
+
+[Thu Feb  4 17:44:34 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 50
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=33A-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 50 with external jobid '198502'.
+[Thu Feb  4 17:44:35 2021]
+Finished job 34.
+26 of 57 steps (46%) done
+
+[Thu Feb  4 17:44:35 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 48
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=33A-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 48 with external jobid '198503'.
+[Thu Feb  4 17:44:45 2021]
+Finished job 41.
+27 of 57 steps (47%) done
+
+[Thu Feb  4 17:44:45 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 9
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 9 with external jobid '198504'.
+[Thu Feb  4 17:44:46 2021]
+Finished job 50.
+28 of 57 steps (49%) done
+[Thu Feb  4 17:44:57 2021]
+Finished job 48.
+29 of 57 steps (51%) done
+[Thu Feb  4 17:47:50 2021]
+Finished job 5.
+30 of 57 steps (53%) done
+
+[Thu Feb  4 17:47:50 2021]
+rule poisson_test:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    jobid: 11
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/find-significant-mpmat-V05.py         -i ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat         -o ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv         -c ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -t ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam         -r /home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa         -p 24         --query_mutation_type CT,GA         --mpmat_filter_info_col_index -1         --mpmat_block_info_col_index -1         --seq_reads_length 150         --poisson_method mutation
+        
+Submitted job 11 with external jobid '198505'.
+
+[Thu Feb  4 17:47:50 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 24
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 24 with external jobid '198506'.
+
+[Thu Feb  4 17:47:50 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 55
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=All-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 55 with external jobid '198507'.
+[Thu Feb  4 17:50:25 2021]
+Finished job 7.
+31 of 57 steps (54%) done
+
+[Thu Feb  4 17:50:25 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 17
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 17 with external jobid '198508'.
+[Thu Feb  4 17:50:25 2021]
+Finished job 24.
+32 of 57 steps (56%) done
+
+[Thu Feb  4 17:50:26 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 19
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 19 with external jobid '198509'.
+[Thu Feb  4 17:50:26 2021]
+Finished job 55.
+33 of 57 steps (58%) done
+[Thu Feb  4 17:50:36 2021]
+Finished job 17.
+34 of 57 steps (60%) done
+
+[Thu Feb  4 17:50:36 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 21
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+[Thu Feb  4 17:50:36 2021]
+Finished job 19.
+35 of 57 steps (61%) done
+Submitted job 21 with external jobid '198510'.
+
+[Thu Feb  4 17:50:36 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 31
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 31 with external jobid '198511'.
+
+[Thu Feb  4 17:50:37 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 38
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 38 with external jobid '198512'.
+[Thu Feb  4 17:50:48 2021]
+Finished job 21.
+36 of 57 steps (63%) done
+
+[Thu Feb  4 17:50:48 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 35
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Feb  4 17:50:48 2021]
+Finished job 31.
+37 of 57 steps (65%) done
+Submitted job 35 with external jobid '198513'.
+
+[Thu Feb  4 17:50:48 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 45
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=YE1-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 45 with external jobid '198514'.
+[Thu Feb  4 17:51:00 2021]
+Finished job 38.
+38 of 57 steps (67%) done
+
+[Thu Feb  4 17:51:00 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 52
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=M2-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 52 with external jobid '198515'.
+[Thu Feb  4 17:51:10 2021]
+Finished job 35.
+39 of 57 steps (68%) done
+
+[Thu Feb  4 17:51:10 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 49
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=33A-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+[Thu Feb  4 17:51:10 2021]
+Finished job 45.
+40 of 57 steps (70%) done
+Submitted job 49 with external jobid '198516'.
+[Thu Feb  4 17:51:11 2021]
+Finished job 52.
+41 of 57 steps (72%) done
+[Thu Feb  4 17:51:21 2021]
+Finished job 49.
+42 of 57 steps (74%) done
+[Thu Feb  4 17:56:39 2021]
+Finished job 4.
+43 of 57 steps (75%) done
+
+[Thu Feb  4 17:56:39 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 18
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 18 with external jobid '198517'.
+
+[Thu Feb  4 17:56:39 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 33
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 33 with external jobid '198518'.
+[Thu Feb  4 17:56:50 2021]
+Finished job 18.
+44 of 57 steps (77%) done
+
+[Thu Feb  4 17:56:50 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 32
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+[Thu Feb  4 17:56:50 2021]
+Finished job 33.
+45 of 57 steps (79%) done
+Submitted job 32 with external jobid '198519'.
+
+[Thu Feb  4 17:56:50 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 47
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=33A-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 47 with external jobid '198520'.
+[Thu Feb  4 17:57:01 2021]
+Finished job 47.
+46 of 57 steps (81%) done
+[Thu Feb  4 17:57:11 2021]
+Finished job 32.
+47 of 57 steps (82%) done
+
+[Thu Feb  4 17:57:12 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 46
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=YE1-VEGFA-PD, ctrl=Vector-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 46 with external jobid '198521'.
+[Thu Feb  4 17:57:22 2021]
+Finished job 46.
+48 of 57 steps (84%) done
+[Thu Feb  4 17:58:45 2021]
+Finished job 9.
+49 of 57 steps (86%) done
+
+[Thu Feb  4 17:58:45 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 23
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 23 with external jobid '198522'.
+[Thu Feb  4 17:58:56 2021]
+Finished job 23.
+50 of 57 steps (88%) done
+
+[Thu Feb  4 17:58:56 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 37
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=M2-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 37 with external jobid '198523'.
+[Thu Feb  4 17:59:06 2021]
+Finished job 37.
+51 of 57 steps (89%) done
+
+[Thu Feb  4 17:59:06 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 51
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=M2-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 51 with external jobid '198524'.
+[Thu Feb  4 17:59:17 2021]
+Finished job 51.
+52 of 57 steps (91%) done
+[Thu Feb  4 18:23:05 2021]
+Finished job 11.
+53 of 57 steps (93%) done
+
+[Thu Feb  4 18:23:05 2021]
+rule del_first_row_of_table:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    jobid: 25
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        sed '1d' ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+        
+Submitted job 25 with external jobid '198525'.
+[Thu Feb  4 18:23:15 2021]
+Finished job 25.
+54 of 57 steps (95%) done
+
+[Thu Feb  4 18:23:15 2021]
+rule select_significant_region:
+    input: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    output: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    jobid: 39
+    reason: Missing output files: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv
+    wildcards: ctrl=Vector-VEGFA-PD, treat=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv | awk -F '	' '{if($NF<0.05 && $13>1 && $10<3) print $0}' > ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+        
+Submitted job 39 with external jobid '198526'.
+[Thu Feb  4 18:23:36 2021]
+Finished job 39.
+55 of 57 steps (96%) done
+
+[Thu Feb  4 18:23:36 2021]
+rule intersect_select_mpmat:
+    input: ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    output: ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 53
+    reason: Missing output files: ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat; Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv
+    wildcards: treat=All-EMX1-PD, ctrl=Vector-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, a=C, b=T, c=G, d=A
+
+
+        if [[ `cat ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv |wc -l` -eq 0 ]]; then 
+        echo "table is empty" 
+        echo "will touch a empty file" 
+        touch ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        else
+        echo "table is ok!"
+        echo "run bedtools intersect"
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/bedtools intersect -a ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat -b ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv -wa > ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+        fi
+        
+Submitted job 53 with external jobid '198527'.
+[Thu Feb  4 18:23:46 2021]
+Finished job 53.
+56 of 57 steps (98%) done
+
+[Thu Feb  4 18:23:46 2021]
+localrule all:
+    input: ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_33A-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_M2-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../mpmat_filter_merge/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.mpmat, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+    jobid: 0
+    reason: Input files updated by another job: ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-All-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-M2-EMX1-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-33A-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-VEGFA-PD_CTRL-Vector-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-33A-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-YE1-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../mpmat_merge_Sign/293T-bat_TREAT-All-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-All-VEGFA-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.Sign.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-YE1-EMX1-PD_rep2.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../table/detect_seq.StatsTest.table_CTRL-Vector-VEGFA-PD_TREAT-M2-EMX1-PD_rep1.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A_noHeader.tsv, ../mpmat_merge_Sign/293T-bat_TREAT-33A-EMX1-PD_CTRL-Vector-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.sort.Sign_poisson.mpmat
+
+[Thu Feb  4 18:23:46 2021]
+Finished job 0.
+57 of 57 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/log/2021-02-04T165913.445414.snakemake.log

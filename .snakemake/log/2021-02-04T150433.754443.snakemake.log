@@ -1,0 +1,1717 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	4	Split_Bmat
+	1	all
+	4	bam2mpileup
+	4	mpileup2bmat
+	64	pmat_merge
+	16	select_bmat
+	16	select_bmat2pmat
+	109
+
+[Thu Feb  4 15:04:35 2021]
+rule bam2mpileup:
+    input: ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup
+    log: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup.log
+    jobid: 13
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup
+    wildcards: sample=All-VEGFA-PD, rep=rep1
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup
+        
+
+[Thu Feb  4 15:04:35 2021]
+rule bam2mpileup:
+    input: ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup
+    log: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup.log
+    jobid: 11
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup
+    wildcards: sample=All-EMX1-PD, rep=rep1
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 13.
+1 of 109 steps (0.92%) done
+[Thu Feb  4 15:04:35 2021]
+Finished job 11.
+2 of 109 steps (2%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule mpileup2bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    log: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat.log
+    jobid: 29
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup
+    wildcards: sample=All-VEGFA-PD, rep=rep1
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 29.
+3 of 109 steps (3%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule bam2mpileup:
+    input: ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup
+    log: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup.log
+    jobid: 12
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup
+    wildcards: sample=All-EMX1-PD, rep=rep2
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 12.
+4 of 109 steps (4%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat
+    jobid: 81
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 81.
+5 of 109 steps (5%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule bam2mpileup:
+    input: ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup
+    log: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup.log
+    jobid: 14
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup
+    wildcards: sample=All-VEGFA-PD, rep=rep2
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 14.
+6 of 109 steps (6%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule mpileup2bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    log: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat.log
+    jobid: 27
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup
+    wildcards: sample=All-EMX1-PD, rep=rep1
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 27.
+7 of 109 steps (6%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat
+    jobid: 83
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 83.
+8 of 109 steps (7%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule Split_Bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.json
+    jobid: 171
+    reason: Missing output files: ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.json; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1
+
+
+        touch ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.json
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 171.
+9 of 109 steps (8%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat
+    jobid: 75
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 75.
+10 of 109 steps (9%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat
+    jobid: 74
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat
+        
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat
+    jobid: 82
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 74.
+11 of 109 steps (10%) done
+[Thu Feb  4 15:04:35 2021]
+Finished job 82.
+12 of 109 steps (11%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    jobid: 138
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 138.
+13 of 109 steps (12%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    jobid: 146
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 146.
+14 of 109 steps (13%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    jobid: 145
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 145.
+15 of 109 steps (14%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat
+    jobid: 76
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 76.
+16 of 109 steps (15%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule Split_Bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.json
+    jobid: 173
+    reason: Missing output files: ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.json; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1
+
+
+        touch ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.json
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 173.
+17 of 109 steps (16%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat.log
+    jobid: 342
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 342.
+18 of 109 steps (17%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat
+    jobid: 84
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 84.
+19 of 109 steps (17%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat.log
+    jobid: 376
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat
+        
+[Thu Feb  4 15:04:35 2021]
+Finished job 376.
+20 of 109 steps (18%) done
+
+[Thu Feb  4 15:04:35 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat.log
+    jobid: 369
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 369.
+21 of 109 steps (19%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat
+    jobid: 73
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 73.
+22 of 109 steps (20%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat.log
+    jobid: 343
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 343.
+23 of 109 steps (21%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat.log
+    jobid: 370
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 370.
+24 of 109 steps (22%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    jobid: 140
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 140.
+25 of 109 steps (23%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    jobid: 148
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 148.
+26 of 109 steps (24%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    jobid: 147
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 147.
+27 of 109 steps (25%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat.log
+    jobid: 372
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 372.
+28 of 109 steps (26%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat.log
+    jobid: 350
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 350.
+29 of 109 steps (27%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat.log
+    jobid: 373
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 373.
+30 of 109 steps (28%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat.log
+    jobid: 351
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 351.
+31 of 109 steps (28%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat.log
+    jobid: 381
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 381.
+32 of 109 steps (29%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat.log
+    jobid: 384
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 384.
+33 of 109 steps (30%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule mpileup2bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    log: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat.log
+    jobid: 28
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup
+    wildcards: sample=All-EMX1-PD, rep=rep2
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 28.
+34 of 109 steps (31%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat.log
+    jobid: 380
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 380.
+35 of 109 steps (32%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    jobid: 137
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 137.
+36 of 109 steps (33%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat.log
+    jobid: 374
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 374.
+37 of 109 steps (34%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat.log
+    jobid: 344
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 344.
+38 of 109 steps (35%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat
+    jobid: 78
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 78.
+39 of 109 steps (36%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat.log
+    jobid: 352
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 352.
+40 of 109 steps (37%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat.log
+    jobid: 382
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 382.
+41 of 109 steps (38%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat.log
+    jobid: 337
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 337.
+42 of 109 steps (39%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat.log
+    jobid: 339
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 339.
+43 of 109 steps (39%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat
+    jobid: 80
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 80.
+44 of 109 steps (40%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule mpileup2bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    log: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat.log
+    jobid: 30
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup
+    wildcards: sample=All-VEGFA-PD, rep=rep2
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 30.
+45 of 109 steps (41%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    jobid: 139
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 139.
+46 of 109 steps (42%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat
+    jobid: 77
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 77.
+47 of 109 steps (43%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    jobid: 144
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 144.
+48 of 109 steps (44%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat
+    jobid: 85
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 85.
+49 of 109 steps (45%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat.log
+    jobid: 366
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat
+        
+[Thu Feb  4 15:04:36 2021]
+Finished job 366.
+50 of 109 steps (46%) done
+
+[Thu Feb  4 15:04:36 2021]
+rule Split_Bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.json
+    jobid: 174
+    reason: Missing output files: ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.json; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2
+
+
+        touch ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.json
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 174.
+51 of 109 steps (47%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat
+    jobid: 86
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 86.
+52 of 109 steps (48%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat.log
+    jobid: 367
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 367.
+53 of 109 steps (49%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    jobid: 150
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 150.
+54 of 109 steps (50%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat.log
+    jobid: 338
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 338.
+55 of 109 steps (50%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat.log
+    jobid: 389
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 389.
+56 of 109 steps (51%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat.log
+    jobid: 383
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=G, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 383.
+57 of 109 steps (52%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat
+    jobid: 87
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 87.
+58 of 109 steps (53%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat.log
+    jobid: 345
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 345.
+59 of 109 steps (54%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    jobid: 151
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 151.
+60 of 109 steps (55%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat.log
+    jobid: 368
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 368.
+61 of 109 steps (56%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat.log
+    jobid: 365
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=G, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 365.
+62 of 109 steps (57%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat.log
+    jobid: 396
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 396.
+63 of 109 steps (58%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat.log
+    jobid: 390
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 390.
+64 of 109 steps (59%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat.log
+    jobid: 375
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=T, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 375.
+65 of 109 steps (60%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat
+    jobid: 79
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 79.
+66 of 109 steps (61%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat
+    jobid: 88
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 88.
+67 of 109 steps (61%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    jobid: 143
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 143.
+68 of 109 steps (62%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    jobid: 152
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 152.
+69 of 109 steps (63%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat.log
+    jobid: 346
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 346.
+70 of 109 steps (64%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat.log
+    jobid: 397
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 397.
+71 of 109 steps (65%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat.log
+    jobid: 398
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 398.
+72 of 109 steps (66%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat.log
+    jobid: 399
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 399.
+73 of 109 steps (67%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat.log
+    jobid: 361
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 361.
+74 of 109 steps (68%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat.log
+    jobid: 391
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 391.
+75 of 109 steps (69%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat.log
+    jobid: 392
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=T, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 392.
+76 of 109 steps (70%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat.log
+    jobid: 362
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 362.
+77 of 109 steps (71%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat.log
+    jobid: 340
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=A, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 340.
+78 of 109 steps (72%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat.log
+    jobid: 395
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 395.
+79 of 109 steps (72%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat.log
+    jobid: 371
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=A, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 371.
+80 of 109 steps (73%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat.log
+    jobid: 341
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=T, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 341.
+81 of 109 steps (74%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat.log
+    jobid: 349
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=G, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 349.
+82 of 109 steps (75%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat.log
+    jobid: 379
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 379.
+83 of 109 steps (76%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule Split_Bmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    output: ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.json
+    jobid: 172
+    reason: Missing output files: ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.json; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2
+
+
+        touch ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.json
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 172.
+84 of 109 steps (77%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    jobid: 142
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 142.
+85 of 109 steps (78%) done
+
+[Thu Feb  4 15:04:37 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat.log
+    jobid: 394
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+        
+[Thu Feb  4 15:04:37 2021]
+Finished job 394.
+86 of 109 steps (79%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat.log
+    jobid: 358
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 358.
+87 of 109 steps (80%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat.log
+    jobid: 347
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 347.
+88 of 109 steps (81%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat.log
+    jobid: 400
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=G, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 400.
+89 of 109 steps (82%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat.log
+    jobid: 377
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 377.
+90 of 109 steps (83%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat.log
+    jobid: 364
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 364.
+91 of 109 steps (83%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat.log
+    jobid: 360
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 360.
+92 of 109 steps (84%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat.log
+    jobid: 363
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=C, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 363.
+93 of 109 steps (85%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat.log
+    jobid: 393
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=C, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 393.
+94 of 109 steps (86%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    jobid: 149
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 149.
+95 of 109 steps (87%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat.log
+    jobid: 359
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 359.
+96 of 109 steps (88%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat.log
+    jobid: 385
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 385.
+97 of 109 steps (89%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat.log
+    jobid: 388
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 388.
+98 of 109 steps (90%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat.log
+    jobid: 386
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 386.
+99 of 109 steps (91%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule select_bmat2pmat:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat
+    output: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    jobid: 141
+    reason: Missing output files: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A
+
+
+        touch ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 141.
+100 of 109 steps (92%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat.log
+    jobid: 387
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, fbase=A, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 387.
+101 of 109 steps (93%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat.log
+    jobid: 353
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 353.
+102 of 109 steps (94%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat.log
+    jobid: 355
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A, tbase=C
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 355.
+103 of 109 steps (94%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    log: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat.log
+    jobid: 378
+    reason: Missing output files: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, fbase=C, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 378.
+104 of 109 steps (95%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat.log
+    jobid: 356
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 356.
+105 of 109 steps (96%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat.log
+    jobid: 357
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=T, tbase=A
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 357.
+106 of 109 steps (97%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat.log
+    jobid: 348
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, fbase=C, tbase=G
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 348.
+107 of 109 steps (98%) done
+
+[Thu Feb  4 15:04:38 2021]
+rule pmat_merge:
+    input: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    output: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat
+    log: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat.log
+    jobid: 354
+    reason: Missing output files: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat; Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, fbase=A, tbase=T
+
+
+        touch ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat
+        
+[Thu Feb  4 15:04:38 2021]
+Finished job 354.
+108 of 109 steps (99%) done
+
+[Thu Feb  4 15:04:38 2021]
+localrule all:
+    input: ../bam/293T-bat_YE1-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_33A-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_M2-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-EMX1-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_All-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_Vector-VEGFA-PD_rep1_bwa_hg38_sort_rmdup_MAPQ20.bam, ../bam/293T-bat_Vector-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G.pmat, ../Split_Bmat_Json/293T-bat_YE1-EMX1-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_YE1-EMX1-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_YE1-VEGFA-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_YE1-VEGFA-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_33A-EMX1-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_33A-EMX1-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_33A-VEGFA-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_33A-VEGFA-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_M2-EMX1-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_M2-EMX1-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_Vector-VEGFA-PD_rep1_hg38.MAPQ20.json, ../Split_Bmat_Json/293T-bat_Vector-VEGFA-PD_rep2_hg38.MAPQ20.json, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_33A-VEGFA-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_M2-EMX1-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G2T.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_Vector-VEGFA-PD_rep2_hg38.select.G2G.mpmat
+    jobid: 0
+    reason: Input files updated by another job: ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.pmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G.pmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.pmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.pmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.mpileup, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2G.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2G.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2C.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.mpileup, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2C.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.pmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.mpileup, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.pmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A2C.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2G.mpmat, ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.json, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.pmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2G.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.A.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2A.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2A.mpmat, ../Split_Bmat_Json/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.json, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.C2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.MAPQ20.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2C.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.select.A.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C.bmat, ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep2_hg38.MAPQ20.json, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2T.mpmat, ../Split_Bmat_Json/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.json, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2G.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.A2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2T.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.T2G.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C.pmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T2T.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.mpileup, ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.G2C.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2C.mpmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T2C.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.T.bmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2T.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.MAPQ20.bmat, ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.C2A.mpmat, ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.T2A.mpmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G.pmat, ../mpileup_pmat_bmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.T.bmat, ../mpileup_pmat_bmat/293T-bat_All-EMX1-PD_rep1_hg38.MAPQ20.bmat
+
+[Thu Feb  4 15:04:38 2021]
+Finished job 0.
+109 of 109 steps (100%) done
+Complete log: /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/.snakemake/log/2021-02-04T150433.754443.snakemake.log

@@ -1,11 +1,18 @@
 SAMPLES = [
-    "GBEmini-AP-RNF2-All-PD",
-    "GBEmini-dU-RNF2-All-PD",
-#     "VEGFA-Vector-PD", # CBE!
-    "test",
+    "YE1-EMX1-PD",
+    "YE1-VEGFA-PD",
+    "33A-EMX1-PD",
+    "33A-VEGFA-PD",
+    "M2-EMX1-PD",
+    "All-EMX1-PD",
+    "All-VEGFA-PD",
+    "Vector-VEGFA-PD"
+#     "test",
 ]
 
-REP = ["rep1"]
+REP = ["rep1","rep2"]
+
+
 
 
 MPMAT_MERGE = [['C'],['T'],['G'],['A']]  # mpmat_merge list means C2T.mpmat + G2A.mpmat == CT_merge_GA.mpmat
@@ -20,8 +27,9 @@ PATH = "/home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/"
 PYTHON2 = os.path.join(PATH, 'python')
 BEDTOOLS = os.path.join(PATH, 'bedtools')
 SAMTOOLS = os.path.join(PATH, 'samtools')
-GENOME = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa"
-GENOME_FAI = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromosome.fa.fai"
+GENOME = "/home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa"
+GENOME_FAI = "/home/zhaohuanan/zhaohn_HD/2.database/db_genomes/genome_fa/genome_ucsc_hg38/genome_ucsc_hg38.fa.fai"
+DB_SNP_HSA = "/home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resources_broad_hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf"
 
 
 
@@ -38,11 +46,11 @@ GENOME_FAI = "/home/zhaohuanan/zhaohn_HD/2.database/fasta_hg38/hg38_only_chromos
 
 
 # explore
-SiteMutNum = [1,2,3,4,5,6,7,8] # 师兄的M4 建议多跑几个range
-SiteCoverNum = [5,6,8,10,15,20] # 师兄的C10
-SiteMutRatio = [0.01,0.1] # 影响不大
-RegionPassNum = [1,2,3] # 师兄的R2
-RegionToleranceNum = [2] # 影响不大，师兄建议设置成2
+SiteMutNum = [3]         
+SiteCoverNum = [6]       
+RegionPassNum = [1]      
+SiteMutRatio = [0.1]     
+RegionToleranceNum = [2] 
 
 rule all:
     input:
@@ -89,7 +97,7 @@ rule mpmat_filter:
         --SiteMutRatio {params.SiteMutRatio} \
         --RegionPassNum {params.RegionPassNum} \
         --RegionToleranceNum {params.RegionToleranceNum} \
-        --InHeader False \
+        --InHeader True \
         --OutHeader False
         """
 

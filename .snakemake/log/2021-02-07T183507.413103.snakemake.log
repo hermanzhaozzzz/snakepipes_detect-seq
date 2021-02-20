@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 59 of /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/step.03.snk.JSON_MpmatBlock_PoissonTest_use_fake_mpmat.py:
+Missing input files for rule poisson_test:
+../mpmat_merge_after_mpmat_filtered_generated_by_faker_sort/293T-M2-VEGFA-PD_rep1_hg38.sort.mpmat

@@ -1,0 +1,143 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 10
+Job counts:
+	count	jobs
+	1	all
+	28	mpmat_filter
+	16	mpmat_filter_merge
+	16	sort_mpmat
+	61
+
+[Thu Feb  4 15:34:46 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 20
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-VEGFA-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 20 with external jobid '198339'.
+
+[Thu Feb  4 15:34:47 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 7
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-VEGFA-PD_rep1_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 7 with external jobid '198340'.
+
+[Thu Feb  4 15:34:47 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 22
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 22 with external jobid '198341'.
+
+[Thu Feb  4 15:34:47 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 14
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 14 with external jobid '198342'.
+
+[Thu Feb  4 15:34:47 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 29
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-VEGFA-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-VEGFA-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-VEGFA-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 29 with external jobid '198343'.
+
+[Thu Feb  4 15:34:48 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 6
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 6 with external jobid '198344'.
+
+[Thu Feb  4 15:34:48 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 21
+    reason: Missing output files: ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=33A-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_33A-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_33A-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 21 with external jobid '198345'.
+
+[Thu Feb  4 15:34:48 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 18
+    reason: Missing output files: ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=YE1-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_YE1-EMX1-PD_rep2_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_YE1-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 18 with external jobid '198346'.
+
+[Thu Feb  4 15:34:49 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    jobid: 12
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep2, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=C, bd=T
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep2_hg38.select.C2T.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep2_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.C2T.mpmat         -f C -t T         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 12 with external jobid '198347'.
+
+[Thu Feb  4 15:34:49 2021]
+rule mpmat_filter:
+    input: ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat
+    output: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    jobid: 27
+    reason: Missing output files: ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat
+    wildcards: sample=All-EMX1-PD, rep=rep1, SMN=3, SCN=6, SMR=0.1, RPN=1, RTN=2, ac=G, bd=A
+
+
+        /home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/python ./program/mpmat-select-V02.py         -i ../mpmat/293T-bat_All-EMX1-PD_rep1_hg38.select.G2A.mpmat -o ../mpmat_filter/293T-bat_All-EMX1-PD_rep1_hg38.filtered_SMN-3_SCN-6_SMR-0.1_RPN-1_RTN-2.G2A.mpmat         -f G -t A         --SiteMutNum 3         --SiteCoverNum 6         --SiteMutRatio 0.1         --RegionPassNum 1         --RegionToleranceNum 2         --InHeader True         --OutHeader False
+        
+Submitted job 27 with external jobid '198348'.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.
