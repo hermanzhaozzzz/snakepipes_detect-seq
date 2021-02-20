@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 161 of /gpfs/user/zhaohuanan/3.project/21.2020-11_1109_GBE_DETECT-Seq_new_protocol/snakepipes_detect-seq/step.03.snk.JSON_MpmatBlock_PoissonTest.py:
-Missing input files for rule del_first_row_of_table:
-../table/detect_seq.StatsTest.table_CTRL-VEGFA-Vector-PD_TREAT-test_rep1.filtered_SMN-4_SCN-10_SMR-0.1_RPN-1_RTN-2.C2T_merge_G2A.tsv

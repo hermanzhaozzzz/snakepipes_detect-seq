@@ -1,6 +1,0 @@
-Migrating .snakemake folder to new format...
-Migration complete
-Building DAG of jobs...
-MissingInputException in line 49 of /gpfs/user/zhaohuanan/3.project/2021_CBE_variant_and_GBE_topic/20210202_DetectSeq_M2-YE1-33A-call-points_sgRNA-EMX1-VEGFA_redo/snakepipes_Detect-seq/step.01.snk.BAM_MPILEUP_BMAT_MutCount_SelectBmat_Bmap2Pmat_PmatMerge.py:
-Missing input files for rule bam2mpileup:
-../bam/293T-bat_YE1-VEGFA-PD_rep2_bwa_hg38_sort_rmdup_MAPQ20.bam
