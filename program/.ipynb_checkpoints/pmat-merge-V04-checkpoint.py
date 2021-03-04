@@ -401,12 +401,17 @@ if __name__ == '__main__':
     while pmat_line:
         if not region_detect_state:
             # initial the line info
-            region_query_res = get_region_start_line(in_pmat_file, from_base, to_base, pmat_line)
+            # TODO
+#             print("DEBUG: \nfrom_base: %s\nto_base: %s\npmat_line%s" % (from_base, to_base, pmat_line))
+            try:
+                region_query_res = get_region_start_line(in_pmat_file, from_base, to_base, pmat_line)
+            except IndexError:
+                continue
+            
             pmat_line = region_query_res[1]
-
+            
             if region_query_res[0]:
                 pmat_line_list = pmat_line.strip().split("\t")
-
                 region_dict = {
                     "chr_name" : pmat_line_list[0],
                     "chr_start" : pmat_line_list[1],

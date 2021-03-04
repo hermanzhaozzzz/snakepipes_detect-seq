@@ -83,15 +83,16 @@ rule mpileup2bmat:
         -o {output} \
         -p 24 -n 0 >{log} 2>&1
         """
-# rule bmat_mutation_count:
-#     input:
-#         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat"
-#     output:
-#         "../bmat_info_tsv/293T-bat_{sample}_{rep}_hg38.MAPQ20.tsv"
-#     shell:
-#         """
-#         {PYTHON2} ./program/bmat_mutation_count.py -i {input} -o {output} --header False
-#         """
+# 一般不用【跑】
+rule bmat_mutation_count:
+    input:
+        "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat"
+    output:
+        "../bmat_info_tsv/293T-bat_{sample}_{rep}_hg38.MAPQ20.tsv"
+    shell:
+        """
+        {PYTHON2} ./program/bmat_mutation_count.py -i {input} -o {output} --header False
+        """
 rule select_bmat:
     input:
         "../mpileup_pmat_bmat/293T-bat_{sample}_{rep}_hg38.MAPQ20.bmat"
@@ -135,9 +136,9 @@ rule pmat_merge:
         FB = '{fbase}',
         TB = '{tbase}'
     shell:
-        """
-        touch {output}
-        """
+#         """
+#         touch {output}
+#         """
         """
         FB={params.FB}
         TB={params.TB}

@@ -189,7 +189,10 @@ if __name__ == '__main__':
     # run part
     for line in INPUT_FILE:
         line_list = line.strip().split("\t")
-        ref_base, ref_num, mut_base, mut_num = parse_line(line, inlike_bed = IF_LIKE_BED)
+        try:
+            ref_base, ref_num, mut_base, mut_num = parse_line(line, inlike_bed = IF_LIKE_BED)
+        except ValueError:
+            continue
         cover_num = ref_num + mut_num
 
         if cover_num > 0:

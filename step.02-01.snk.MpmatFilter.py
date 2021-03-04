@@ -47,9 +47,9 @@ DB_SNP_HSA = "/home/zhaohuanan/zhaohn_HD/2.database/GATK_resource_bundle/resourc
 
 
 # explore
-SiteMutNum = [1,2,3,4,5]         
-SiteCoverNum = [4,5,6,7,8]       
-RegionPassNum = [0,1,2,3]      
+SiteMutNum = [1,2,3,4,5,6,7,8]         
+SiteCoverNum = [4,5,6,7,8,9]       
+RegionPassNum = [0,1,2,3,4,5]      
 SiteMutRatio = [0.1]     
 RegionToleranceNum = [2] 
 
