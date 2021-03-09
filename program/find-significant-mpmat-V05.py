@@ -527,7 +527,7 @@ if __name__ == '__main__':
 
     sys.stderr.write("-" * 80 + "\n")
     logging.info("Calculating FDR value and make final output table...")
-
+    
     # change pval into float
     pval_list = []
     for pval_str in pval_list_str:

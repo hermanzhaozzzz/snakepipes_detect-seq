@@ -1128,8 +1128,8 @@ def multi_run_mpmat_poisson_test(
     # check run state
     final_run_state = 0
     for index, res in enumerate(run_return_info_list):
-        run_state = res.get()
-        if run_state != 0:
+        final_run_state = res.get()
+        if final_run_state != 0:
             logging.error("Poisson test error occur with %s!" % chr_name_order_list[index])
             if final_run_state == 0:
                 final_run_state = 1
@@ -1162,16 +1162,15 @@ def make_qvalue_with_BH_method(pval_list):
     raw_pval_index_dict = {}
     rm_NA_pval_list = []
     run_index = 0
-
+    
     for index, pval in enumerate(pval_list):
         if pval != "NA":
             rm_NA_pval_list.append(pval)
             raw_pval_index_dict[run_index] = index
             run_index += 1
-
     FDR_qvalue = multi.multipletests(np.array(rm_NA_pval_list), alpha=0.05, method="fdr_bh", is_sorted=False)
     FDR_qvalue_vec = FDR_qvalue[1]
-
+        
     return_fdr_list = ["NA"] * len(pval_list)
 
     for index, fdr in enumerate(FDR_qvalue_vec):

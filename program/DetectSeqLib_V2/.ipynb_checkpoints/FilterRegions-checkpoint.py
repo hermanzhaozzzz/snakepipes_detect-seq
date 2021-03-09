@@ -838,8 +838,11 @@ def multi_mpmat_block_site(
     # check run state
     final_run_state = 0
     for index, res in enumerate(run_return_info_list):
-        run_state = res.get()
-        if run_state != 1:
+        try:
+            final_run_state = res.get()
+        except IndexError:
+            logging.error("res.get error occur with %s!" % chr_name_order_list[index])
+        if final_run_state != 1:
             logging.error("Blocking error occur with %s!" % chr_name_order_list[index])
             if final_run_state == 0:
                 final_run_state = 1
