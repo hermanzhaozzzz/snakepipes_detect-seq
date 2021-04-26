@@ -24,6 +24,7 @@ MPMAT_MERGE = [['C'],['T'],['G'],['A']]
 
 
 import os
+
 PATH = "/home/zhaohuanan/zhaohn_HD/miniconda3/envs/snakepipes_detect-seq/bin/"
 PYTHON2 = os.path.join(PATH, 'python')
 BEDTOOLS = os.path.join(PATH, 'bedtools')  # must be version 2.27.0 !
@@ -134,21 +135,24 @@ rule poisson_test:
         -p 24 \
         --mpmat_filter_info_col_index 13 \
         --mpmat_block_info_col_index -1 \
-        --other_mut_max_cutoff 4 \
-        --poisson_method mutation \
         --query_mutation_type CT,GA \
+        --mpmat_filter_info_col_index 13 \
+        --mpmat_block_info_col_index 14 \
         --query_mut_min_cutoff 1 \
-        --query_mut_max_cutoff 8 \
+        --query_mut_max_cutoff 16 \
+        --total_mut_max_cutoff 20 \
+        --other_mut_max_cutoff 12 \
         --seq_reads_length 150 \
-        --total_mut_max_cutoff 12
+        --lambda_method ctrl_max \
+        --poisson_method mutation
         """
 #         --mpmat_filter_info_col_index 13 \
 #         --mpmat_block_info_col_index -1 \
-#         --other_mut_max_cutoff 8 \
+#         --other_mut_max_cutoff 12 \
 #         --poisson_method mutation \
 #         --query_mutation_type CT,GA \
 #         --query_mut_min_cutoff 1 \
-#         --query_mut_max_cutoff 10 \
+#         --query_mut_max_cutoff 16 \
 #         --seq_reads_length 150 \
 #         --total_mut_max_cutoff 20
 
