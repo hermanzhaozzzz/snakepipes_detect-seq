@@ -125,22 +125,23 @@ rule poisson_test:
         "../table/detect_seq.StatsTest.table_CTRL-{ctrl}_TREAT-{treat}_{rep}.filtered_SMN-{SMN}_SCN-{SCN}_SMR-{SMR}_RPN-{RPN}_RTN-{RTN}.{a}2{b}_merge_{c}2{d}.tsv"
     shell:
         """
-        {PYTHON2} ./program/find-significant-mpmat-V05.py \
+        {PYTHON2} ./program/find-significant-mpmat-V06.py \
         -i {input.blocked_mpmat} \
         -o {output} \
         -c {input.ctrl_bam} \
         -t {input.treat_bam} \
         -r {GENOME} \
         -p 24 \
-        --mpmat_filter_info_col_index 13 \
-        --mpmat_block_info_col_index -1 \
-        --other_mut_max_cutoff 4 \
-        --poisson_method mutation \
         --query_mutation_type CT,GA \
-        --query_mut_min_cutoff 1 \
-        --query_mut_max_cutoff 8 \
+        --mpmat_filter_info_col_index -1 \
+        --mpmat_block_info_col_index -1 \
+        --query_mut_min_cutoff 2 \
+        --query_mut_max_cutoff 20 \
+        --total_mut_max_cutoff 26 \
+        --other_mut_max_cutoff 12 \
         --seq_reads_length 150 \
-        --total_mut_max_cutoff 12
+        --lambda_method raw \
+        --poisson_method mutation
         """
 #         --mpmat_filter_info_col_index 13 \
 #         --mpmat_block_info_col_index -1 \
