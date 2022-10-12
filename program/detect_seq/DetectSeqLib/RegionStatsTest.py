@@ -13,8 +13,8 @@ from statsmodels.stats import proportion
 import statsmodels.stats.multitest as multi
 import numpy as np
 
-from DetectSeqLib_V2.CheckAndLoadFiles import load_reference_fasta_as_dict
-from DetectSeqLib_V2.FilterRegions import mpmatLine
+from DetectSeqLib.CheckAndLoadFiles import load_reference_fasta_as_dict
+from DetectSeqLib.FilterRegions import mpmatLine, find_block_info_and_highest_signal
 
 # Version information START ----------------------------------------------------
 VERSION_INFO = \
@@ -137,14 +137,18 @@ def get_align_mismatch_pairs(align):
 
             When NM == 0, return None
     """
-    # No mismatch
-    try:
-        if align.get_tag("NM") == 0:
-            return None
-    except:
-        return None
+    # Hisat-3n aligner NM will be set as 0, but with several conversions.
+    # So I have to comment out this part
+    # 2022-07-29
 
-    # parse softclip, insertion and deletion
+    # No mismatch
+    # try:
+    #     if align.get_tag("NM") == 0:
+    #         return None
+    # except:
+    #     return None
+
+    # parse soft clip, insertion and deletion
     info_index_list = []
     accu_index = 0
 
@@ -172,7 +176,9 @@ def get_align_mismatch_pairs(align):
             i += 1
 
         else:
-            cur_index += int(cur_base)
+            if cur_base != "":
+                cur_index += int(cur_base)
+
             cur_base = ""
 
             if base == "^":
@@ -184,7 +190,6 @@ def get_align_mismatch_pairs(align):
                     i += 1
 
                 cur_index += len(del_str)
-                del_str = ""
 
             elif base.isalpha():
                 cur_index += 1
@@ -200,7 +205,10 @@ def get_align_mismatch_pairs(align):
                 else:
                     return None
 
-    return mismatch_pair_list
+    if len(mismatch_pair_list) == 0:
+        return None
+    else:
+        return mismatch_pair_list
 
 
 #################################################################################
@@ -226,11 +234,16 @@ def get_No_MD_align_mismatch_pairs(align, ref_genome_dict):
 
     """
     # No mismatch
-    try:
-        if align.get_tag("NM") == 0:
-            return None
-    except:
-        return None
+
+    # Hisat-3n aligner NM will be set as 0, but with several conversions.
+    # So I have to comment out this part
+    # 2022-07-29
+
+    # try:
+    #     if align.get_tag("NM") == 0:
+    #         return None
+    # except:
+    #     return None
 
     mismatch_pair_list = []
     for align_idx, ref_idx in align.get_aligned_pairs():
@@ -246,13 +259,17 @@ def get_No_MD_align_mismatch_pairs(align, ref_genome_dict):
                     align_base
                 ])
 
-    return mismatch_pair_list
+    if len(mismatch_pair_list) == 0:
+        return None
+    else:
+        return mismatch_pair_list
 
 
 #################################################################################
 # FUN
 #################################################################################
-def analyse_align_mut_state(mpmat_info, align_mismatch_pairs, query_mut_type, site_index_dict):
+def analyse_align_mut_state(mpmat_info, align_mismatch_pairs, query_mut_type,
+                            site_index_dict, snp_index_dict, block_index_dict):
     """
     INPUT:
         <mpmat_info>
@@ -268,10 +285,17 @@ def analyse_align_mut_state(mpmat_info, align_mismatch_pairs, query_mut_type, si
         <site_index_dict>
             dict, key is pos as str like '2474644', value is site order in mpmat_info.site_index_list
 
+        <snp_index_dict>
+            dict, key is pos as str like '2474644', value is site order in mpmat_info.site_index_list
+
+        <block_index_dict>
+            dict, key is pos as str like '2474644', value is site order in mpmat_info.site_index_list
+
     RETURN:
         <align_mut_state> str
             "M-M-M" means tandem mutation,
             "M-B-M" means mut, block, mut
+            "M-S-M" mean mut, SNV, mut
             "N-N-N" means no mut
 
         <query_mut_count>
@@ -282,47 +306,58 @@ def analyse_align_mut_state(mpmat_info, align_mismatch_pairs, query_mut_type, si
 
         <total_mut_count>
             int, total number of mutation on whole alignment read
+
+        <region_query_mut_count>
+            int, total number of reads with query mutation in mpmat region
+
+    VERSION:
+        Final edition date: 2022-07-31
     """
 
     # var init
     total_mut_count = 0
     other_mut_count = 0
     query_mut_count = 0
-    align_mut_state_list = ["N"] * mpmat_info.site_num
+    region_query_mut_count = 0
+
+    align_mut_state_list = mpmat_info.mut_key_list[:]
 
     for site_mis_info in align_mismatch_pairs:
         total_mut_count += 1
 
         site_index, site_align_pos, from_base, to_base = site_mis_info
+
+        # check block
+        block_site_order = block_index_dict.get(str(site_index))
+
+        # check SNP
+        snp_site_order = snp_index_dict.get(str(site_index))
+
+        if block_site_order is not None:
+            continue
+
+        if snp_site_order is not None:
+            continue
+
+        # not in block info list
         site_order = site_index_dict.get(str(site_index))
 
         # count mutation num
         if (from_base == query_mut_type[0]) and (to_base == query_mut_type[1]):
             query_mut_count += 1
+
+            # check mutation site only in mpmat region
+            if site_order is not None:
+                region_query_mut_count += 1
+                align_mut_state_list[site_order] = "M"
+
         else:
             other_mut_count += 1
-
-            # make tandem info
-        if site_order is not None:
-            if hasattr(mpmat_info, "block_state_list"):
-                if mpmat_info.block_state_list[site_order]:
-                    align_mut_state_list[site_order] = "B"
-
-                else:
-                    if (from_base == query_mut_type[0]) and (to_base == query_mut_type[1]):
-                        align_mut_state_list[site_order] = "M"
-                    else:
-                        align_mut_state_list[site_order] = "O"
-            else:
-                if (from_base == query_mut_type[0]) and (to_base == query_mut_type[1]):
-                    align_mut_state_list[site_order] = "M"
-                else:
-                    align_mut_state_list[site_order] = "O"
 
     # align mut state
     align_mut_state = "-".join(align_mut_state_list)
 
-    return align_mut_state, query_mut_count, other_mut_count, total_mut_count
+    return align_mut_state, query_mut_count, other_mut_count, total_mut_count, region_query_mut_count
 
 
 #################################################################################
@@ -380,19 +415,43 @@ def get_mpmat_region_count(
             dict, key is  <align_mut_state> (refer to FUN analyse_align_mut_state)
                 "M-M-M" means tandem mutation,
                 "M-B-M" means mut, block, mut
+                "M-S-M" means mut, SNP, mut
                 "N-N-N" means no mut
 
         <align_mut_count_dict>
             dict, key is mutation number like 0,1,2,3,4.... value is align reads count
 
+        <mpmat_info>
+            obj, mpmatLine obj, change <mut_key_list> and <mut_key> according to mpmat block info
+
+    VERSION:
+        Final edition date: 2022-07-31
     """
     # ---------------------------------------------------------->>>>>>>>>>
     # init var
     # ---------------------------------------------------------->>>>>>>>>>
     # site index dict
     site_index_dict = {}
+
+    # site SNP dict
+    snp_site_index_dict = {}
+
+    # site block dict
+    block_site_index_dict = {}
+
+    # fix mpmat_info
     for index, site_index in enumerate(mpmat_info.site_index_list):
         site_index_dict[site_index.split("_")[1]] = index
+
+        if mpmat_info.block_info_list[index]:
+            block_site_index_dict[site_index.split("_")[1]] = index
+
+        if mpmat_info.SNP_ann_list[index]:
+            snp_site_index_dict[site_index.split("_")[1]] = index
+
+    # make non mut key
+    non_mut_key = mpmat_info.mut_key
+    align_mut_tandem_dict = {non_mut_key: 0}
 
     # define count dict
     align_count_dict = {
@@ -405,10 +464,6 @@ def get_mpmat_region_count(
         "all_filter_count": 0
     }
 
-    # tandem mutation info
-    non_mut_key = "-".join(["N"] * mpmat_info.site_num)
-    align_mut_tandem_dict = {non_mut_key: 0}
-
     # mutation count dict
     align_mut_count_dict = {}
     for mut_num in range(mpmat_info.site_num + 1):
@@ -420,10 +475,6 @@ def get_mpmat_region_count(
     for align in in_bam_obj.fetch(reference=mpmat_info.chr_name,
                                   start=mpmat_info.chr_start - 1,
                                   end=mpmat_info.chr_end + 1):
-
-        # filter (maybe not useful!~)
-        if not ((align.reference_start < mpmat_info.chr_start) and (align.reference_end > mpmat_info.chr_end)):
-            continue
 
         # count total
         align_count_dict["all_align_count"] += 1
@@ -451,18 +502,18 @@ def get_mpmat_region_count(
             align_mut_analyse_res = analyse_align_mut_state(mpmat_info=mpmat_info,
                                                             align_mismatch_pairs=align_mismatch_pairs,
                                                             query_mut_type=query_mut_type,
-                                                            site_index_dict=site_index_dict)
+                                                            site_index_dict=site_index_dict,
+                                                            snp_index_dict=snp_site_index_dict,
+                                                            block_index_dict=block_site_index_dict)
 
             if align_mut_tandem_dict.get(align_mut_analyse_res[0]) is None:
                 align_mut_tandem_dict[align_mut_analyse_res[0]] = 1
             else:
                 align_mut_tandem_dict[align_mut_analyse_res[0]] += 1
 
-            mut_count = align_mut_analyse_res[0].count("M")
-            align_mut_count_dict[mut_count] += 1
-
             # load mut num
-            query_mut_count, other_mut_count, total_mut_count = align_mut_analyse_res[1:]
+            query_mut_count, other_mut_count, total_mut_count, region_query_mut_count = align_mut_analyse_res[1:]
+            align_mut_count_dict[region_query_mut_count] += 1
 
             # filter high mismatch reads
             if total_mut_count >= total_mut_max_cutoff:
@@ -478,10 +529,10 @@ def get_mpmat_region_count(
                 align_count_dict["all_filter_count"] += 1
 
             else:
-                if mut_count == 0:
+                if region_query_mut_count == 0:
                     align_count_dict["region_non_mut_count"] += 1
 
-                elif mut_count >= query_mut_min_cutoff:
+                elif region_query_mut_count >= query_mut_min_cutoff:
                     align_count_dict["region_mut_count"] += 1
 
     return align_count_dict, align_mut_tandem_dict, align_mut_count_dict
@@ -602,10 +653,7 @@ def run_mpmat_poisson_test(
         genome_bg_dict=None,
         lambda_bg_method="ctrl_max",
         poisson_method="mutation",
-        region_block_site_min_num_cutoff=1,
-        region_block_num_ratio_cutoff=0.8,
-        region_block_num_ratio_check_min_num=5,
-        region_block_num_max_num_cutoff=15,
+        region_block_mut_num_cutoff=2,
         reads_query_mut_min_cutoff=1,
         reads_query_mut_max_cutoff=16,
         reads_total_mut_max_cutoff=20,
@@ -640,10 +688,7 @@ def run_mpmat_poisson_test(
         genome_bg_dict={genome_bg_dict}
         lambda_bg_method={lambda_bg_method}
         poisson_method={poisson_method}
-        region_block_site_min_num_cutoff={region_block_site_min_num_cutoff}
-        region_block_num_ratio_cutoff={region_block_num_ratio_cutoff}
-        region_block_num_ratio_check_min_num={region_block_num_ratio_check_min_num}
-        region_block_num_max_num_cutoff={region_block_num_max_num_cutoff}
+        region_block_mut_num_cutoff={region_block_mut_num_cutoff}
         reads_query_mut_min_cutoff={reads_query_mut_min_cutoff}
         reads_query_mut_max_cutoff={reads_query_mut_max_cutoff}
         reads_total_mut_max_cutoff={reads_total_mut_max_cutoff}
@@ -660,10 +705,7 @@ def run_mpmat_poisson_test(
         genome_bg_dict=genome_bg_dict,
         lambda_bg_method=lambda_bg_method,
         poisson_method=poisson_method,
-        region_block_site_min_num_cutoff=region_block_site_min_num_cutoff,
-        region_block_num_ratio_cutoff=region_block_num_ratio_cutoff,
-        region_block_num_ratio_check_min_num=region_block_num_ratio_check_min_num,
-        region_block_num_max_num_cutoff=region_block_num_max_num_cutoff,
+        region_block_mut_num_cutoff=region_block_mut_num_cutoff,
         reads_query_mut_min_cutoff=reads_query_mut_min_cutoff,
         reads_query_mut_max_cutoff=reads_query_mut_max_cutoff,
         reads_total_mut_max_cutoff=reads_total_mut_max_cutoff,
@@ -674,14 +716,14 @@ def run_mpmat_poisson_test(
     # open files
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     try:
-        chr_mpmat_file = open(mpmat_filename, "rb")
+        chr_mpmat_file = open(mpmat_filename, "r")
         ctrl_bam = pysam.AlignmentFile(ctrl_bam_filename, "rb")
         treat_bam = pysam.AlignmentFile(treat_bam_filename, "rb")
 
         if out_poisson_filename == "stdout":
             out_file = sys.stdout
         else:
-            out_file = open(out_poisson_filename, "wb")
+            out_file = open(out_poisson_filename, "w")
 
     except:
         raise IOError("Open files error! Please check INPUT and OUTPUT filenames!")
@@ -696,25 +738,8 @@ def run_mpmat_poisson_test(
     ref_genome_dict = load_reference_fasta_as_dict(ref_fasta_path=ref_genome_fa_filename,
                                                    ref_name_list=select_chr_name_list)
 
-    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    # init vars
-    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    # store
-    mpmat_info_dict = {
-        "ctrl_all_count": [],
-        "treat_all_count": [],
-        "ctrl_mut_count": [],
-        "treat_mut_count": [],
-        "ctrl_all_count.norm": [],
-        "treat_all_count.norm": [],
-        "ctrl_mut_count.norm": [],
-        "treat_mut_count.norm": [],
-        "log2FC_all_count": [],
-        "log2FC_mut_count": [],
-        "region_count_info": [],
-        "test_state": [],
-        "pvalue": []
-    }
+    # get pysam Fasta obj
+    ref_genome_fa_obj = pysam.FastaFile(ref_genome_fa_filename)
 
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     # iter to run test
@@ -731,7 +756,35 @@ def run_mpmat_poisson_test(
 
     for line_index, line in enumerate(chr_mpmat_file):
         line_list = line.strip().split("\t")
-        mpmat_info = mpmatLine(line_list, block_info_index=parse_mpmat_block_col_idx, filter_info_index=parse_mpmat_filter_col_idx)
+        mpmat_info = mpmatLine(line_list,
+                               block_info_index=parse_mpmat_block_col_idx,
+                               filter_info_index=parse_mpmat_filter_col_idx)
+
+        # make dict
+        mpmat_info_dict = {
+            "ctrl_all_count": None,
+            "treat_all_count": None,
+            "ctrl_mut_count": None,
+            "treat_mut_count": None,
+            "ctrl_all_count.norm": None,
+            "treat_all_count.norm": None,
+            "ctrl_mut_count.norm": None,
+            "treat_mut_count.norm": None,
+            "log2FC_all_count": None,
+            "log2FC_mut_count": None,
+            "region_count_info": None,
+            "test_state": None,
+            "pvalue": None,
+            "region_site_index": None,
+            "region_site_num": None,
+            "region_block_site_num": None,
+            "region_mut_site_num": None,
+            "region_block_state": None,
+            "region_highest_site_index": None,
+            "region_highest_site_mut_num": None,
+            "region_highest_site_cover_num": None,
+            "region_highest_site_mut_ratio": None,
+        }
 
         # chr name
         mpmat_chr_name = mpmat_info.chr_name
@@ -747,22 +800,33 @@ def run_mpmat_poisson_test(
         if line_index % run_report_num == 0:
             logging.info("Running Poisson test on %s, processed line number %s" % (mpmat_chr_name, line_index + 1))
 
-        # check mpmat region state
-        if parse_mpmat_block_col_idx is not None:
-            mpmat_check_res = check_mpmat_test_state_by_block_info(mpmat_info,
-                                                                   block_site_min_num_cutoff=region_block_site_min_num_cutoff,
-                                                                   block_num_ratio_cutoff=region_block_num_ratio_cutoff,
-                                                                   block_num_ratio_check_min_num=region_block_num_ratio_check_min_num,
-                                                                   block_num_max_num_cutoff=region_block_num_max_num_cutoff)
-        else:
-            mpmat_check_res = [True]
+        # check mpmat region state [old-block-methods]
+        # if parse_mpmat_block_col_idx is not None:
+        #     mpmat_check_res = check_mpmat_test_state_by_block_info(
+        #         mpmat_info,
+        #         block_site_min_num_cutoff=region_block_site_min_num_cutoff,
+        #         block_num_ratio_cutoff=region_block_num_ratio_cutoff,
+        #         block_num_ratio_check_min_num=region_block_num_ratio_check_min_num,
+        #         block_num_max_num_cutoff=region_block_num_max_num_cutoff
+        #     )
+        # else:
+        #     mpmat_check_res = [True]
+
+        # ---------------------------------------------------------->>>>>>>>>>
+        # new-add-step.a hard block and find highest signal
+        # ---------------------------------------------------------->>>>>>>>>>
+        mpmat_info_block = find_block_info_and_highest_signal(mpmat_info,
+                                                              ctrl_bam_obj=ctrl_bam,
+                                                              treat_bam_obj=treat_bam,
+                                                              ref_genome_obj=ref_genome_fa_obj,
+                                                              block_mut_num_cutoff=2)
 
         # ---------------------------------------------------------->>>>>>>>>>
         # step1. get align count info
         # ---------------------------------------------------------->>>>>>>>>>
         # pipeline
         ctrl_count_res = get_mpmat_region_count(in_bam_obj=ctrl_bam,
-                                                mpmat_info=mpmat_info,
+                                                mpmat_info=mpmat_info_block,
                                                 ref_genome_dict=ref_genome_dict,
                                                 query_mut_type=mpmat_info.mut_type,
                                                 query_mut_min_cutoff=reads_query_mut_min_cutoff,
@@ -771,7 +835,7 @@ def run_mpmat_poisson_test(
                                                 other_mut_max_cutoff=reads_other_mut_max_cutoff)
 
         treat_count_res = get_mpmat_region_count(in_bam_obj=treat_bam,
-                                                 mpmat_info=mpmat_info,
+                                                 mpmat_info=mpmat_info_block,
                                                  ref_genome_dict=ref_genome_dict,
                                                  query_mut_type=mpmat_info.mut_type,
                                                  query_mut_min_cutoff=reads_query_mut_min_cutoff,
@@ -782,27 +846,44 @@ def run_mpmat_poisson_test(
         ctrl_mpmat_count_dict = ctrl_count_res[0]
         treat_mpmat_count_dict = treat_count_res[0]
 
-        if mpmat_check_res[0]:
-            # ---------------------------------------------------------->>>>>>>>>>
-            # step2. align count normalization
-            # ---------------------------------------------------------->>>>>>>>>>
-            # region mut lambda
-            # try:
-            ctrl_mpmat_lambda = ctrl_mpmat_count_dict["region_mut_count"] / 1.0 / scale_factor_dict["ctrl"][mpmat_chr_name]["all_align_count.scale_factor"]
-            treat_mpmat_lambda = treat_mpmat_count_dict["region_mut_count"] / 1.0 / scale_factor_dict["treat"][mpmat_chr_name]["all_align_count.scale_factor"]
+        # ---------------------------------------------------------->>>>>>>>>>
+        # step2. align count normalization
+        # ---------------------------------------------------------->>>>>>>>>>
+        # region mut lambda
+        # try:
+        ctrl_mpmat_lambda = ctrl_mpmat_count_dict["region_mut_count"] / 1.0 \
+                            / scale_factor_dict["ctrl"][mpmat_chr_name]["all_align_count.scale_factor"]
+        treat_mpmat_lambda = treat_mpmat_count_dict["region_mut_count"] / 1.0 \
+                             / scale_factor_dict["treat"][mpmat_chr_name]["all_align_count.scale_factor"]
 
-            # all reads lambda
-            ctrl_mpmat_lambda_all = ctrl_mpmat_count_dict["all_align_count"] / 1.0 / scale_factor_dict["ctrl"][mpmat_chr_name]["all_align_count.scale_factor"]
-            treat_mpmat_lambda_all = treat_mpmat_count_dict["all_align_count"] / 1.0 / scale_factor_dict["treat"][mpmat_chr_name]["all_align_count.scale_factor"]
+        # all reads lambda
+        ctrl_mpmat_lambda_all = ctrl_mpmat_count_dict["all_align_count"] / 1.0 \
+                                / scale_factor_dict["ctrl"][mpmat_chr_name]["all_align_count.scale_factor"]
+        treat_mpmat_lambda_all = treat_mpmat_count_dict["all_align_count"] / 1.0 \
+                                 / scale_factor_dict["treat"][mpmat_chr_name]["all_align_count.scale_factor"]
 
-            # ---------------------------------------------------------->>>>>>>>>>
-            # step3. Poisson test
-            # ---------------------------------------------------------->>>>>>>>>>
-            # global vars
-            treat_lambda = 0
-            bg_lambda = 0
+        # ---------------------------------------------------------->>>>>>>>>>
+        # step3. Poisson test
+        # ---------------------------------------------------------->>>>>>>>>>
+        # global vars
+        treat_lambda = 0
+        bg_lambda = 0
 
-            # Poisson test
+        # Poisson test
+        if lambda_bg_method == "raw":
+            if poisson_method == "mutation":
+                bg_lambda = ctrl_mpmat_count_dict["region_mut_count"]
+                treat_lambda = treat_mpmat_count_dict["region_mut_count"]
+
+            elif poisson_method == "all":
+                bg_lambda = ctrl_mpmat_count_dict["all_align_count"]
+                treat_lambda = treat_mpmat_count_dict["all_align_count"]
+
+            else:
+                logging.error("Set wrong Poisson method!")
+                raise ValueError("Set wrong Poisson method!")
+
+        else:
             if poisson_method == "mutation":
                 # make mutation lambda list
                 ctrl_bg_lambda_list = [
@@ -865,19 +946,17 @@ def run_mpmat_poisson_test(
             elif lambda_bg_method == "max":
                 bg_lambda = max(bg_lambda_list)
 
+            elif lambda_bg_method == "raw":
+                pass
+
             else:
                 logging.error("Set wrong lambda method!")
 
-            # Poisson test
-            mut_pvalue = poisson_test(treat_lambda, bg_lambda, alternative="larger", method="sqrt")[1]
+        # Poisson test
+        mut_pvalue = poisson_test(treat_lambda, bg_lambda, alternative="larger", method="sqrt")[1]
 
-            # record state
-            state_test = "TestOK"
-
-        else:
-            # record state
-            state_test = "NoTest"
-            mut_pvalue = "NA"
+        # record state
+        state_test = "TestOK"
 
         # ---------------------------------------------------------->>>>>>>>>>
         # step4. record signal and pvalue
@@ -894,7 +973,7 @@ def run_mpmat_poisson_test(
 
         count_str_list = [mut_num_list, ctrl_count_list, treat_count_list]
         count_str = " ".join([",".join(map(str, x)) for x in count_str_list])
-        mpmat_info_dict["region_count_info"].append(count_str)
+        mpmat_info_dict["region_count_info"] = count_str
 
         # calculate normalized signal
         mpmat_ctrl_mut_count_norm = ctrl_mpmat_count_dict["region_mut_count"] / 1.0 / normalize_scale_factor_dict["ctrl"][mpmat_chr_name]["all_align_count.scale_factor"]
@@ -908,8 +987,7 @@ def run_mpmat_poisson_test(
         if mpmat_ctrl_all_count_norm != 0:
             all_count_FC = mpmat_treat_all_count_norm / 1.0 / mpmat_ctrl_all_count_norm
         else:
-            all_count_FC = mpmat_treat_all_count_norm / 1.0 / genome_bg_dict["ctrl"]["norm_scale_all_bg"][
-                mpmat_chr_name]
+            all_count_FC = mpmat_treat_all_count_norm / 1.0 / genome_bg_dict["ctrl"]["norm_scale_all_bg"][mpmat_chr_name]
 
         if all_count_FC > 0:
             log2FC_all_count = math.log(all_count_FC, 2)
@@ -920,8 +998,7 @@ def run_mpmat_poisson_test(
         if mpmat_ctrl_mut_count_norm != 0:
             mut_count_FC = mpmat_treat_mut_count_norm / 1.0 / mpmat_ctrl_mut_count_norm
         else:
-            mut_count_FC = mpmat_treat_mut_count_norm / 1.0 / genome_bg_dict["ctrl"]["norm_scale_mut_bg"][
-                mpmat_chr_name]
+            mut_count_FC = mpmat_treat_mut_count_norm / 1.0 / genome_bg_dict["ctrl"]["norm_scale_mut_bg"][mpmat_chr_name]
 
         if mut_count_FC > 0:
             log2FC_mut_count = math.log(mut_count_FC, 2)
@@ -929,44 +1006,67 @@ def run_mpmat_poisson_test(
             log2FC_mut_count = "NA"
 
         # add all info into dict
-        mpmat_info_dict["ctrl_all_count"].append(ctrl_mpmat_count_dict["all_align_count"])
-        mpmat_info_dict["treat_all_count"].append(treat_mpmat_count_dict["all_align_count"])
+        mpmat_info_dict["ctrl_all_count"] = ctrl_mpmat_count_dict["all_align_count"]
+        mpmat_info_dict["treat_all_count"] = treat_mpmat_count_dict["all_align_count"]
 
-        mpmat_info_dict["ctrl_mut_count"].append(ctrl_mpmat_count_dict["region_mut_count"])
-        mpmat_info_dict["treat_mut_count"].append(treat_mpmat_count_dict["region_mut_count"])
+        mpmat_info_dict["ctrl_mut_count"] = ctrl_mpmat_count_dict["region_mut_count"]
+        mpmat_info_dict["treat_mut_count"] = treat_mpmat_count_dict["region_mut_count"]
 
-        mpmat_info_dict["ctrl_all_count.norm"].append(mpmat_ctrl_all_count_norm)
-        mpmat_info_dict["treat_all_count.norm"].append(mpmat_treat_all_count_norm)
+        mpmat_info_dict["ctrl_all_count.norm"] = mpmat_ctrl_all_count_norm
+        mpmat_info_dict["treat_all_count.norm"] = mpmat_treat_all_count_norm
 
-        mpmat_info_dict["ctrl_mut_count.norm"].append(mpmat_ctrl_mut_count_norm)
-        mpmat_info_dict["treat_mut_count.norm"].append(mpmat_treat_mut_count_norm)
+        mpmat_info_dict["ctrl_mut_count.norm"] = mpmat_ctrl_mut_count_norm
+        mpmat_info_dict["treat_mut_count.norm"] = mpmat_treat_mut_count_norm
 
-        mpmat_info_dict["log2FC_all_count"].append(log2FC_all_count)
-        mpmat_info_dict["log2FC_mut_count"].append(log2FC_mut_count)
+        mpmat_info_dict["log2FC_all_count"] = log2FC_all_count
+        mpmat_info_dict["log2FC_mut_count"] = log2FC_mut_count
+
+        # add highest info
+        mpmat_info_dict["region_site_index"] = ",".join(mpmat_info_block.site_index_list)
+        mpmat_info_dict["region_site_num"] = mpmat_info_block.site_num
+        mpmat_info_dict["region_block_site_num"] = mpmat_info_block.block_site_num
+        mpmat_info_dict["region_mut_site_num"] = mpmat_info_block.site_num - mpmat_info_block.block_site_num
+        mpmat_info_dict["region_block_state"] = mpmat_info_block.mut_key
+        mpmat_info_dict["region_highest_site_index"] = mpmat_info_block.highest_site_dict["full_site_index"]
+        mpmat_info_dict["region_highest_site_mut_num"] = mpmat_info_block.highest_site_dict["mut_num"]
+        mpmat_info_dict["region_highest_site_cover_num"] = mpmat_info_block.highest_site_dict["total"]
+        mpmat_info_dict["region_highest_site_mut_ratio"] = mpmat_info_block.highest_site_dict["mut_ratio"]
 
         # record pvalue
-        mpmat_info_dict["test_state"].append(state_test)
-        mpmat_info_dict["pvalue"].append(mut_pvalue)
+        mpmat_info_dict["test_state"] = state_test
+        mpmat_info_dict["pvalue"] = mut_pvalue
 
         # ---------------------------------------------------------->>>>>>>>>>
         # step5. output part
         # ---------------------------------------------------------->>>>>>>>>>
         info_list = line_list[:3]
 
+        # region index
+        info_list.append("%s_%s_%s" % (line_list[0], line_list[1], line_list[2]))
+
         info_list += [
-            mpmat_info_dict["ctrl_all_count"][line_index],
-            mpmat_info_dict["treat_all_count"][line_index],
-            mpmat_info_dict["ctrl_mut_count"][line_index],
-            mpmat_info_dict["treat_mut_count"][line_index],
-            mpmat_info_dict["ctrl_all_count.norm"][line_index],
-            mpmat_info_dict["treat_all_count.norm"][line_index],
-            mpmat_info_dict["ctrl_mut_count.norm"][line_index],
-            mpmat_info_dict["treat_mut_count.norm"][line_index],
-            mpmat_info_dict["region_count_info"][line_index],
-            mpmat_info_dict["log2FC_all_count"][line_index],
-            mpmat_info_dict["log2FC_mut_count"][line_index],
-            mpmat_info_dict["test_state"][line_index],
-            mpmat_info_dict["pvalue"][line_index]
+            mpmat_info_dict["region_site_num"],
+            mpmat_info_dict["region_block_site_num"],
+            mpmat_info_dict["region_mut_site_num"],
+            mpmat_info_dict["region_site_index"],
+            mpmat_info_dict["region_block_state"],
+            mpmat_info_dict["region_highest_site_index"],
+            mpmat_info_dict["region_highest_site_mut_num"],
+            mpmat_info_dict["region_highest_site_cover_num"],
+            mpmat_info_dict["region_highest_site_mut_ratio"],
+            mpmat_info_dict["ctrl_all_count"],
+            mpmat_info_dict["treat_all_count"],
+            mpmat_info_dict["ctrl_mut_count"],
+            mpmat_info_dict["treat_mut_count"],
+            mpmat_info_dict["ctrl_all_count.norm"],
+            mpmat_info_dict["treat_all_count.norm"],
+            mpmat_info_dict["ctrl_mut_count.norm"],
+            mpmat_info_dict["treat_mut_count.norm"],
+            mpmat_info_dict["region_count_info"],
+            mpmat_info_dict["log2FC_all_count"],
+            mpmat_info_dict["log2FC_mut_count"],
+            mpmat_info_dict["test_state"],
+            mpmat_info_dict["pvalue"]
         ]
 
         # write into file
@@ -1006,10 +1106,7 @@ def multi_run_mpmat_poisson_test(
 
         <**region_filter_args>
             args list:
-                <region_block_site_min_num_cutoff>
-                <region_block_num_ratio_cutoff>
-                <region_block_num_ratio_check_min_num>
-                <region_block_num_max_num_cutoff>
+                <region_block_mut_num_cutoff>
                 <reads_query_mut_min_cutoff>
                 <reads_query_mut_max_cutoff>
                 <reads_total_mut_max_cutoff>
@@ -1042,10 +1139,7 @@ def multi_run_mpmat_poisson_test(
     # params setting
     # ------------------------------------------------------------>>>>>>>>>>
     run_params_dict = {
-        "region_block_site_min_num_cutoff": 1,
-        "region_block_num_ratio_cutoff": 0.8,
-        "region_block_num_ratio_check_min_num": 5,
-        "region_block_num_max_num_cutoff": 15,
+        "region_block_mut_num_cutoff": 2,
         "reads_query_mut_min_cutoff": 1,
         "reads_query_mut_max_cutoff": 16,
         "reads_total_mut_max_cutoff": 20,
@@ -1107,10 +1201,7 @@ def multi_run_mpmat_poisson_test(
                     genome_bg_dict,
                     lambda_bg_method,
                     poisson_method,
-                    run_params_dict["region_block_site_min_num_cutoff"],
-                    run_params_dict["region_block_num_ratio_cutoff"],
-                    run_params_dict["region_block_num_ratio_check_min_num"],
-                    run_params_dict["region_block_num_max_num_cutoff"],
+                    run_params_dict["region_block_mut_num_cutoff"],
                     run_params_dict["reads_query_mut_min_cutoff"],
                     run_params_dict["reads_query_mut_max_cutoff"],
                     run_params_dict["reads_total_mut_max_cutoff"],
@@ -1128,8 +1219,8 @@ def multi_run_mpmat_poisson_test(
     # check run state
     final_run_state = 0
     for index, res in enumerate(run_return_info_list):
-        final_run_state = res.get()
-        if final_run_state != 0:
+        run_state = res.get()
+        if run_state != 0:
             logging.error("Poisson test error occur with %s!" % chr_name_order_list[index])
             if final_run_state == 0:
                 final_run_state = 1
@@ -1162,15 +1253,16 @@ def make_qvalue_with_BH_method(pval_list):
     raw_pval_index_dict = {}
     rm_NA_pval_list = []
     run_index = 0
-    
+
     for index, pval in enumerate(pval_list):
         if pval != "NA":
             rm_NA_pval_list.append(pval)
             raw_pval_index_dict[run_index] = index
             run_index += 1
+
     FDR_qvalue = multi.multipletests(np.array(rm_NA_pval_list), alpha=0.05, method="fdr_bh", is_sorted=False)
     FDR_qvalue_vec = FDR_qvalue[1]
-        
+
     return_fdr_list = ["NA"] * len(pval_list)
 
     for index, fdr in enumerate(FDR_qvalue_vec):

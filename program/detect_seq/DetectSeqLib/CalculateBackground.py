@@ -13,8 +13,8 @@ import time
 from Bio import SeqIO
 import multiprocessing
 
-from DetectSeqLib_V2.CheckAndLoadFiles import load_reference_fasta_as_dict
-from DetectSeqLib_V2.RegionStatsTest import get_align_mismatch_pairs, get_No_MD_align_mismatch_pairs
+from DetectSeqLib.CheckAndLoadFiles import load_reference_fasta_as_dict
+from DetectSeqLib.RegionStatsTest import get_align_mismatch_pairs, get_No_MD_align_mismatch_pairs
 
 # Version information START ----------------------------------------------------
 VERSION_INFO = \
@@ -129,7 +129,7 @@ def count_effective_genome(genome_fa_filename, genome_json_out=None, log_verbose
         out_file = None
 
     else:
-        out_file = open(genome_json_out, "wb")
+        out_file = open(genome_json_out, "w")
 
     if out_file is not None:
         json_obj = json.dumps(genome_base_count_dict, encoding="utf-8", sort_keys=True, indent=4,
@@ -222,13 +222,13 @@ def count_split_chrom_mut_bg(bmat_filename,
         json_out = None
 
     else:
-        json_out = open(json_out_filename, "wb")
+        json_out = open(json_out_filename, "w")
 
     # open input bmat file
     if (bmat_filename[-3:] == ".gz") or (bmat_filename[-5:] == ".gzip"):
-        input_file = gzip.open(bmat_filename, "rb")
+        input_file = gzip.open(bmat_filename, "r")
     else:
-        input_file = open(bmat_filename, "rb")
+        input_file = open(bmat_filename, "r")
 
     # log
     logging.info("-" * 80)
@@ -431,9 +431,9 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
 
     # open input bmat file
     if (input_bmat_filename[-3:] == ".gz") or (input_bmat_filename[-5:] == ".gzip"):
-        input_file = gzip.open(input_bmat_filename, "rb")
+        input_file = gzip.open(input_bmat_filename, "r")
     else:
-        input_file = open(input_bmat_filename, "rb")
+        input_file = open(input_bmat_filename, "r")
 
     # set init 
     cur_chr_name = None
@@ -466,9 +466,9 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
 
             # write
             if not out_gzip:
-                cur_out_file = open(temp_file_name, "wb")
+                cur_out_file = open(temp_file_name, "w")
             else:
-                cur_out_file = gzip.open(temp_file_name, "wb")
+                cur_out_file = gzip.open(temp_file_name, "w")
 
             cur_out_file.write(line)
 
@@ -498,9 +498,9 @@ def split_bmat_by_chr_name(input_bmat_filename, temp_dir=None, force_temp_dir=Tr
 
             # write
             if not out_gzip:
-                cur_out_file = open(temp_file_name, "wb")
+                cur_out_file = open(temp_file_name, "w")
             else:
-                cur_out_file = gzip.open(temp_file_name, "wb")
+                cur_out_file = gzip.open(temp_file_name, "w")
 
             cur_out_file.write(line)
 
@@ -734,9 +734,9 @@ def split_mpmat_by_chr_name(input_mpmat_filename, temp_dir=None, force_temp_dir=
 
     # open input mpmat file
     if (input_mpmat_filename[-3:] == ".gz") or (input_mpmat_filename[-5:] == ".gzip"):
-        input_file = gzip.open(input_mpmat_filename, "rb")
+        input_file = gzip.open(input_mpmat_filename, "rt")
     else:
-        input_file = open(input_mpmat_filename, "rb")
+        input_file = open(input_mpmat_filename, "rt")
 
     # set init 
     cur_chr_name = None
@@ -765,7 +765,7 @@ def split_mpmat_by_chr_name(input_mpmat_filename, temp_dir=None, force_temp_dir=
             record_dict[cur_chr_name] = temp_file_name
 
             # write
-            cur_out_file = open(temp_file_name, "wb")
+            cur_out_file = open(temp_file_name, "w")
             cur_out_file.write(line)
 
         elif cur_chr_name == chr_name:
@@ -790,7 +790,7 @@ def split_mpmat_by_chr_name(input_mpmat_filename, temp_dir=None, force_temp_dir=
             record_dict[cur_chr_name] = temp_file_name
 
             # write
-            cur_out_file = open(temp_file_name, "wb")
+            cur_out_file = open(temp_file_name, "w")
             cur_out_file.write(line)
 
     # close all files
@@ -820,10 +820,8 @@ def _count_mismatch_num(align_mismatch_pairs, region_mut_type_list=["CT", "GA"])
         <align_mismatch_pairs>
             list, generate from
 
-
     RETURN:
         <mismatch_count_dict>
-
 
     """
     total_mut_num = 0
@@ -1158,10 +1156,10 @@ def count_dict_sum_up(count_dict, key_ref_name_list="All", ignore_key_list=["tot
     """
 
     if key_ref_name_list == "All":
-        key_ref_name_list = count_dict.keys()
+        key_ref_name_list = list(count_dict.keys())
 
     total_dict = {}
-    inner_key_list = count_dict[key_ref_name_list[0]].keys()
+    inner_key_list = list(count_dict[key_ref_name_list[0]].keys())
 
     for inner_key in inner_key_list:
         total_dict[inner_key] = 0

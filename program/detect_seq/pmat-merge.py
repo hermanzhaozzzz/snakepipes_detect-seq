@@ -1,43 +1,5 @@
-#! /Users/meng/menghw_HD/anaconda2/bin/python
+#! /home/menghw/miniconda3/envs/DetectSeq/bin/python
 # _*_ coding: UTF-8 _*_
-
-
-# Version information START --------------------------------------------------
-VERSION_INFO = \
-"""
-Author: MENG Howard
-
-Version-01:
-  2019-08-06 对bmat2pmat的输出结果进行merge
-
-Version-02:
-  2019-08-08 修改输出的列及header
-             修改 back_trandem_site_index 函数可能会造成ref index溢出的问题
-
-Version-03:
-  2019-09-12 增加SNP注释信息的支持格式      
-
-Version-04:
-  2019-09-19 
-
-E-Mail: meng_howard@126.com
-"""
-# Version information END ----------------------------------------------------
-
-# Learning Part START --------------------------------------------------------
-LEARNING_PART = \
-"""
-output format like:
-
-# column 1~3 basic info
-<chr_name> <region_start> <region_end> 
-
-# annotation info
-<region_site_num> <region_conatin_mut_site_num(rm SNP)> <region_SNP_num> <region_site_index.list> <to_base_num.list> <cover_base_num.list> <mut_ratio.list> <SNP_info.list> <tandem_info>
-
-TAB separate
-"""
-# Learning Part END-----------------------------------------------------------
 
 from Bio import SeqIO
 import argparse
@@ -46,10 +8,58 @@ import sys
 import time
 import string
 
+# Version information START --------------------------------------------------
+VERSION_INFO = """
+Author: MENG Howard
+
+Version-01:
+  2019-08-06 this code is for pmat merging step 
+
+Version-02:
+  2019-08-08 
+    1. fix output column order and header info
+    2. debug with FUN <back_tandem_site_index>, fix out of ref index 
+
+Version-03:
+  2019-09-12 support bed-like format snv info     
+
+Version-04:
+  2019-09-19 code polish
+
+Version-05:
+  2022-07-26 Support Python3.9 and fix code follow pythonic style
+
+E-Mail: meng_howard@126.com
+"""
+# Version information END ----------------------------------------------------
+
+# Learning Part START --------------------------------------------------------
+LEARNING_PART = """
+output format like:
+
+# column 1~3 basic info
+<chr_name> <region_start> <region_end> 
+
+# annotation info
+<region_site_num> <region_contain_mut_site_num(rm SNP)>
+ 
+<region_SNP_num> <region_site_index.list> <to_base_num.list> 
+
+<cover_base_num.list> <mut_ratio.list> <SNP_info.list> <tandem_info>
+
+TAB separate
+"""
+
+
+# Learning Part END-----------------------------------------------------------
+
+
 ###############################################################################
 # function part 
 ###############################################################################
-def back_trandem_site_index(chr_name, chr_start, base_type, ref_dict, distance_size_cutoff = 150, back_site_num_cutoff = None):
+def back_tandem_site_index(chr_name, chr_start, base_type, ref_dict,
+                           distance_size_cutoff=150,
+                           back_site_num_cutoff=None):
     """
     <INPUT> 
         chr_name: 
@@ -78,27 +88,27 @@ def back_trandem_site_index(chr_name, chr_start, base_type, ref_dict, distance_s
     site_index_list = []
     chr_index = int(chr_start)
 
-    if ref_dict[chr_name][chr_index -1] == base_type:
+    if ref_dict[chr_name][chr_index - 1] == base_type:
         site_index = "%s_%s_%s" % (chr_name, chr_index, base_type)
         site_index_list.append(site_index)
     else:
-        return(None)
+        return None
 
     chr_end_index = chr_index - 1 + distance_size_cutoff
     if chr_end_index > len(ref_dict[chr_name]):
         chr_end_index = len(ref_dict[chr_name])
 
-    for run_chr_index in xrange(chr_index, chr_end_index):
+    for run_chr_index in range(chr_index, chr_end_index):
         run_base = ref_dict[chr_name][run_chr_index]
         if run_base == base_type:
             site_index = "%s_%s_%s" % (chr_name, run_chr_index + 1, base_type)
             site_index_list.append(site_index)
 
-            if back_site_num_cutoff != None:
+            if back_site_num_cutoff is not None:
                 if len(site_index_list) >= back_site_num_cutoff:
-                    return(site_index_list)
+                    return site_index_list
 
-    return(site_index_list)
+    return site_index_list
 
 
 def load_VCF_as_dict(snp_vcf_file_obj, input_dict):
@@ -106,55 +116,55 @@ def load_VCF_as_dict(snp_vcf_file_obj, input_dict):
     <HELP>
         load vcf file input a dict, and return dict
     """
-    
+
     for line in snp_vcf_file_obj:
         if line[0] != "#":
             line_list = line.strip().split("\t")
             vcf_index = "%s_%s_%s%s" % (line_list[0], line_list[1], line_list[3], line_list[4])
             input_dict[vcf_index] = 0
 
-    return(input_dict)
+    return input_dict
 
 
 def load_BED_as_dict(snp_vcf_file_obj, input_dict):
     """
     <HELP>
-        load vcf file input a dict, and return dict
+        load bed-like file input a dict, and return dict
     """
-    
+
     for line in snp_vcf_file_obj:
         if line[0] != "#":
             line_list = line.strip().split("\t")
             site_index = line_list[3]
             input_dict[site_index] = 0
 
-    return(input_dict)
+    return input_dict
 
 
-def get_region_start_line(pmat_obj, from_base, to_base, pmat_temp_line = None):
+def get_region_start_line(pmat_obj, from_base, to_base, pmat_temp_line=None):
     """
     <HELP>
         help to get region start site
     """
     # consider temp 
-    if pmat_temp_line != None:
+    if pmat_temp_line is not None:
         line_list = pmat_temp_line.strip().split("\t")
-        if (int(line_list[12]) > 0) and (line_list[9] == from_base) and (line_list[10] == to_base) :
-            return(True,pmat_temp_line) 
-    
+        if (int(line_list[12]) > 0) and (line_list[9] == from_base) and (line_list[10] == to_base):
+            return True, pmat_temp_line
+
     # initial the line info
     line = pmat_obj.readline()
     while line:
         line_list = line.strip().split("\t")
-        if (int(line_list[12]) > 0) and (line_list[9] == from_base) and (line_list[10] == to_base) :
-            return(True,line) 
+        if (int(line_list[12]) > 0) and (line_list[9] == from_base) and (line_list[10] == to_base):
+            return True, line
         else:
             line = in_pmat_file.readline()
-    
-    return(False,line)    
-  
 
-def report_region(out_region_dict, to_base = "T"):
+    return False, line
+
+
+def report_region(out_region_dict, to_base="T"):
     """
     <HELP>
         make output str from region_dict
@@ -165,33 +175,37 @@ def report_region(out_region_dict, to_base = "T"):
         <chr_name> <region_start> <region_end> 
 
         # annotation info
-        <region_site_num> <region_conatin_mut_site_num(rm SNP)> <region_SNP_num> <region_site_index.list> <to_base_num.list> <cover_base_num.list> <mut_ratio.list> <SNP_info.list> <tandem_info>
+        <region_site_num> <region_contain_mut_site_num(rm SNP)>
+        <region_SNP_num> <region_site_index.list> <to_base_num.list>
+        <cover_base_num.list> <mut_ratio.list> <SNP_info.list> <tandem_info>
     """
     out_str_list = []
 
     # site selection
     region_start_mut_index = None
     region_end_mut_index = None
-    
+
     # get start index
-    for index in  range(len(out_region_dict["mut_count_list"])):
-        if (int(out_region_dict["mut_count_list"][index]) > 0) and (out_region_dict["site_idx_list"][index][-1] == to_base): 
+    for index in range(len(out_region_dict["mut_count_list"])):
+        if (int(out_region_dict["mut_count_list"][index]) > 0) and (
+                out_region_dict["site_idx_list"][index][-1] == to_base):
 
             if not out_region_dict["SNP_ann_list"][index]:
                 region_start_mut_index = index
                 break
 
     # get end index
-    for index in range(len(out_region_dict["mut_count_list"]) -1 , -1 , -1):
-        if (int(out_region_dict["mut_count_list"][index]) > 0) and (out_region_dict["site_idx_list"][index][-1] == to_base): 
-            
+    for index in range(len(out_region_dict["mut_count_list"]) - 1, -1, -1):
+        if (int(out_region_dict["mut_count_list"][index]) > 0) and (
+                out_region_dict["site_idx_list"][index][-1] == to_base):
+
             if not out_region_dict["SNP_ann_list"][index]:
                 region_end_mut_index = index
                 break
 
-    if (region_start_mut_index == None) or (region_end_mut_index == None):
-        return(None)
-    
+    if (region_start_mut_index is None) or (region_end_mut_index is None):
+        return None
+
     else:
         # column 1~3 basic info
         out_str_list.append(out_region_dict["chr_name"])
@@ -200,34 +214,41 @@ def report_region(out_region_dict, to_base = "T"):
 
         # region site number 
         out_str_list.append(region_end_mut_index - region_start_mut_index + 1)
-        
+
         # get mutation count
-        mut_signal_site_num = 0 
+        mut_signal_site_num = 0
         snp_site_num = 0
-        
+
         for index in range(region_start_mut_index, region_end_mut_index + 1):
             if out_region_dict["SNP_ann_list"][index]:
                 snp_site_num += 1
                 continue
-            
-            if (int(out_region_dict["mut_count_list"][index]) > 0) and (out_region_dict["site_idx_list"][index][-1] == to_base):
+
+            if (int(out_region_dict["mut_count_list"][index]) > 0) and (
+                    out_region_dict["site_idx_list"][index][-1] == to_base):
                 mut_signal_site_num += 1
 
         out_str_list.append(mut_signal_site_num)
         out_str_list.append(snp_site_num)
 
         # annotation info 
-        out_str_list.append(",".join(map(str,out_region_dict["site_idx_list"][region_start_mut_index : region_end_mut_index+1])))
-        out_str_list.append(",".join(map(str,out_region_dict["mut_count_list"][region_start_mut_index : region_end_mut_index+1])))
-        out_str_list.append(",".join(map(str,out_region_dict["cover_count_list"][region_start_mut_index : region_end_mut_index+1])))
-        out_str_list.append(",".join(map(str,out_region_dict["mut_ratio_list"][region_start_mut_index : region_end_mut_index+1])))
-        out_str_list.append(",".join(map(str,out_region_dict["SNP_ann_list"][region_start_mut_index : region_end_mut_index+1]))) 
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["site_idx_list"][region_start_mut_index: region_end_mut_index + 1])))
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["mut_count_list"][region_start_mut_index: region_end_mut_index + 1])))
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["cover_count_list"][region_start_mut_index: region_end_mut_index + 1])))
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["mut_ratio_list"][region_start_mut_index: region_end_mut_index + 1])))
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["SNP_ann_list"][region_start_mut_index: region_end_mut_index + 1])))
 
         # make output str
-        out_str_list.append(",".join(map(str,out_region_dict["tandem_state"][region_start_mut_index : region_end_mut_index+1])))  
-        out_str = "\t".join(map(str,out_str_list))
+        out_str_list.append(
+            ",".join(map(str, out_region_dict["tandem_state"][region_start_mut_index: region_end_mut_index + 1])))
+        out_str = "\t".join(map(str, out_str_list))
 
-        return (out_str)
+        return out_str
 
 
 ###############################################################################
@@ -238,43 +259,45 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="merge pmat file")
 
     parser.add_argument("-i", "--Input",
-        help="Input bmat file",required=True)
+                        help="Input bmat file", required=True)
 
     parser.add_argument("-o", "--Output",
-        help="Output BED format file",default="Stdout")
+                        help="Output BED format file", default="Stdout")
 
     parser.add_argument("-f", "--FromBase",
-        help="Ref base, accept A,G,C,T default=C",default="C")
+                        help="Ref base, accept A,G,C,T default=C", default="C")
 
     parser.add_argument("-t", "--ToBase",
-        help="Mut base, accept A,G,C,T default=T",default="T")
+                        help="Mut base, accept A,G,C,T default=T", default="T")
 
-    parser.add_argument("-r","--reference",
-        help="Reference genome fasta file",required=True)
+    parser.add_argument("-r", "--reference",
+                        help="Reference genome fasta file", required=True)
 
     parser.add_argument("-d", "--MaxSiteDistance",
-        help="Max distance between two sites in one region, default=50",default="50")
+                        help="Max distance between two sites in one region, default=50", default="50")
 
     parser.add_argument("-D", "--MaxRegionDistance",
-        help="Max length of a mutation region, default=100",default="100")
+                        help="Max length of a mutation region, default=100", default="100")
 
     parser.add_argument("--NoMutNumCutoff",
-        help="The number of site without mutation --ToBase signal in a mutation region, default=2",default="2")
+                        help="The number of site without mutation --ToBase signal in a mutation region, default=2",
+                        default="2")
 
     parser.add_argument("--OmitTandemNumCutoff",
-        help="The omit tande site cutoff, default=2",default="2")
+                        help="The omit tandem site cutoff, default=2", default="2")
 
     parser.add_argument("--SNP",
-        help="SNP file with vcf or bed format, if use multiple file, use ',' to separate, default=None",default="None")
+                        help="SNP file with vcf or bed format, if use multiple file, use ',' to separate, default=None",
+                        default="None")
 
     parser.add_argument("--OutHeader",
-        help="If contain header line in output file, default=True",default="True")
+                        help="If contain header line in output file, default=True", default="True")
 
     parser.add_argument("--InHeader",
-        help="If contain header line in input file, default=True",default="True")
+                        help="If contain header line in input file, default=True", default="True")
 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    # load the paramters
+    # load the parameters
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     ARGS = parser.parse_args()
 
@@ -298,9 +321,9 @@ if __name__ == '__main__':
     # open input file
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     if ".gz" == input_file_path[-3:]:
-        in_pmat_file = gzip.open(input_file_path,"r")
+        in_pmat_file = gzip.open(input_file_path, "rt")
     else:
-        in_pmat_file = open(input_file_path,"r")
+        in_pmat_file = open(input_file_path, "rt")
 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     # open output file
@@ -308,9 +331,9 @@ if __name__ == '__main__':
     if output_file_path == "Stdout":
         output_file = sys.stdout
     elif ".gz" == output_file_path[-3:]:
-        output_file = gzip.open(output_file_path,"w")
+        output_file = gzip.open(output_file_path, "wt")
     else:
-        output_file = open(output_file_path,"w")
+        output_file = open(output_file_path, "wt")
 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     # load SNP VCF file
@@ -326,13 +349,13 @@ if __name__ == '__main__':
 
         for SNP_filename in SNP_filename_list:
             # log
-            sys.stderr.write("%s...\t%s\n" % (SNP_filename,time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+            sys.stderr.write("%s...\t%s\n" % (SNP_filename, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
             if ".gz" == SNP_filename[-3:]:
-                SNP_vcf_file_obj = gzip.open(SNP_filename,"r")
+                SNP_vcf_file_obj = gzip.open(SNP_filename, "rt")
                 SNP_filename_base = os.path.splitext(SNP_filename)[0]
             else:
-                SNP_vcf_file_obj = open(SNP_filename,"r")
+                SNP_vcf_file_obj = open(SNP_filename, "rt")
                 SNP_filename_base = SNP_filename
 
             if SNP_filename_base[-3:].upper() == "VCF":
@@ -350,7 +373,7 @@ if __name__ == '__main__':
     # load genome 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     genome_dict = {}
-    genome_fa =  SeqIO.parse(handle=genome_fa_file_path,format="fasta")
+    genome_fa = SeqIO.parse(handle=genome_fa_file_path, format="fasta")
 
     sys.stderr.write("Loading genome... \t %s \n" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
@@ -401,36 +424,31 @@ if __name__ == '__main__':
     while pmat_line:
         if not region_detect_state:
             # initial the line info
-            # TODO
-#             print("DEBUG: \nfrom_base: %s\nto_base: %s\npmat_line%s" % (from_base, to_base, pmat_line))
-            try:
-                region_query_res = get_region_start_line(in_pmat_file, from_base, to_base, pmat_line)
-            except IndexError:
-                continue
-            
+            region_query_res = get_region_start_line(in_pmat_file, from_base, to_base, pmat_line)
             pmat_line = region_query_res[1]
-            
+
             if region_query_res[0]:
                 pmat_line_list = pmat_line.strip().split("\t")
+
                 region_dict = {
-                    "chr_name" : pmat_line_list[0],
-                    "chr_start" : pmat_line_list[1],
-                    "chr_end" : None,
-                    "site_idx_list" : [ pmat_line_list[3] ],
-                    "mut_count_list" : [ pmat_line_list[12] ],
-                    "cover_count_list" : [ pmat_line_list[13] ],
-                    "mut_ratio_list" : [ pmat_line_list[14] ],
-                    "SNP_ann_list" : [ ],
-                    "miss_tandem_num" : 0,
+                    "chr_name": pmat_line_list[0],
+                    "chr_start": pmat_line_list[1],
+                    "chr_end": None,
+                    "site_idx_list": [pmat_line_list[3]],
+                    "mut_count_list": [pmat_line_list[12]],
+                    "cover_count_list": [pmat_line_list[13]],
+                    "mut_ratio_list": [pmat_line_list[14]],
+                    "SNP_ann_list": [],
+                    "miss_tandem_num": 0,
                     "no_mut_num": 0,
-                    "mut_signal_site_num" : 1,
-                    "tandem_state": [ 0 ]
+                    "mut_signal_site_num": 1,
+                    "tandem_state": [0]
                 }
 
                 # get snp query res
                 if SNP_vcf_dict:
                     query_snp_res = SNP_vcf_dict.get(pmat_line_list[3])
-                    if query_snp_res == None:
+                    if query_snp_res is None:
                         region_dict["SNP_ann_list"].append(False)
                     else:
                         region_dict["SNP_ann_list"].append(True)
@@ -438,17 +456,17 @@ if __name__ == '__main__':
                     region_dict["SNP_ann_list"].append(False)
 
                 # get tandem mut site 
-                tandem_site_index_list = back_trandem_site_index(
-                    chr_name = region_dict["chr_name"],
-                    chr_start = region_dict["chr_start"],
-                    base_type = from_base,
-                    ref_dict = genome_dict,
-                    distance_size_cutoff = region_distance_cutoff,
-                    back_site_num_cutoff = 20
+                tandem_site_index_list = back_tandem_site_index(
+                    chr_name=region_dict["chr_name"],
+                    chr_start=region_dict["chr_start"],
+                    base_type=from_base,
+                    ref_dict=genome_dict,
+                    distance_size_cutoff=region_distance_cutoff,
+                    back_site_num_cutoff=20
                 )
 
                 # 如果返回的tandem site 数目很少，则直接输出最终的结果
-                if tandem_site_index_list != None:
+                if tandem_site_index_list is not None:
                     if len(tandem_site_index_list) == 1:
                         out_str = report_region(region_dict, to_base)
                         if out_str:
@@ -458,7 +476,7 @@ if __name__ == '__main__':
                         region_dict = {}
                         region_detect_state = False
                         tandem_site_index_list = []
-                        tandem_order_index = 0 
+                        tandem_order_index = 0
                         pmat_line = in_pmat_file.readline()
 
                     else:
@@ -479,11 +497,25 @@ if __name__ == '__main__':
                 region_dict = {}
                 region_detect_state = False
                 tandem_site_index_list = []
-                tandem_order_index = 0 
+                tandem_order_index = 0
 
             else:
                 # 判断是否符合-d 以及 -D的距离cutoff
-                if int(pmat_line_list[1]) - int(region_dict["site_idx_list"][-1].split("_")[1]) >= bisite_distance_cutoff:
+                if int(pmat_line_list[1]) - \
+                        int(region_dict["site_idx_list"][-1].split("_")[1]) >= bisite_distance_cutoff:
+                    out_str = report_region(region_dict, to_base)
+
+                    if out_str:
+                        output_file.write(out_str + "\n")
+
+                    # set initial var    
+                    region_dict = {}
+                    region_detect_state = False
+                    tandem_site_index_list = []
+                    tandem_order_index = 0
+
+                elif (int(region_dict["site_idx_list"][-1].split("_")[1]) -
+                      int(region_dict["site_idx_list"][0].split("_")[1])) >= region_distance_cutoff:
                     out_str = report_region(region_dict, to_base)
                     if out_str:
                         output_file.write(out_str + "\n")
@@ -492,18 +524,7 @@ if __name__ == '__main__':
                     region_dict = {}
                     region_detect_state = False
                     tandem_site_index_list = []
-                    tandem_order_index = 0 
-
-                elif (int(region_dict["site_idx_list"][-1].split("_")[1]) - int(region_dict["site_idx_list"][0].split("_")[1])) >= region_distance_cutoff:
-                    out_str = report_region(region_dict, to_base)
-                    if out_str:
-                        output_file.write(out_str + "\n")
-
-                    # set initial var    
-                    region_dict = {}
-                    region_detect_state = False
-                    tandem_site_index_list = []
-                    tandem_order_index = 0 
+                    tandem_order_index = 0
 
                 elif tandem_order_index >= len(tandem_site_index_list):
                     out_str = report_region(region_dict, to_base)
@@ -514,17 +535,17 @@ if __name__ == '__main__':
                     region_dict = {}
                     region_detect_state = False
                     tandem_site_index_list = []
-                    tandem_order_index = 0 
+                    tandem_order_index = 0
 
                 else:
                     if pmat_line_list[9] == from_base:
                         cur_tandem_site_index_split = tandem_site_index_list[tandem_order_index].split("_")
-                        
+
                         # 判断是否为tandem info
                         if pmat_line_list[1] == cur_tandem_site_index_split[1]:
 
-                            #判断是否带有mut 信息
-                            if int(pmat_line_list[12]) == 0 :
+                            # 判断是否带有mut 信息
+                            if int(pmat_line_list[12]) == 0:
                                 region_dict["no_mut_num"] += 1
                             elif pmat_line_list[10] != to_base:
                                 region_dict["no_mut_num"] += 1
@@ -533,7 +554,7 @@ if __name__ == '__main__':
                                 out_str = report_region(region_dict, to_base)
                                 if out_str:
                                     output_file.write(out_str + "\n")
-                                
+
                                 # set initial var    
                                 region_dict = {}
                                 region_detect_state = False
@@ -544,17 +565,17 @@ if __name__ == '__main__':
                             else:
                                 if pmat_line_list[10] == to_base:
                                     # add info into region_dict
-                                    #### get snp query res
+                                    # get snp query res
                                     if SNP_vcf_dict:
                                         query_snp_res = SNP_vcf_dict.get(pmat_line_list[3])
-                                        if query_snp_res == None:
+                                        if query_snp_res is None:
                                             region_dict["SNP_ann_list"].append(False)
                                         else:
                                             region_dict["SNP_ann_list"].append(True)
                                     else:
                                         region_dict["SNP_ann_list"].append(False)
 
-                                    #### add info into region_dict
+                                    # add info into region_dict
                                     region_dict["site_idx_list"].append(pmat_line_list[3])
                                     region_dict["mut_count_list"].append(pmat_line_list[12])
                                     region_dict["cover_count_list"].append(pmat_line_list[13])
@@ -566,19 +587,19 @@ if __name__ == '__main__':
 
                                     pmat_line = in_pmat_file.readline()
                                     tandem_order_index += 1
-                                    
+
                                 else:
                                     # 具有非C-T mutation 的信息
                                     if SNP_vcf_dict:
                                         query_snp_res = SNP_vcf_dict.get(pmat_line_list[3])
-                                        if query_snp_res == None:
+                                        if query_snp_res is None:
                                             region_dict["SNP_ann_list"].append(False)
                                         else:
                                             region_dict["SNP_ann_list"].append(True)
                                     else:
                                         region_dict["SNP_ann_list"].append(False)
-                                        
-                                    #### add info into region_dict
+
+                                    # add info into region_dict
                                     region_dict["site_idx_list"].append(pmat_line_list[3])
                                     region_dict["mut_count_list"].append(0)
                                     region_dict["cover_count_list"].append(pmat_line_list[13])
@@ -587,7 +608,7 @@ if __name__ == '__main__':
 
                                     pmat_line = in_pmat_file.readline()
                                     tandem_order_index += 1
-                                    
+
                         elif int(pmat_line_list[1]) > int(cur_tandem_site_index_split[1]):
                             region_dict["miss_tandem_num"] += 1
 
@@ -617,17 +638,9 @@ if __name__ == '__main__':
                     else:
                         pmat_line = in_pmat_file.readline()
 
-    sys.stderr.write("Merge done!\t %s \n" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))    
-    
+    sys.stderr.write("Merge done!\t %s \n" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
 in_pmat_file.close()
 output_file.close()
 
-
-
-
-
-
-
-
-# 2019-09-12
+# 2022-07-26

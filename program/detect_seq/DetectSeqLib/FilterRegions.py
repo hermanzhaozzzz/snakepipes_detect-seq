@@ -78,10 +78,10 @@ class mpmatLine(object):
         self.SNP_site_num = int(mpmat_line_list[5])
 
         self.site_index_list = mpmat_line_list[6].split(",")
-        self.mut_count_list = map(int, mpmat_line_list[7].split(","))
-        self.cover_count_list = map(int, mpmat_line_list[8].split(","))
-        self.mut_ratio_list = map(float, mpmat_line_list[9].split(","))
-        self.SNP_ann_list = map(bool, mpmat_line_list[10].split(","))
+        self.mut_count_list = list(map(int, mpmat_line_list[7].split(",")))
+        self.cover_count_list = list(map(int, mpmat_line_list[8].split(",")))
+        self.mut_ratio_list = list(map(float, mpmat_line_list[9].split(",")))
+        self.SNP_ann_list = list(map(eval, mpmat_line_list[10].split(",")))
         self.tandem_info_list = mpmat_line_list[11].split(",")
 
         # region str
@@ -89,6 +89,15 @@ class mpmatLine(object):
 
         # get mut type
         self.mut_type = mpmat_line_list[6].split(",")[0].split("_")[-1]
+
+        # mutation key
+        mut_key_list = ["N"] * self.site_num
+        for index, site_index in enumerate(self.site_index_list):
+            if self.SNP_ann_list[index]:
+                mut_key_list[index] = "S"
+
+        self.mut_key = "-".join(mut_key_list)
+        self.mut_key_list = mut_key_list
 
         # load filter
         if filter_info_index is not None:
@@ -99,17 +108,25 @@ class mpmatLine(object):
 
         if block_info_index is not None:
             try:
-                block_info_list = mpmat_line_list[block_info_index - 1].split(" ")
-                self.block_name_list = block_info_list[0].split(",")
-                self.ctrl_hf_state_list = map(eval, block_info_list[1].split(","))
-                self.ctrl_hf_reason_list = block_info_list[2].split(",")
-                self.ctrl_binomial_pval_list = map(int, block_info_list[3].split(","))
-                self.treat_hf_state_list = map(eval, block_info_list[4].split(","))
-                self.treat_hf_reason_list = block_info_list[5].split(",")
-                self.block_state_list = map(eval, block_info_list[6].split(","))
-                self.block_reason_list = block_info_list[7].split(",")
+                self.block_info_list = list(map(eval, mpmat_line_list[block_info_index - 1].split(",")))
+                self.block_site_num = self.block_info_list.count(True)
             except:
                 raise IOError("Parsing error occur at <block_info_index>")
+
+        # [old-version-block]
+        # if block_info_index is not None:
+        #     try:
+        #         block_info_list =
+        #         self.block_name_list = block_info_list[0].split(",")
+        #         self.ctrl_hf_state_list = list(map(eval, block_info_list[1].split(",")))
+        #         self.ctrl_hf_reason_list = block_info_list[2].split(",")
+        #         self.ctrl_binomial_pval_list = list(map(int, block_info_list[3].split(",")))
+        #         self.treat_hf_state_list = list(map(eval, block_info_list[4].split(",")))
+        #         self.treat_hf_reason_list = block_info_list[5].split(",")
+        #         self.block_state_list = list(map(eval, block_info_list[6].split(",")))
+        #         self.block_reason_list = block_info_list[7].split(",")
+        #     except:
+        #         raise IOError("Parsing error occur at <block_info_index>")
 
 
 #################################################################################
@@ -273,6 +290,13 @@ def query_region_bmat_info(bmat_file, site_index_list, genome_order_dict):
         "site_index_list": []
     }
 
+    # make init val
+    for raw_site_index in site_index_list:
+        raw_site_index_obj = siteIndex(raw_site_index)
+        query_res_dict["site_index_list"].append(raw_site_index_obj.site_index)
+        query_res_dict[raw_site_index_obj.site_index] = None
+
+    # query run
     while bmat_line != "":
         bmat_line_list = bmat_line.strip().split("\t")
         bmat_site_index = "_".join(bmat_line_list[0:3])
@@ -283,7 +307,7 @@ def query_region_bmat_info(bmat_file, site_index_list, genome_order_dict):
             query_site_num += 1
 
             # add info into dict 
-            query_res_dict["site_index_list"].append(site_index.site_index)
+            # query_res_dict["site_index_list"].append(site_index.site_index)
             query_res_dict[site_index.site_index] = bmatLine(bmat_line_list)
 
             if query_site_num >= query_total_num:
@@ -301,7 +325,7 @@ def query_region_bmat_info(bmat_file, site_index_list, genome_order_dict):
             query_site_num += 1
 
             # add info into dict 
-            query_res_dict["site_index_list"].append(site_index.site_index)
+            # query_res_dict["site_index_list"].append(site_index.site_index)
             query_res_dict[site_index.site_index] = None
 
             if query_site_num >= query_total_num:
@@ -494,24 +518,24 @@ def add_block_info_to_mpmat(
     # part I open file
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     try:
-        chr_mpmat_file = open(chr_mpmat_filename, "rb")
+        chr_mpmat_file = open(chr_mpmat_filename, "r")
 
         # open ctrl bmat file
         if (chr_bmat_ctrl_filename[-3:] == ".gz") or (chr_bmat_ctrl_filename[-5:] == ".gzip"):
-            chr_bmat_ctrl_file = gzip.open(chr_bmat_ctrl_filename, "rb")
+            chr_bmat_ctrl_file = gzip.open(chr_bmat_ctrl_filename, "r")
         else:
-            chr_bmat_ctrl_file = open(chr_bmat_ctrl_filename, "rb")
+            chr_bmat_ctrl_file = open(chr_bmat_ctrl_filename, "r")
 
         # open treat bmat file
         if (chr_bmat_treat_filename[-3:] == ".gz") or (chr_bmat_treat_filename[-5:] == ".gzip"):
-            chr_bmat_treat_file = gzip.open(chr_bmat_treat_filename, "rb")
+            chr_bmat_treat_file = gzip.open(chr_bmat_treat_filename, "r")
         else:
-            chr_bmat_treat_file = open(chr_bmat_treat_filename, "rb")
+            chr_bmat_treat_file = open(chr_bmat_treat_filename, "r")
 
         if out_chr_mpmat_filename == "stdout":
             out_chr_mpmat_file = sys.stdout
         else:
-            out_chr_mpmat_file = open(out_chr_mpmat_filename, "wb")
+            out_chr_mpmat_file = open(out_chr_mpmat_filename, "w")
     except:
         raise IOError("Load or Open files error!")
 
@@ -627,11 +651,15 @@ def add_block_info_to_mpmat(
         block_reason_list = ["None"] * mpmat_info.site_num
 
         for index in range(mpmat_info.site_num):
-            if ctrl_site_hard_filter_state[index]:
-                block_state_list[index] = True
-                # block reason: ctrl hard filter
-                block_reason_list[index] = "CHF"
-                continue
+            try:
+                if ctrl_site_hard_filter_state[index]:
+                    block_state_list[index] = True
+                    # block reason: ctrl hard filter
+                    block_reason_list[index] = "CHF"
+                    continue
+            except:
+                print(ctrl_site_hard_filter_state)
+                print(ctrl_bmat_res_dict)
 
             if binom_test_pval[index] > ctrl_binomial_cutoff_int:
                 block_state_list[index] = True
@@ -838,11 +866,8 @@ def multi_mpmat_block_site(
     # check run state
     final_run_state = 0
     for index, res in enumerate(run_return_info_list):
-        try:
-            final_run_state = res.get()
-        except IndexError:
-            logging.error("res.get error occur with %s!" % chr_name_order_list[index])
-        if final_run_state != 1:
+        run_state = res.get()
+        if run_state != 1:
             logging.error("Blocking error occur with %s!" % chr_name_order_list[index])
             if final_run_state == 0:
                 final_run_state = 1
@@ -855,3 +880,252 @@ def multi_mpmat_block_site(
         logging.error("Something wrong with block step!")
         raise RuntimeError("")
 
+
+#################################################################################
+# FUN
+#################################################################################
+def query_site_mpileup_info(site_idx_list,
+                            bam_obj,
+                            genome_obj,
+                            ignore_overlaps=True,
+                            min_base_quality=20,
+                            min_mapping_quality=20,
+                            dist_cutoff=10000):
+    """
+    INPUT
+        <site_idx_list>
+            list, format like:
+
+                ["chr1_125178576_CT", "chr1_125178578_CT", "chr1_125178580_CT", "chr1_125178588_CA"]
+
+            The site coordinate is related to the UCSC genome browser index.
+
+            Site index have to be sorted.
+
+        <bam_obj>
+            pysam.AlignmentFile() obj
+
+        <genome_obj>
+            genome obj, which is created by pysam.FastaFile()
+
+    RETURN
+        dict
+            key:
+                site_index only key chr_name and chr_pos like "chr1_125178576" rather than "chr1_125178576_CT"
+
+            value:
+                A, T, C, G, N, other count
+    """
+
+    # -------------------------------------------------------->>>>>>>>
+    # check site index list
+    # -------------------------------------------------------->>>>>>>>
+    if len(site_idx_list) == 0:
+        return None
+
+    chr_name = site_idx_list[0].split("_")[0]
+    region_start = region_end = int(site_idx_list[0].split("_")[1])
+    site_dist = 0
+
+    for site_idx in site_idx_list:
+        if site_idx.split("_")[0] != chr_name:
+            raise IOError("<site_idx_list> all site index have to on the same chromosome.")
+
+    if len(site_idx_list) >= 2:
+        region_start = int(site_idx_list[0].split("_")[1])
+        region_end = int(site_idx_list[-1].split("_")[1])
+        site_dist = region_end - region_start
+
+    if site_dist >= dist_cutoff:
+        raise IOError("<site_idx_list> mpileup region is too large, which could take a lot of time!")
+
+    # -------------------------------------------------------->>>>>>>>
+    # make raw dict
+    # -------------------------------------------------------->>>>>>>>
+    site_dict = {}
+    for site_idx in site_idx_list:
+        key = "_".join(site_idx.split("_")[:2])
+        site_dict[key] = {"A": 0, "T": 0, "C": 0, "G": 0, "N": 0, "total": 0}
+
+    # -------------------------------------------------------->>>>>>>>
+    # run mpileup
+    # -------------------------------------------------------->>>>>>>>
+    mpileup_extend_length = 10
+
+    mpileup_iter = bam_obj.pileup(chr_name,
+                                  region_start - mpileup_extend_length,
+                                  region_end + mpileup_extend_length,
+                                  fastafile=genome_obj,
+                                  ignore_overlaps=ignore_overlaps,
+                                  min_base_quality=min_base_quality,
+                                  min_mapping_quality=min_mapping_quality,
+                                  stepper="samtools")
+
+    for pileup in mpileup_iter:
+        run_index = "%s_%s" % (chr_name, pileup.reference_pos + 1)
+
+        if (pileup.reference_pos + 1) > region_end:
+            break
+
+        if site_dict.get(run_index) is not None:
+            base_list = list(map(str.upper, pileup.get_query_sequences()))
+            site_dict[run_index]["A"] = base_list.count("A")
+            site_dict[run_index]["T"] = base_list.count("T")
+            site_dict[run_index]["C"] = base_list.count("C")
+            site_dict[run_index]["G"] = base_list.count("G")
+            site_dict[run_index]["N"] = base_list.count("N")
+            site_dict[run_index]["total"] = len(base_list)
+
+    return site_dict
+
+
+#################################################################################
+# FUN
+#################################################################################
+def find_block_info_and_highest_signal(
+        mpmat_info,
+        ctrl_bam_obj,
+        treat_bam_obj,
+        ref_genome_obj,
+        block_mut_num_cutoff=2
+):
+    """
+    INPUT:
+        <ctrl_bam_obj> and <treat_bam_obj>
+            pysam.AlignmentFile obj
+
+        <ref_genome_obj>
+            pysam.Fasta obj
+
+        <mpmat_info>
+            mpmatLine obj
+
+        <block_mut_num_cutoff>
+            int, site in ctrl sample contain mutation number >= this cutoff will be blocked in the following steps
+
+    RETURN
+        <back_mpmat_line>
+            mpmatLine obj with additional features
+                1. mpmatLine.block_info_list
+                    list, contain True or False, True means need to block in the following steps.
+
+                2. mpmatLine.highest_site_dict
+                    dict, format like
+                        {'A': 0,
+                         'T': 6,
+                         'C': 96,
+                         'G': 0,
+                         'N': 0,
+                         'total': 102,
+                         'site_index': 'chr1_121885716',
+                         'full_site_index': 'chr1_121885716_CT',
+                         'mut_num': 6,
+                         'mut_ratio': 0.058823529411764705}
+
+                3. block_site_num
+                    int, count block site number
+
+    """
+
+    # init params
+    if not hasattr(mpmat_info, "block_info_list"):
+        mpmat_info.block_info_list = [False] * mpmat_info.site_num
+        mpmat_info.block_site_num = 0
+
+    mut_type_base = mpmat_info.mut_type[1]
+
+    highest_treat_mut_site_dict = {
+        "A": 0,
+        "T": 0,
+        "G": 0,
+        "C": 0,
+        "N": 0,
+        "total": 0,
+        "site_index": "",
+        "full_site_index": "",
+        "mut_num": 0,
+        "mut_ratio": 0,
+        "run_state": False
+    }
+
+    # query ctrl and treat pileup info
+    collect_ctrl_site_cover_dict = query_site_mpileup_info(site_idx_list=mpmat_info.site_index_list,
+                                                           bam_obj=ctrl_bam_obj,
+                                                           genome_obj=ref_genome_obj,
+                                                           ignore_overlaps=True,
+                                                           min_base_quality=20,
+                                                           min_mapping_quality=20,
+                                                           dist_cutoff=10000)
+
+    collect_treat_site_cover_dict = query_site_mpileup_info(site_idx_list=mpmat_info.site_index_list,
+                                                            bam_obj=treat_bam_obj,
+                                                            genome_obj=ref_genome_obj,
+                                                            ignore_overlaps=True,
+                                                            min_base_quality=20,
+                                                            min_mapping_quality=20,
+                                                            dist_cutoff=10000)
+
+    # add block info and find highest signal
+    for run_idx, full_site_index in enumerate(mpmat_info.site_index_list):
+        if mpmat_info.SNP_ann_list[run_idx]:
+            mpmat_info.block_info_list[run_idx] = True
+            continue
+
+        # fix site index
+        site_index = "_".join(full_site_index.split("_")[:2])
+
+        # query site cover in ctrl sample
+        ctrl_site_cover_dict = collect_ctrl_site_cover_dict.get(site_index)
+
+        if ctrl_site_cover_dict is not None:
+            ctrl_site_mut_num = ctrl_site_cover_dict.get(mut_type_base)
+        else:
+            continue
+
+        if ctrl_site_mut_num is None:
+            continue
+
+        if ctrl_site_mut_num >= block_mut_num_cutoff:
+            mpmat_info.block_info_list[run_idx] = True
+
+        if not mpmat_info.block_info_list[run_idx]:
+            treat_site_cover_dict = collect_treat_site_cover_dict.get(site_index)
+            if not highest_treat_mut_site_dict["run_state"]:
+                highest_treat_mut_site_dict = treat_site_cover_dict.copy()
+                highest_treat_mut_site_dict["site_index"] = site_index
+                highest_treat_mut_site_dict["full_site_index"] = full_site_index
+                highest_treat_mut_site_dict["run_state"] = True
+
+            if treat_site_cover_dict[mut_type_base] > highest_treat_mut_site_dict[mut_type_base]:
+                highest_treat_mut_site_dict = treat_site_cover_dict.copy()
+                highest_treat_mut_site_dict["site_index"] = site_index
+                highest_treat_mut_site_dict["full_site_index"] = full_site_index
+                highest_treat_mut_site_dict["run_state"] = True
+
+    # calculate highest info and signal
+    if highest_treat_mut_site_dict["total"] > 0:
+        highest_treat_mut_site_dict["mut_num"] = highest_treat_mut_site_dict[mut_type_base]
+        highest_treat_mut_site_dict["mut_ratio"] = highest_treat_mut_site_dict["mut_num"] / 1.0 / highest_treat_mut_site_dict["total"]
+    else:
+        highest_treat_mut_site_dict["mut_num"] = 0
+        highest_treat_mut_site_dict["mut_ratio"] = 0.0
+        highest_treat_mut_site_dict["run_state"] = False
+
+    # add dict into mpmat info
+    mpmat_info.highest_site_dict = highest_treat_mut_site_dict.copy()
+
+    # fix mut_key_list
+    for index, site_index in enumerate(mpmat_info.site_index_list):
+        if mpmat_info.block_info_list[index]:
+            mpmat_info.mut_key_list[index] = "B"
+
+        if mpmat_info.SNP_ann_list[index]:
+            mpmat_info.mut_key_list[index] = "S"
+
+    # fix mut_key
+    mpmat_info.mut_key = "-".join(mpmat_info.mut_key_list)
+
+    # add block_site_num
+    mpmat_info.block_site_num = mpmat_info.block_info_list.count(True)
+
+    return mpmat_info

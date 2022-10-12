@@ -1,4 +1,4 @@
-#! /Users/meng/menghw_HD/anaconda2/bin/python
+#! /gpfs/user/menghaowei/anaconda2/bin/python
 # _*_ coding: UTF-8 _*_
 
 
@@ -85,9 +85,10 @@ def parse_line(Line,inlike_bed=False):
         else:
             if base_dict[base_key] >  mut_num:
                 mut_base = base_key
-                mut_num =  base_dict[base_key]
+                mut_num = base_dict[base_key]
     
     return([ref_base, ref_num, mut_base, mut_num])
+
 
 ###############################################################################
 # read parameters
@@ -189,10 +190,7 @@ if __name__ == '__main__':
     # run part
     for line in INPUT_FILE:
         line_list = line.strip().split("\t")
-        try:
-            ref_base, ref_num, mut_base, mut_num = parse_line(line, inlike_bed = IF_LIKE_BED)
-        except ValueError:
-            continue
+        ref_base, ref_num, mut_base, mut_num = parse_line(line, inlike_bed = IF_LIKE_BED)
         cover_num = ref_num + mut_num
 
         if cover_num > 0:

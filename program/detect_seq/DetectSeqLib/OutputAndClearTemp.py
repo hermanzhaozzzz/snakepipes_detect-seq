@@ -72,7 +72,7 @@ def merge_split_files(split_file_dict,
     if out_filename == "stdout":
         out_file = sys.stdout
     else:
-        out_file = open(out_filename, "wb")
+        out_file = open(out_filename, "w")
 
     # init vars
     ignore_key_list = ["chr_name_order"]
@@ -92,7 +92,7 @@ def merge_split_files(split_file_dict,
         if run_key not in ignore_key_list:
             logging.debug("Merging files, processing on \n\t%s" % split_file_dict[run_key])
 
-            with open(split_file_dict[run_key], "rb") as run_file:
+            with open(split_file_dict[run_key], "r") as run_file:
                 for line in run_file:
                     if in_sep != out_sep:
                         line_list = line.strip().split(in_sep)

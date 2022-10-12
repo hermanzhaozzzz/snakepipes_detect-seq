@@ -3,14 +3,13 @@
 
 import argparse
 
-from DetectSeqLib_V2.CalculateBackground import *
-from DetectSeqLib_V2.CheckAndLoadFiles import *
-from DetectSeqLib_V2.OutputAndClearTemp import *
-from DetectSeqLib_V2.RegionStatsTest import *
+from DetectSeqLib.CalculateBackground import *
+from DetectSeqLib.CheckAndLoadFiles import *
+from DetectSeqLib.OutputAndClearTemp import *
+from DetectSeqLib.RegionStatsTest import *
 
 # Version information START --------------------------------------------------
-VERSION_INFO = \
-"""
+VERSION_INFO = """
 Author: MENG Howard
 
 Version-01:
@@ -45,15 +44,28 @@ Version-05:
         Update code to a new version, this code could analyze CBE, ABE, GBE, PE, DdCBE data...
         
         Fix small bugs and can run from mpmat file with block-info
-            
+        
+Version-06
+    2021-02-13
+        Update new method, compare directly without sequencing depth normalization
+    
+Version-07
+    2022-01-06
+        Add filter by mpmat SNV/SNP info
+
+Version-08
+    2022-07-30
+        1. add block function
+        2. output with highest signal site
+        3. output with site index and block info
+        
 E-Mail: meng_howard@126.com
 """
 # Version information END ----------------------------------------------------
 
 
 # Learning Part START --------------------------------------------------------
-LEARNING_PART = \
-"""
+LEARNING_PART = """
 Design pipeline:
 
 Input:
@@ -104,10 +116,7 @@ def _log_cmd_str(args):
     --keep_temp_file {keep_temp_file}
     --mpmat_filter_info_col_index {mpmat_filter_info_col_index}
     --mpmat_block_info_col_index {mpmat_block_info_col_index}
-    --region_block_site_min_num_cutoff {region_block_site_min_num_cutoff}
-    --region_block_num_ratio_cutoff {region_block_num_ratio_cutoff}
-    --region_block_num_ratio_check_min_num {region_block_num_ratio_check_min_num}
-    --region_block_num_max_num_cutoff {region_block_num_max_num_cutoff}
+    --region_block_mut_num_cutoff {region_block_mut_num_cutoff}
     --query_mut_min_cutoff {query_mut_min_cutoff}
     --query_mut_max_cutoff {query_mut_max_cutoff}
     --total_mut_max_cutoff {total_mut_max_cutoff}
@@ -128,10 +137,7 @@ def _log_cmd_str(args):
         keep_temp_file=args.keep_temp_file,
         mpmat_filter_info_col_index=args.mpmat_filter_info_col_index,
         mpmat_block_info_col_index=args.mpmat_block_info_col_index,
-        region_block_site_min_num_cutoff=args.region_block_site_min_num_cutoff,
-        region_block_num_ratio_cutoff=args.region_block_num_ratio_cutoff,
-        region_block_num_ratio_check_min_num=args.region_block_num_ratio_check_min_num,
-        region_block_num_max_num_cutoff=args.region_block_num_max_num_cutoff,
+        region_block_mut_num_cutoff=args.region_block_mut_num_cutoff,
         query_mut_min_cutoff=args.query_mut_min_cutoff,
         query_mut_max_cutoff=args.query_mut_max_cutoff,
         total_mut_max_cutoff=args.total_mut_max_cutoff,
@@ -247,6 +253,16 @@ header_list = [
     "chr_name",
     "region_start",
     "region_end",
+    "mpmat_index",
+    "region_site_num",
+    "region_block_site_num",
+    "region_mut_site_num",
+    "region_site_index",
+    "region_block_state",
+    "region_highest_site_index",
+    "region_highest_site_mut_num",
+    "region_highest_site_cover_num",
+    "region_highest_site_mut_ratio",
     "ctrl_count",
     "treat_count",
     "ctrl_mut_count",
@@ -279,7 +295,8 @@ if __name__ == '__main__':
                         required=True)
 
     parser.add_argument("-o", "--output",
-                        help="Output Poisson test result, default=poisson_output.tsv", default="./poisson_output.tsv", type=str)
+                        help="Output Poisson test result, default=poisson_output.tsv", default="./poisson_output.tsv",
+                        type=str)
 
     parser.add_argument("-c", "--ctrl_BAM",
                         help="Control BAM file", required=True)
@@ -313,31 +330,16 @@ if __name__ == '__main__':
                         default=-1, type=int)
 
     parser.add_argument("--mpmat_block_info_col_index",
-                        help="Column index for region block info, -1 means no such info. Default=14.",
-                        default=14, type=int)
+                        help="Column index for region block info, -1 means no such info. Default=-1.",
+                        default=-1, type=int)
 
     # ==========================================================================================>>>>>
     # mpmat region block filter
     # ==========================================================================================>>>>>
-    parser.add_argument("--region_block_site_min_num_cutoff",
-                        help="A mpmat filter cutoff. If a mpmat region contains non-blocked mutation sites no larger than this cutoff"
-                             " will not run Poisson test. Default=1",
-                        default=1, type=int)
-
-    parser.add_argument("--region_block_num_ratio_cutoff",
-                        help="A mpmat filter cutoff. If a mpmat region contains blocked sites ratio no less than this cutoff"
-                             " will not run Poisson test. Default=0.8",
-                        default=0.8, type=float)
-
-    parser.add_argument("--region_block_num_ratio_check_min_num",
-                        help="A mpmat filter cutoff. Company with <region_block_num_ratio_cutoff> only mutation site larger"
-                             "than this cutoff will consider <region_block_num_ratio_cutoff> filter. Default=5",
-                        default=0.8, type=float)
-
-    parser.add_argument("--region_block_num_max_num_cutoff",
-                        help="A mpmat filter cutoff. If a mpmat region contains blocked mutation sites larger than this cutoff"
-                             " will not run Poisson test. Default=15, higher block sites often occur in genome repetitive region.",
-                        default=15, type=int)
+    parser.add_argument("--region_block_mut_num_cutoff",
+                        help="Site filter cutoff, if a site has a mutation signal >= this cutoff in ctrl sample, "
+                             "the site will be blocked in the downstream analysis. Default=2",
+                        default=2, type=int)
 
     # ==========================================================================================>>>>>
     # Poisson test params
@@ -367,11 +369,12 @@ if __name__ == '__main__':
                         default=150, type=int)
 
     parser.add_argument("--scale_reads_count",
-                        help="Scaled final output region signal, default=1e6 Usually, default=1e6, means CPM",
+                        help="Scaled final output region signal, default=1000000 Usually, default=1e6, means CPM",
                         default=int(1e6), type=int)
 
     parser.add_argument("--lambda_method",
-                        help="Can be set as 'ctrl_max', 'treat_max', 'max', default=ctrl_max", default="ctrl_max")
+                        help="Can be set as 'ctrl_max', 'treat_max', 'max', 'raw', default=ctrl_max",
+                        default="ctrl_max")
 
     parser.add_argument("--poisson_method",
                         help="Can be set as 'mutation' OR 'all', default=mutation. "
@@ -410,8 +413,8 @@ if __name__ == '__main__':
                         stream=sys.stderr,
                         filemode="w")
 
-    if ARGS.mpmat_block_info_col_index != 14:
-        logging.warning("mpmat file block col index not set as default! That is abnormal!")
+    # if ARGS.mpmat_block_info_col_index != 14:
+    #     logging.warning("mpmat file block col index not set as default!")
 
     # ---------------------------------------------------------------------------->>>>>>>>>>
     # Part I split mpmat
@@ -499,10 +502,7 @@ if __name__ == '__main__':
         poisson_method=ARGS.poisson_method,
         log_verbose=ARGS.verbose,
         thread=ARGS.thread,
-        region_block_site_min_num_cutoff=ARGS.region_block_site_min_num_cutoff,
-        region_block_num_ratio_cutoff=ARGS.region_block_num_ratio_cutoff,
-        region_block_num_ratio_check_min_num=ARGS.region_block_num_ratio_check_min_num,
-        region_block_num_max_num_cutoff=ARGS.region_block_num_max_num_cutoff,
+        region_block_mut_num_cutoff=ARGS.region_block_mut_num_cutoff,
         reads_query_mut_min_cutoff=ARGS.query_mut_min_cutoff,
         reads_query_mut_max_cutoff=ARGS.query_mut_max_cutoff,
         reads_total_mut_max_cutoff=ARGS.total_mut_max_cutoff,
@@ -523,11 +523,12 @@ if __name__ == '__main__':
                                                    out_filename=ARGS.output + ".NoFDR",
                                                    header_list=None,
                                                    in_sep="\t", out_sep="\t",
-                                                   log_verbose=ARGS.verbose, return_col_index=-1)
+                                                   log_verbose=ARGS.verbose,
+                                                   return_col_index=-1)
 
     sys.stderr.write("-" * 80 + "\n")
     logging.info("Calculating FDR value and make final output table...")
-    
+
     # change pval into float
     pval_list = []
     for pval_str in pval_list_str:
@@ -540,10 +541,10 @@ if __name__ == '__main__':
     qval_list = make_qvalue_with_BH_method(pval_list)
 
     # make final output
-    final_out_file = open(ARGS.output, "wb")
+    final_out_file = open(ARGS.output, "wt")
     final_out_file.write("\t".join(header_list) + "\n")
 
-    with open(meta_dict["filename"]["Poisson_out_merge_NoFDR"], "rb") as no_fdr_file:
+    with open(meta_dict["filename"]["Poisson_out_merge_NoFDR"], "rt") as no_fdr_file:
         for index, line in enumerate(no_fdr_file):
             line_list = line.strip().split("\t")
             line_list.append(str(qval_list[index]))
@@ -574,7 +575,7 @@ if __name__ == '__main__':
         logging.info("Removing Poisson test raw file...")
         try:
             os.remove(meta_dict["filename"]["Poisson_out_merge_NoFDR"])
-        except:
+        except Warning as w:
             logging.warning("Removing file error: \n\t%s" % meta_dict["filename"]["Poisson_out_merge_NoFDR"])
 
     logging.info("Everything done!")
