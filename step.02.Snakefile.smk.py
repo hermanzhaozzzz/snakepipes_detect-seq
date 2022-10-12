@@ -142,8 +142,8 @@ rule hisat3n:
         "../fastq_temp/{sample}_%s.fastq.gz" % READ[0]
     output:
         sam=temp("../bam/{sample}_hisat3n.sam"),
-        unmapped_fq1="../fastq_temp/{sample}_unmapped.fastq.1.gz",
-        unmapped_fq2="../fastq_temp/{sample}_unmapped.fastq.2.gz",
+        unmapped_fq1=temp("../fastq_temp/{sample}_unmapped.fastq.1.gz"),
+        unmapped_fq2=temp("../fastq_temp/{sample}_unmapped.fastq.2.gz"),
     params:
         SE="../fastq_temp/{sample}_SE.fastq.gz",
         R1="../fastq_temp/{sample}_R1.fastq.gz",
@@ -188,7 +188,7 @@ rule hisat3n:
         """
 rule sam2bam:
     input: "../bam/{sample}_hisat3n.sam"
-    output: "../bam/{sample}_hisat3n.bam"
+    output: temp("../bam/{sample}_hisat3n.bam")
     shell: "{SAMTOOLS} view -@ {THREAD} -Shb {input} > {output}"
 # ------------------------------------------------------------------->>>>>>>>>>
 # rule filter_low_mapq_reads
@@ -226,8 +226,8 @@ rule low_mapq_reads_sortn:
 rule fetch_low_mapq_reads_from_bam:
     input: "../bam/{sample}_hisat3n.LowerMAPQ20.sortn.bam"
     output:
-        R1="../fastq_temp/{sample}_low_mapq_R1.fastq.gz",
-        R2="../fastq_temp/{sample}_low_mapq_R2.fastq.gz"
+        R1=temp("../fastq_temp/{sample}_low_mapq_R1.fastq.gz"),
+        R2=temp("../fastq_temp/{sample}_low_mapq_R2.fastq.gz")
     params:
         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
     shell:
@@ -246,8 +246,8 @@ rule merge_unmapped_and_lowmapq_reads:
         lowmapq_fq1="../fastq_temp/{sample}_low_mapq_R1.fastq.gz",
         lowmapq_fq2="../fastq_temp/{sample}_low_mapq_R2.fastq.gz"
     output:
-        R1="../fastq_temp/{sample}_unmapped_plus_lowmapq_R1.fastq.gz",
-        R2="../fastq_temp/{sample}_unmapped_plus_lowmapq_R2.fastq.gz"
+        R1=temp("../fastq_temp/{sample}_unmapped_plus_lowmapq_R1.fastq.gz"),
+        R2=temp("../fastq_temp/{sample}_unmapped_plus_lowmapq_R2.fastq.gz")
     params:
         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
     shell:
@@ -278,7 +278,7 @@ rule remap_unmapped_and_lowmapq_reads:
         """
 rule sam2bam_2:
     input: "../bam/{sample}_remapped.sam"
-    output: "../bam/{sample}_remapped.bam"
+    output: temp("../bam/{sample}_remapped.bam")
     shell: "{SAMTOOLS} view -@ {THREAD} -Shb {input} > {output}"
 
 # ------------------------------------------------------------------->>>>>>>>>>
@@ -304,19 +304,18 @@ rule merge_bams:
 # ------------------------------------------------------------------->>>>>>>>>>
 rule sort_bam:
     input: "../bam/{sample}_merged.bam"
-    output: "../bam/{sample}_merged_sorted.bam"
+    output: temp("../bam/{sample}_merged_sorted.bam")
     shell: 
         """
         mkdir -p ../temp_file
         {SAMTOOLS} sort -O BAM -o {output} -T ../temp_file -@ {THREAD} {input}
-            # -m 2G \
         """
 # ------------------------------------------------------------------->>>>>>>>>>
 # filter clip, non-concordant reads, low MAPQ reads and secondary alignment
 # ------------------------------------------------------------------->>>>>>>>>>
 rule filter_bam:
     input: "../bam/{sample}_merged_sorted.bam"
-    output: "../bam/{sample}_merged_sorted_filter.bam"
+    output: temp("../bam/{sample}_merged_sorted_filter.bam")
     params:
         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai',
         awk="""'function abs(v) {return v < 0 ? -v : v} $1~"@" || ($7 == "=" && abs($9) <= 2500 ) {print $0}'"""
