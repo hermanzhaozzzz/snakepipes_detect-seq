@@ -1,3 +1,10 @@
+# snakepipes_detect-seq
+
+## envs
+```shell
+conda install pysam pysamstats
+```
+
 # conda environment setting
 ```
 mamba create -n snakepipes_detect-seq python=2.7 bedtools=2.27 samtools biopython=1.72 pysam statsmodels pandas
