@@ -2,7 +2,7 @@
 
 ## envs
 ```shell
-conda install pysam pysamstats
+conda install python=3.10 pysam pysamstats biopython
 ```
 
 # conda environment setting
