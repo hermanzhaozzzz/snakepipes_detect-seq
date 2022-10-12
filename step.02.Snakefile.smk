@@ -375,7 +375,7 @@ rule bam2pmat:
             --out_format pmat \
             --bed_like_format True \
             --mut_type ALL \
-            --block_size 20000000 \
+            --block_size 1000000 \
             --cover_num_cutoff 0 \
             --mut_num_cutoff 0 \
             --mut_ratio_cutoff 0 \
