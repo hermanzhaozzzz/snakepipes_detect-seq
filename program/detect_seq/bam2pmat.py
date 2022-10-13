@@ -1,12 +1,23 @@
 """
-Fix log by ZHAO Hua-nan
-2022-10-11: out_filename: 
-    # old
-    out_file = open(out_filename, "wt")
-    # new
-    out_file = open(out_filename, "wt") if '.gz' not in out_filename else gzip.open(out_filename, "wt")
-"""
+# Authors
+- Original program by MENG Haowei
+    - E-Mail: menghaowei@pku.edu.cn
+- Refactor by ZHAO Hua-nan
+    - E-Mail: hermanzhaozzzz@gmail.com
+# Debug logs:
+- 2022-10-12: refactor all the codes
 
+---
+
+# output info
+Pmat is a TAB separate file, like:
+
+```text
+<chr_name> <chr_index> <site_index> <A> <G> <T> <C> <type> <ref_base> <mut_base> <ref_num> <mut_num> <cover_num> <mut_ratio>
+chr1    54795   54795   chr1_54795_TC   1   0   2   6   TC  T   C   6   2   8   0.25
+```
+"""
+import time
 import argparse
 import pysam
 import pysamstats
@@ -18,52 +29,155 @@ import multiprocessing
 import logging
 import sys
 import gzip
-
-# Version information START --------------------------------------------------
-VERSION_INFO = """
-Author: MENG Howard
-
-Version-01:
-    2022-07-24
-        From bam to count info like .pmat / .bmat file
-        
-E-Mail: menghaowei@pku.edu.cn
-"""
-# Version information END ----------------------------------------------------
+from functools import wraps
 
 
-# Learning Part START --------------------------------------------------------
-LEARNING_PART = """
-output pmat format like
+def load_args():
+    parser = argparse.ArgumentParser(
+        description="convert bam file to bmat / pmat file")
 
-<chr_name> <chr_index> <site_index> <A> <G> <T> <C> <type> <ref_base> <mut_base> <ref_num> <mut_num> <cover_num> <mut_ratio>
-chr1    54795   54795   chr1_54795_TC   1   0   2   6   TC  T   C   6   2   8   0.25
+    parser.add_argument(
+        "-i",
+        "--input_bam",
+        help="Input bam file, sorted and indexed",
+        required=True)
 
-TAB separate
-"""
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="Output filename, default=out.pmat",
+        default="out.pmat")
+
+    parser.add_argument("-r", "--reference",
+                        help="Genome FASTA file", required=True)
+
+    parser.add_argument(
+        "-p",
+        "--threads",
+        help="multiple threads number, default=1",
+        default=1,
+        type=int)
+
+    parser.add_argument("--out_format",
+                        help="bmat or pmat, default=pmat", default="pmat")
+
+    parser.add_argument(
+        "--bed_like_format",
+        help="The first 3 cols is chr_name, chr_index, chr_index, default=True",
+        type=bool,
+        default=True)
+
+    parser.add_argument(
+        "--block_size",
+        help="Genome block size, larger block size means more memory requirement. "
+             "default=100000 this value needs ~700MB memory for each thread.",
+        default=100000,
+        type=int)
+
+    # ==========================================================================================>>>>>
+    # count part
+    # ==========================================================================================>>>>>
+    parser.add_argument(
+        "--mapq_cutoff",
+        help="MAPQ >= this cutoff will be kept. Default=20",
+        default=20,
+        type=int)
+
+    parser.add_argument(
+        "--base_cutoff",
+        help="Sequencing base quality cutoff. Default=20",
+        default=20,
+        type=int)
+
+    parser.add_argument(
+        "--max_depth",
+        help="Max depth for each position. Default=8000",
+        default=8000,
+        type=int)
+
+    parser.add_argument(
+        "--every_position",
+        help="Set True means output every position in whole genome. Default=False",
+        type=bool,
+        default=False)
+
+    # ==========================================================================================>>>>>
+    # out filter part
+    # ==========================================================================================>>>>>
+    parser.add_argument(
+        "--cover_num_cutoff",
+        help="Only for pmat, site coverage number cutoff default=0",
+        default=0,
+        type=int)
+
+    parser.add_argument(
+        "--mut_num_cutoff",
+        help="Only for pmat, site mutation number cutoff default=0",
+        default=0,
+        type=int)
+
+    parser.add_argument(
+        "--mut_ratio_cutoff",
+        help="Only for pmat, site mutation ratio cutoff default=0",
+        default=0.0,
+        type=float)
+
+    parser.add_argument(
+        "--mut_type",
+        help="Only for pmat, select mutation type, ALL means no selection, "
+             "can set like CT, default output all info",
+        default="ALL")
+
+    parser.add_argument(
+        "--out_header",
+        help="If contain header line in output file, default=True",
+        type=bool,
+        default=True)
+
+    parser.add_argument(
+        "--keep_temp_file",
+        help="If keep temp files, default=False",
+        type=bool,
+        default=False)
+
+    parser.add_argument(
+        "--temp_dir",
+        help="Path of temp files, default=dirname of output",
+        type=str,
+        default=None)
+
+    parser.add_argument(
+        "--verbose",
+        help="Larger number means out more log info, can be 0,1,2,3 default=3",
+        default=3,
+        type=int)
+
+    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
+    # load args
+    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
+    return parser.parse_args()
 
 
-# Learning Part END-----------------------------------------------------------
+def timeit(func):
+    def wrapper(*args, **kwargs):
+        name = func
+        for attr in ('__qualname__', '__name__'):
+            if hasattr(func, attr):
+                name = getattr(func, attr)
+                break
+
+        print("Start call: {}".format(name))
+        now = time.time()
+        result = func(*args, **kwargs)
+        using = (time.time() - now) * 1000
+        msg = "End call {}, using: {:.1f}ms".format(name, using)
+        print(msg)
+        return result
+
+    return wrapper
 
 
-############################################################################################
-# FUN Part
-############################################################################################
-def _log_cmd_str(args):
-    """
-    INPUT:
-        <args>
-            obj, argparse obj
-
-    RETURN:
-        <full_cmd_str>
-            str, record full command str info
-    """
-    pass
-
-    return full_cmd_str
-
-
+@timeit
 def get_bmat_info(row_info, bed_like_format=True):
     """
     INPUT:
@@ -231,7 +345,8 @@ def get_BAM_ref_length(bam_filename):
             return ref name list, which contain more than ref_count_cutoff mapped reads
 
     """
-    bam_file = pysam.AlignmentFile(bam_filename, "r")
+    bam_file = pysam.AlignmentFile(
+        bam_filename, "r", threads=os.cpu_count() - 1)
     ref_dict = {
         "key_order": []
     }
@@ -248,7 +363,11 @@ def get_BAM_ref_length(bam_filename):
     return ref_dict
 
 
-def split_genome_into_bin_list(ref_genome_len_dict, exclude_chr_list=(), binsize=20000000):
+@timeit
+def split_genome_into_bin_list(
+        ref_genome_len_dict,
+        exclude_chr_list=(),
+        binsize=20000000):
     """
     INPUT:
         <ref_genome_len_dict>
@@ -295,6 +414,7 @@ def split_genome_into_bin_list(ref_genome_len_dict, exclude_chr_list=(), binsize
     return ref_genome_bin_list
 
 
+@timeit
 def generate_temp_filename(genome_bin_list, temp_dir="."):
     """
     INPUT:
@@ -323,7 +443,8 @@ def generate_temp_filename(genome_bin_list, temp_dir="."):
 
     return file_dict
 
-
+# TODO
+#  这个函数需要优化性能
 def convert_BAM_to_count_info(
         bam_filename,
         ref_fa_filename,
@@ -378,7 +499,7 @@ def convert_BAM_to_count_info(
     """
 
     # open bam file and ref fasta
-    load_bam_obj = pysam.AlignmentFile(bam_filename, "r")
+    load_bam_obj = pysam.AlignmentFile(bam_filename, "rb")
     load_ref_fa = pysam.Fastafile(ref_fa_filename)
 
     temp_count_res = pysamstats.load_variation(alignmentfile=load_bam_obj,
@@ -392,12 +513,11 @@ def convert_BAM_to_count_info(
                                                min_mapq=mapq_cutoff,
                                                min_baseq=base_cutoff,
                                                pad=every_pos_base)
-
     temp_count_df = pd.DataFrame(temp_count_res)
-
-    # decoding with UTF-8
-    temp_count_df['chrom'] = temp_count_df['chrom'].apply(lambda s: s.decode('utf-8'))
-    temp_count_df['ref'] = temp_count_df['ref'].apply(lambda s: s.decode('utf-8'))
+    temp_count_df['chrom'] = temp_count_df['chrom'].apply(
+        lambda s: s.decode('utf-8'))
+    temp_count_df['ref'] = temp_count_df['ref'].apply(
+        lambda s: s.decode('utf-8'))
 
     if out_format == "bmat":
         temp_out_df = temp_count_df.apply(
@@ -440,7 +560,9 @@ def convert_BAM_to_count_info(
             "mut_ratio"
         ]
 
-        temp_out_df = temp_count_df.apply(lambda x: get_pmat_info(x, bed_like_format=bed_like_format), axis=1)
+        temp_out_df = temp_count_df.apply(
+            lambda x: get_pmat_info(
+                x, bed_like_format=bed_like_format), axis=1)
 
         if bed_like_format:
             temp_out_df = temp_out_df.apply(pd.Series, index=header_like_bed)
@@ -452,18 +574,24 @@ def convert_BAM_to_count_info(
             temp_out_df = temp_out_df.loc[temp_out_df["mut_type"] == mut_type]
 
         # filter cutoff
-        if (mut_num_cutoff > 0) or (mut_ratio_cutoff > 0) or (cover_num_cutoff > 0):
+        if (mut_num_cutoff > 0) or (
+                mut_ratio_cutoff > 0) or (cover_num_cutoff > 0):
             temp_out_df = temp_out_df.loc[
                 (temp_out_df["cover_num"] >= cover_num_cutoff) &
                 (temp_out_df["mut_num"] >= mut_num_cutoff) &
                 (temp_out_df["mut_ratio"] >= mut_ratio_cutoff)
-            ]
+                ]
 
     else:
         raise IOError("out_format is wrong! FUN: convert_BAM_to_count_info")
 
     # output
-    temp_out_df.to_csv(path_or_buf=out_filename, sep="\t", header=False, index=False, encoding="utf-8")
+    temp_out_df.to_csv(
+        path_or_buf=out_filename,
+        sep="\t",
+        header=False,
+        index=False,
+        encoding="utf-8")
 
     # delete
     del temp_out_df
@@ -475,6 +603,7 @@ def convert_BAM_to_count_info(
     return 0
 
 
+@timeit
 def merge_split_files(input_bin_list,
                       temp_file_dict,
                       out_filename="stdout",
@@ -542,7 +671,11 @@ def merge_split_files(input_bin_list,
     if out_filename == "stdout":
         out_file = sys.stdout
     else:
-        out_file = open(out_filename, "wt") if '.gz' not in out_filename else gzip.open(out_filename, "wt")
+        out_file = open(
+            out_filename,
+            "wt") if '.gz' not in out_filename else gzip.open(
+            out_filename,
+            "wt")
 
     # header output
     if header_list is not None:
@@ -560,7 +693,9 @@ def merge_split_files(input_bin_list,
             raise IOError("merge temp file error!")
 
         # merge step
-        logging.debug("Merging files, processing on \n\t%s" % run_temp_filename)
+        logging.debug(
+            "Merging files, processing on \n\t%s" %
+            run_temp_filename)
 
         with open(run_temp_filename, "r") as run_file:
             for line in run_file:
@@ -581,6 +716,7 @@ def merge_split_files(input_bin_list,
     return 0
 
 
+@timeit
 def clear_temp_files_by_dict(temp_file_dict, log_verbose=3):
     """
     INPUT:
@@ -616,13 +752,15 @@ def clear_temp_files_by_dict(temp_file_dict, log_verbose=3):
     run_state = 0
 
     for run_key in temp_file_dict.keys():
-        if type(temp_file_dict[run_key]) is str:
+        if isinstance(temp_file_dict[run_key], str):
             if os.path.exists(temp_file_dict[run_key]):
                 if os.path.isfile(temp_file_dict[run_key]):
                     try:
                         os.remove(temp_file_dict[run_key])
-                    except:
-                        logging.error("Removing error on \n\t%s" % temp_file_dict[run_key])
+                    except BaseException:
+                        logging.error(
+                            "Removing error on \n\t%s" %
+                            temp_file_dict[run_key])
                         run_state = 1
 
     return run_state
@@ -630,127 +768,80 @@ def clear_temp_files_by_dict(temp_file_dict, log_verbose=3):
 
 # define header info
 header_pmat_list = [
-    "chr_name", "chr_index", "site_index", "A", "G", "C", "T",
-    "mut_type", "ref_base", "mut_base", "ref_num", "mut_num", "cover_num", "mut_ratio"
-]
+    "chr_name",
+    "chr_index",
+    "site_index",
+    "A",
+    "G",
+    "C",
+    "T",
+    "mut_type",
+    "ref_base",
+    "mut_base",
+    "ref_num",
+    "mut_num",
+    "cover_num",
+    "mut_ratio"]
 
 header_pmat_bed_list = [
-    "chr_name", "chr_index", "chr_index2", "site_index", "A", "G", "C", "T",
-    "mut_type", "ref_base", "mut_base", "ref_num", "mut_num", "cover_num", "mut_ratio"
-]
+    "chr_name",
+    "chr_index",
+    "chr_index2",
+    "site_index",
+    "A",
+    "G",
+    "C",
+    "T",
+    "mut_type",
+    "ref_base",
+    "mut_base",
+    "ref_num",
+    "mut_num",
+    "cover_num",
+    "mut_ratio"]
 
 header_bmat_list = [
-    "chr_name", "chr_index", "ref_base", "A", "G", "C", "T",
-    "del_count", "insert_count", "ambiguous_count", "deletion",  "insertion", "ambiguous",  "mut_num"
-]
+    "chr_name",
+    "chr_index",
+    "ref_base",
+    "A",
+    "G",
+    "C",
+    "T",
+    "del_count",
+    "insert_count",
+    "ambiguous_count",
+    "deletion",
+    "insertion",
+    "ambiguous",
+    "mut_num"]
 
 header_bmat_bed_list = [
-    "chr_name", "chr_index", "ref_base", "A", "G", "C", "T",
-    "del_count", "insert_count", "ambiguous_count", "deletion",  "insertion", "ambiguous",  "mut_num"
-]
+    "chr_name",
+    "chr_index",
+    "ref_base",
+    "A",
+    "G",
+    "C",
+    "T",
+    "del_count",
+    "insert_count",
+    "ambiguous_count",
+    "deletion",
+    "insertion",
+    "ambiguous",
+    "mut_num"]
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="convert bam file to bmat / pmat file")
-
-    parser.add_argument("-i", "--input_bam",
-                        help="Input bam file, sorted and indexed", required=True)
-
-    parser.add_argument("-o", "--output",
-                        help="Output filename, default=out.pmat", default="out.pmat")
-
-    parser.add_argument("-r", "--reference",
-                        help="Genome FASTA file", required=True)
-
-    parser.add_argument("-p", "--threads",
-                        help="multiple threads number, default=1", default=1, type=int)
-
-    parser.add_argument("--out_format",
-                        help="bmat or pmat, default=pmat", default="pmat")
-
-    parser.add_argument("--bed_like_format",
-                        help="The first 3 cols is chr_name, chr_index, chr_index, default=True", default="True")
-
-    parser.add_argument("--block_size",
-                        help="Genome block size, larger block size means more memory requirement. "
-                             "default=100000 this value needs ~700MB memory for each thread.",
-                        default=100000, type=int)
-
-    # ==========================================================================================>>>>>
-    # count part
-    # ==========================================================================================>>>>>
-    parser.add_argument("--mapq_cutoff",
-                        help="MAPQ >= this cutoff will be kept. Default=20", default=20, type=int)
-
-    parser.add_argument("--base_cutoff",
-                        help="Sequencing base quality cutoff. Default=20", default=20, type=int)
-
-    parser.add_argument("--max_depth",
-                        help="Max depth for each position. Default=8000", default=8000, type=int)
-
-    parser.add_argument("--every_position",
-                        help="Set True means output every position in whole genome. Default=False",
-                        default="False")
-
-    # ==========================================================================================>>>>>
-    # out filter part
-    # ==========================================================================================>>>>>
-    parser.add_argument("--cover_num_cutoff",
-                        help="Only for pmat, site coverage number cutoff default=0", default=0, type=int)
-
-    parser.add_argument("--mut_num_cutoff",
-                        help="Only for pmat, site mutation number cutoff default=0", default=0, type=int)
-
-    parser.add_argument("--mut_ratio_cutoff",
-                        help="Only for pmat, site mutation ratio cutoff default=0", default=0.0, type=float)
-
-    parser.add_argument("--mut_type",
-                        help="Only for pmat, select mutation type, ALL means no selection, "
-                             "can set like CT, default output all info",
-                        default="ALL")
-
-    parser.add_argument("--out_header",
-                        help="If contain header line in output file, default=True", default="True")
-
-    parser.add_argument("--keep_temp_file",
-                        help="If keep temp files, default=False",
-                        default="False")
-
-    parser.add_argument("--verbose",
-                        help="Larger number means out more log info, can be 0,1,2,3 default=3",
-                        default=3, type=int)
-
-    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    # load args
-    # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    ARGS = parser.parse_args()
-
-    if ARGS.every_position == "True":
-        args_every_position = True
-    else:
-        args_every_position = False
-
-    if ARGS.out_header == "True":
-        args_out_header = True
-    else:
-        args_out_header = False
-
-    if ARGS.bed_like_format == "True":
-        args_bed_like_format = True
-    else:
-        args_bed_like_format = False
-
-    if ARGS.keep_temp_file == "True":
-        args_keep_temp_file = True
-    else:
-        args_keep_temp_file = False
-
+def main(args):
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     # split genome
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    ref_genome_length_dict = get_BAM_ref_length(bam_filename=ARGS.input_bam)
-
-    genome_bin_list = split_genome_into_bin_list(ref_genome_length_dict, binsize=ARGS.block_size)
+    # TODO
+    ref_genome_length_dict = get_BAM_ref_length(bam_filename=args.input_bam)
+    return
+    genome_bin_list = split_genome_into_bin_list(
+        ref_genome_length_dict, binsize=args.block_size)
 
     # genome_bin_list = [
     #      ['chr1', 10000000, 10010000, 'chr1_10000000_10010000'],
@@ -768,12 +859,13 @@ if __name__ == '__main__':
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     # make temp file
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    if ARGS.output == "out.pmat":
-        temp_dir = os.getcwd()
+    if args.temp_dir:
+        temp_dir = os.path.abspath(args.temp_dir)
     else:
-        temp_dir = os.path.dirname(ARGS.output)
+        temp_dir = os.path.dirname(args.output)
 
-    temp_filename_dict = generate_temp_filename(genome_bin_list, temp_dir=temp_dir)
+    temp_filename_dict = generate_temp_filename(
+        genome_bin_list, temp_dir=temp_dir)
     # temp_filename_dict = {
     #     'chr1_10000000_10010000': '/Users/meng/data_HD/01.temp/temp__chr1_10000000_10010000__91jBQNPoKeq48rlE',
     #     'chr1_10010000_10020000': '/Users/meng/data_HD/01.temp/temp__chr1_10010000_10020000__j5Dvtzn90EF76wHR',
@@ -791,7 +883,7 @@ if __name__ == '__main__':
     # multi-threads running part
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     # set log info
-    logging.basicConfig(level=(4 - ARGS.verbose) * 10,
+    logging.basicConfig(level=(4 - args.verbose) * 10,
                         format='%(levelname)-5s @ %(asctime)s: %(message)s ',
                         datefmt='%Y-%m-%d %H:%M:%S',
                         stream=sys.stderr,
@@ -799,7 +891,7 @@ if __name__ == '__main__':
 
     logging.info("Starting to count BAM info...")
 
-    pool = multiprocessing.Pool(processes=ARGS.threads)
+    pool = multiprocessing.Pool(processes=args.threads)
 
     # record info
     region_count_result = []
@@ -815,22 +907,22 @@ if __name__ == '__main__':
             pool.apply_async(
                 func=convert_BAM_to_count_info,
                 args=(
-                    ARGS.input_bam,
-                    ARGS.reference,
+                    args.input_bam,
+                    args.reference,
                     chr_name,
                     region_start,
                     region_end,
                     temp_filename,
-                    ARGS.out_format,
-                    args_bed_like_format,
-                    ARGS.mapq_cutoff,
-                    ARGS.base_cutoff,
-                    ARGS.max_depth,
-                    args_every_position,
-                    ARGS.cover_num_cutoff,
-                    ARGS.mut_num_cutoff,
-                    ARGS.mut_ratio_cutoff,
-                    ARGS.mut_type,
+                    args.out_format,
+                    args.bed_like_format,
+                    args.mapq_cutoff,
+                    args.base_cutoff,
+                    args.max_depth,
+                    args.every_position,
+                    args.cover_num_cutoff,
+                    args.mut_num_cutoff,
+                    args.mut_ratio_cutoff,
+                    args.mut_type,
                 )
             )
         )
@@ -855,22 +947,22 @@ if __name__ == '__main__':
 
     out_header_list = None
 
-    if args_out_header:
-        if ARGS.out_format == "pmat":
-            if args_bed_like_format:
+    if args.out_header:
+        if args.out_format == "pmat":
+            if args.bed_like_format:
                 out_header_list = header_pmat_bed_list
             else:
                 out_header_list = header_pmat_list
 
-        elif ARGS.out_format == "bmat":
-            if args_bed_like_format:
+        elif args.out_format == "bmat":
+            if args.bed_like_format:
                 out_header_list = header_bmat_bed_list
             else:
                 out_header_list = header_bmat_list
 
     merge_state = merge_split_files(input_bin_list=genome_bin_list,
                                     temp_file_dict=temp_filename_dict,
-                                    out_filename=ARGS.output,
+                                    out_filename=args.output,
                                     header_list=out_header_list,
                                     in_sep="\t",
                                     out_sep="\t",
@@ -879,10 +971,14 @@ if __name__ == '__main__':
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
     # remove temp file
     # ---------------------------------------------------------->>>>>>>>>>>>>>>>>>>>
-    if not args_keep_temp_file:
-        rm_temp_state = clear_temp_files_by_dict(temp_filename_dict, log_verbose=ARGS.verbose)
+    if not args.keep_temp_file:
+        rm_temp_state = clear_temp_files_by_dict(
+            temp_filename_dict, log_verbose=args.verbose)
 
     logging.info("Everything is done!")
+
+
+if __name__ == '__main__':
+    main(args=load_args())
+
     # Final edit date: 2022-07-25
-
-
