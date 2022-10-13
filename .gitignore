@@ -3,6 +3,7 @@
 ##############
 # python cache
 **/__pycache__/
+**/__pycache__/*
 # spyder
 **/.spyproject/
 # jupyterlab meta
