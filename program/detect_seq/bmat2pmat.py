@@ -54,7 +54,7 @@ def parse_line(Line,inlike_bed=False):
         ref_num = 0
         mut_base = None
         mut_num = 0
-        
+
         # get ref_num and mut_num
         base_dict = {
             "A":int(Line_list[4]),
@@ -144,9 +144,9 @@ if __name__ == '__main__':
     # open input file
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     if ".gz" in INPUT_FILE_PATH:
-        INPUT_FILE = gzip.open(INPUT_FILE_PATH,"r")
+        INPUT_FILE = gzip.open(INPUT_FILE_PATH,"rt")
     else:
-        INPUT_FILE = open(INPUT_FILE_PATH,"r")
+        INPUT_FILE = open(INPUT_FILE_PATH,"rt")
 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     # open output file
@@ -154,9 +154,9 @@ if __name__ == '__main__':
     if OUTPUT_FILE_PATH == "Stdout":
         OUTPUT_FILE = sys.stdout
     elif ".gz" in OUTPUT_FILE_PATH:
-        OUTPUT_FILE = gzip.open(OUTPUT_FILE_PATH,"w")
+        OUTPUT_FILE = gzip.open(OUTPUT_FILE_PATH,"wt")
     else:
-        OUTPUT_FILE = open(OUTPUT_FILE_PATH,"w")
+        OUTPUT_FILE = open(OUTPUT_FILE_PATH,"wt")
 
 
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -91,11 +91,10 @@ rule all:
         expand("../bam/{sample}_final_rmdup.bam",sample=SAMPLES),
         expand("../mpileup/{sample}_final_rmdup.mpileup.gz",sample=SAMPLES),
         expand("../bmat/{sample}_final_rmdup.bmat.gz",sample=SAMPLES),
-
-# expand("../pmat/{sample}.pmat.gz", sample=SAMPLES),
-# expand("../mpmat/{sample}_merge.select.sort.mpmat.gz", sample=SAMPLES),
-# expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES),
-# expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES),
+        expand("../pmat/{sample}_final_rmdup.pmat.gz", sample=SAMPLES),
+        expand("../mpmat/{sample}_merge.select.sort.mpmat.gz", sample=SAMPLES),
+        expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES),
+        expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES),
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # rule cutadapt
@@ -392,261 +391,200 @@ rule mpileup2bmat:
         python program/detect_seq/parse-mpileup.py -i {input} -o {output} -p {THREAD} -n 0 > {log} 2>&1
         """
 
-# rule select_bmat2pmat:
-#     input:
-#         "../bmat/{sample}_final_rmdup.bmat"
-#     output:
-#         "../pmat/{sample}_final_rmdup.pmat"
-#     shell:
-#         """
-#         {PYTHON} program/detect_seq/bmat2pmat.py \
-#         -i {input} \
-#         -o {output} \
-#         --InHeader False \
-#         --InLikeBED False \
-#         --OutHeader False
-#         """
-# rule bam2pmat:
-#     input:
-#         "../bam/{sample}_final_rmdup.bam"
-#     output:
-#         "../pmat/{sample}.pmat.gz"
-#     params:
-#         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
-#     shell:
-#         """
-#         python program/detect_seq/bam2pmat.py \
-#             -i {input} \
-#             -r {params.ref} \
-#             -o {output} \
-#             -p {THREAD} \
-#             --out_format pmat \
-#             --bed_like_format True \
-#             --mut_type ALL \
-#             --block_size 20000000 \
-#             --cover_num_cutoff 0 \
-#             --mut_num_cutoff 0 \
-#             --mut_ratio_cutoff 0 \
-#             --keep_temp_file False \
-#             --out_header False
-#         """
-SELECT_BASES_FROM = [
-    'A',
-    'T',
-    'C',
-    'G'
-]
-SELECT_BASES_TO = [
-    'A',
-    'T',
-    'C',
-    'G'
-]
+rule select_bmat2pmat:
+    input:
+        "../bmat/{sample}_final_rmdup.bmat.gz"
+    output:
+        "../pmat/{sample}_final_rmdup.pmat.gz"
+    shell:
+        """
+        python program/detect_seq/bmat2pmat.py \
+        -i {input} \
+        -o {output} \
+        --InHeader False \
+        --InLikeBED False \
+        --OutHeader False
+        """
 # ------------------------------------------------------------------->>>>>>>>>>
 # tracing tandem mutation signals
 # merge tandem mutation signals and sort
 # ------------------------------------------------------------------->>>>>>>>>>
+rule pmat_merge_1:
+    input:
+        "../pmat/{sample}_final_rmdup.pmat.gz"
+    output:
+        raw=temp("../pmat/{sample}_CT.mpmat.gz"),
+        filtered=temp("../pmat/{sample}_CT_select.mpmat.gz")
+    params:
+        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
+        f='C',
+        t='T'
+    log:
+        step1="../pmat/{sample}_CT.mpmat.gz.log",
+        step2="../pmat/{sample}_CT_select.mpmat.gz.log"
+    shell:
+        """
+        python program/detect_seq/pmat-merge.py \
+            --Input {input} \
+            --FromBase {params.f} \
+            --ToBase {params.t} \
+            --reference {params.ref} \
+            --MaxSiteDistance 50 \
+            --MaxRegionDistance 100 \
+            --NoMutNumCutoff 2 \
+            --OmitTandemNumCutoff 2 \
+            --Output {output.raw} \
+            --SNP {SNP_LIST} > {log.step1} 2>&1
+
+        python program/detect_seq/mpmat-select.py \
+            -i {output.raw} \
+            -o {output.filtered} \
+            -f {params.f} \
+            -t {params.t} \
+            -m 4 \
+            -c 6 \
+            -r 0.01 \
+            --RegionPassNum 1 \
+            --RegionToleranceNum 10 \
+            --RegionMutNum 2 \
+            --InHeader True \
+            --OutHeader False > {log.step2} 2>&1
+        """
+rule pmat_merge_2:
+    input:
+        "../pmat/{sample}_final_rmdup.pmat.gz"
+    output:
+        raw=temp("../pmat/{sample}_GA.mpmat.gz"),
+        filtered=temp("../pmat/{sample}_GA_select.mpmat.gz")
+    params:
+        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
+        f='G',
+        t='A'
+    log:
+        step1="../pmat/{sample}_GA.mpmat.gz.log",
+        step2="../pmat/{sample}_GA_select.mpmat.gz.log"
+    shell:
+        """
+        python program/detect_seq/pmat-merge.py \
+            --Input {input} \
+            --FromBase {params.f} \
+            --ToBase {params.t} \
+            --reference {params.ref} \
+            --MaxSiteDistance 50 \
+            --MaxRegionDistance 100 \
+            --NoMutNumCutoff 2 \
+            --OmitTandemNumCutoff 2 \
+            --Output {output.raw} \
+            --SNP {SNP_LIST} > {log.step1} 2>&1
+
+        python program/detect_seq/mpmat-select.py \
+            -i {output.raw} \
+            -o {output.filtered} \
+            -f {params.f} \
+            -t {params.t} \
+            -m 4 \
+            -c 6 \
+            -r 0.01 \
+            --RegionPassNum 1 \
+            --RegionToleranceNum 10 \
+            --RegionMutNum 2 \
+            --InHeader True \
+            --OutHeader False > {log.step2} 2>&1
+        """
+rule merge_mpmat:
+    input:
+        "../pmat/{sample}_CT_select.mpmat.gz",
+        "../pmat/{sample}_GA_select.mpmat.gz"
+    output:
+        temp("../mpmat/{sample}_merge.select.mpmat.gz"),
+        "../mpmat/{sample}_merge.select.sort.mpmat.gz",
+        "../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
+    params:
+        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai'
+    shell:
+        """
+        cat {input[0]} {input[1]}  > {output[0]}
+
+        bedtools sort -i {output[0]} -g {params.ref} | uniq | gzip > {output[1]}
+
+        gunzip -d -c {output[1]} | grep -v chrY | grep -v chrM | gzip > {output[2]}
+        """
+
 # ------------------------------------------------------------------->>>>>>>>>>
-# do
-#     in_CT_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge_d50_D100.CT.mpmat
-#     in_GA_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge_d50_D100.GA.mpmat
-#     ref_genome_fa_index=reference/hisat3n_hg38_CT/hg38_only_chromosome.fa.fai
+# run the Poisson enrichment test
+# ------------------------------------------------------------------->>>>>>>>>>
+# ref_genome_fa=reference/hisat3n_hg38_CT/hg38_only_chromosome.fa
 
-#     out_CT_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge_d50_D100.CT.select.mpmat
-#     out_GA_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge_d50_D100.GA.select.mpmat
-#     out_merge_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge_d50_D100.merge.select.mpmat
-# out_merge_sort_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge.select.sort.mpmat
-# out_rm_chr_mpmat=pmat_and_mpmat/${sample}_hg38.MAPQ20.merge.select.sort.RmChrYChrM.mpmat
-#     # select CT
-#     python mpmat-select.py -i {in_CT_mpmat} -o ${out_CT_mpmat} -f C -t T -m 4 -c 6 -r 0.01 --RegionPassNum 1 --RegionToleranceNum 10 --RegionMutNum 2 --InHeader True --OutHeader False
+# # for BE4max sample
+# python find-significant-mpmat.py -p 25 \
+# -i pmat_and_mpmat/293T-BE4max-VEGFA-All-PD_hg38.MAPQ20.merge.select.sort.RmChrYChrM.mpmat \
+# -o poisson_res/293T-BE4max-VEGFA-All-PD_vs_ctrl_hg38.select.pvalue_table \
+# -c bam.hisat3n/293T-BE4max-mCherry-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
+# -t bam.hisat3n/293T-BE4max-VEGFA-All-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
+# -r ${ref_genome_fa} \
+# --query_mutation_type CT,GA  \
+# --mpmat_filter_info_col_index -1 \
+# --mpmat_block_info_col_index -1  \
+# --region_block_mut_num_cutoff 2  \
+# --query_mut_min_cutoff 2  \
+# --query_mut_max_cutoff 16  \
+# --total_mut_max_cutoff 16  \
+# --other_mut_max_cutoff 6   \
+# --seq_reads_length 150  \
+# --lambda_method ctrl_max \
+# --poisson_method mutation \
+# 2> poisson_res/293T-BE4max-VEGFA-All-PD_vs_ctrl_hg38_possion_test.log &
 
-#     # select GA
-#     python mpmat-select.py -i {in_GA_mpmat} -o ${out_GA_mpmat} -f G -t A -m 4 -c 6 -r 0.01 --RegionPassNum 1 --RegionToleranceNum 10 --RegionMutNum 2 --InHeader True --OutHeader False
-#  # merge CT singal on the Watson strand and the Crick strand
-#     cat ${out_CT_mpmat} ${out_GA_mpmat}  > ${out_merge_mpmat}
+# # for DdCBE sample
+# python find-significant-mpmat.py -p 25 \
+# -i pmat_and_mpmat/293T-DdCBE-ND6-All-PD_hg38.MAPQ20.merge.select.sort.RmChrYChrM.mpmat \
+# -o poisson_res/293T-DdCBE-ND6-All-PD_vs_ctrl_hg38.select.pvalue_table \
+# -c bam.hisat3n/293T-DdCBE-GFP-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
+# -t bam.hisat3n/293T-DdCBE-ND6-All-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
+# -r ${ref_genome_fa} \
+# --query_mutation_type CT,GA  \
+# --mpmat_filter_info_col_index -1 \
+# --mpmat_block_info_col_index -1  \
+# --region_block_mut_num_cutoff 2  \
+# --query_mut_min_cutoff 2  \
+# --query_mut_max_cutoff 16  \
+# --total_mut_max_cutoff 16  \
+# --other_mut_max_cutoff 6   \
+# --seq_reads_length 150  \
+# --lambda_method ctrl_max \
+# --poisson_method mutation \
+# 2> poisson_res/293T-DdCBE-ND6-All-PD_vs_ctrl_hg38_possion_test.log &
 
-#     # sort by the genome coordinate
-#     bedtools sort -i ${out_merge_mpmat} -g ${ref_genome_fa_index} | uniq > ${out_merge_sort_mpmat}
+# ------------------------------------------------------------------->>>>>>>>>>
 
-#     # remove chrY and chrM
-#     cat ${out_merge_sort_mpmat} | grep -v chrY | grep -v chrM > ${out_rm_chr_mpmat}
-# done
-# rule pmat_merge_1:
-#     input:
-#         "../pmat/{sample}.pmat.gz"
-#     output:
-#         raw=temp("../pmat/{sample}_CT.mpmat.gz"),
-#         filtered=temp("../pmat/{sample}_CT_select.mpmat.gz")
-#     params:
-#         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
-#         f='C',
-#         t='T'
-#     log:
-#         step1="../pmat/{sample}_CT.mpmat.gz.log",
-#         step2="../pmat/{sample}_CT_select.mpmat.gz.log"
-#     shell:
-#         """
-#         python program/detect_seq/pmat-merge.py \
-#             --Input {input} \
-#             --FromBase {params.f} \
-#             --ToBase {params.t} \
-#             --reference {params.ref} \
-#             --MaxSiteDistance 50 \
-#             --MaxRegionDistance 100 \
-#             --NoMutNumCutoff 2 \
-#             --OmitTandemNumCutoff 2 \
-#             --Output {output.raw} \
-#             --SNP {SNP_LIST} > {log.step1} 2>&1
-
-#         python program/detect_seq/mpmat-select.py \
-#             -i {output.raw} \
-#             -o {output.filtered} \
-#             -f {params.f} \
-#             -t {params.t} \
-#             -m 4 \
-#             -c 6 \
-#             -r 0.01 \
-#             --RegionPassNum 1 \
-#             --RegionToleranceNum 10 \
-#             --RegionMutNum 2 \
-#             --InHeader True \
-#             --OutHeader False > {log.step2} 2>&1
-#         """
-# rule pmat_merge_2:
-#     input:
-#         "../pmat/{sample}.pmat.gz"
-#     output:
-#         raw=temp("../pmat/{sample}_GA.mpmat.gz"),
-#         filtered=temp("../pmat/{sample}_GA_select.mpmat.gz")
-#     params:
-#         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
-#         f='G',
-#         t='A'
-#     log:
-#         step1="../pmat/{sample}_GA.mpmat.gz.log",
-#         step2="../pmat/{sample}_GA_select.mpmat.gz.log"
-#     shell:
-#         """
-#         python program/detect_seq/pmat-merge.py \
-#             --Input {input} \
-#             --FromBase {params.f} \
-#             --ToBase {params.t} \
-#             --reference {params.ref} \
-#             --MaxSiteDistance 50 \
-#             --MaxRegionDistance 100 \
-#             --NoMutNumCutoff 2 \
-#             --OmitTandemNumCutoff 2 \
-#             --Output {output.raw} \
-#             --SNP {SNP_LIST} > {log.step1} 2>&1
-
-#         python program/detect_seq/mpmat-select.py \
-#             -i {output.raw} \
-#             -o {output.filtered} \
-#             -f {params.f} \
-#             -t {params.t} \
-#             -m 4 \
-#             -c 6 \
-#             -r 0.01 \
-#             --RegionPassNum 1 \
-#             --RegionToleranceNum 10 \
-#             --RegionMutNum 2 \
-#             --InHeader True \
-#             --OutHeader False > {log.step2} 2>&1
-#         """
-# rule merge_mpmat:
-#     input:
-#         "../pmat/{sample}_CT_select.mpmat.gz",
-#         "../pmat/{sample}_GA_select.mpmat.gz"
-#     output:
-#         temp("../mpmat/{sample}_merge.select.mpmat.gz"),
-#         "../mpmat/{sample}_merge.select.sort.mpmat.gz",
-#         "../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
-#     params:
-#         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai'
-#     shell:
-#         """
-#         cat {input[0]} {input[1]}  > {output[0]}
-
-#         bedtools sort -i {output[0]} -g {params.ref} | uniq | gzip > {output[1]}
-
-#         zcat {output[1]} | grep -v chrY | grep -v chrM | gzip > {output[2]}
-#         """
-
-# # ------------------------------------------------------------------->>>>>>>>>>
-# # run the Poisson enrichment test
-# # ------------------------------------------------------------------->>>>>>>>>>
-# # ref_genome_fa=reference/hisat3n_hg38_CT/hg38_only_chromosome.fa
-
-# # # for BE4max sample
-# # python find-significant-mpmat.py -p 25 \
-# # -i pmat_and_mpmat/293T-BE4max-VEGFA-All-PD_hg38.MAPQ20.merge.select.sort.RmChrYChrM.mpmat \
-# # -o poisson_res/293T-BE4max-VEGFA-All-PD_vs_ctrl_hg38.select.pvalue_table \
-# # -c bam.hisat3n/293T-BE4max-mCherry-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
-# # -t bam.hisat3n/293T-BE4max-VEGFA-All-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
-# # -r ${ref_genome_fa} \
-# # --query_mutation_type CT,GA  \
-# # --mpmat_filter_info_col_index -1 \
-# # --mpmat_block_info_col_index -1  \
-# # --region_block_mut_num_cutoff 2  \
-# # --query_mut_min_cutoff 2  \
-# # --query_mut_max_cutoff 16  \
-# # --total_mut_max_cutoff 16  \
-# # --other_mut_max_cutoff 6   \
-# # --seq_reads_length 150  \
-# # --lambda_method ctrl_max \
-# # --poisson_method mutation \
-# # 2> poisson_res/293T-BE4max-VEGFA-All-PD_vs_ctrl_hg38_possion_test.log &
-
-# # # for DdCBE sample
-# # python find-significant-mpmat.py -p 25 \
-# # -i pmat_and_mpmat/293T-DdCBE-ND6-All-PD_hg38.MAPQ20.merge.select.sort.RmChrYChrM.mpmat \
-# # -o poisson_res/293T-DdCBE-ND6-All-PD_vs_ctrl_hg38.select.pvalue_table \
-# # -c bam.hisat3n/293T-DdCBE-GFP-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
-# # -t bam.hisat3n/293T-DdCBE-ND6-All-PD_hg38_merge_sort_rmdup.MAPQ20.bam \
-# # -r ${ref_genome_fa} \
-# # --query_mutation_type CT,GA  \
-# # --mpmat_filter_info_col_index -1 \
-# # --mpmat_block_info_col_index -1  \
-# # --region_block_mut_num_cutoff 2  \
-# # --query_mut_min_cutoff 2  \
-# # --query_mut_max_cutoff 16  \
-# # --total_mut_max_cutoff 16  \
-# # --other_mut_max_cutoff 6   \
-# # --seq_reads_length 150  \
-# # --lambda_method ctrl_max \
-# # --poisson_method mutation \
-# # 2> poisson_res/293T-DdCBE-ND6-All-PD_vs_ctrl_hg38_possion_test.log &
-
-# # ------------------------------------------------------------------->>>>>>>>>>
-
-# rule find_significant_mpmat:
-#     input:
-#         mpmat="../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
-#         bam="../bam/{sample}_final_rmdup.bam"
-#     output:
-#         "../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME
-#     params:
-#         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
-#     log:
-#         "../poisson_res/{sample}_vs_ctrl_%s.select.log" % CTRL_NAME
-#     shell:
-#         """
-#         python program/detect_seq/find-significant-mpmat.py \
-#             -p {THREAD} \
-#             -i {input.mpmat} \
-#             -o {output} \
-#             -c {CTRL_BAM} \
-#             -t {input.bam} \
-#             -r {params.ref} \
-#             --query_mutation_type {QMT}  \
-#             --mpmat_filter_info_col_index -1 \
-#             --mpmat_block_info_col_index -1  \
-#             --region_block_mut_num_cutoff 2  \
-#             --query_mut_min_cutoff 2  \
-#             --query_mut_max_cutoff 16  \
-#             --total_mut_max_cutoff 16  \
-#             --other_mut_max_cutoff 6   \
-#             --seq_reads_length 150  \
-#             --lambda_method ctrl_max \
-#             --poisson_method mutation > {log} 2>&1
-#         """
+rule find_significant_mpmat:
+    input:
+        mpmat="../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
+        bam="../bam/{sample}_final_rmdup.bam"
+    output:
+        "../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME
+    params:
+        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
+    log:
+        "../poisson_res/{sample}_vs_ctrl_%s.select.log" % CTRL_NAME
+    shell:
+        """
+        python program/detect_seq/find-significant-mpmat.py \
+            -p {THREAD} \
+            -i {input.mpmat} \
+            -o {output} \
+            -c {CTRL_BAM} \
+            -t {input.bam} \
+            -r {params.ref} \
+            --query_mutation_type {QMT}  \
+            --mpmat_filter_info_col_index -1 \
+            --mpmat_block_info_col_index -1  \
+            --region_block_mut_num_cutoff 2  \
+            --query_mut_min_cutoff 2  \
+            --query_mut_max_cutoff 16  \
+            --total_mut_max_cutoff 16  \
+            --other_mut_max_cutoff 6   \
+            --seq_reads_length 150  \
+            --lambda_method ctrl_max \
+            --poisson_method mutation > {log} 2>&1
+        """
