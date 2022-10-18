@@ -95,6 +95,7 @@ rule all:
         expand("../mpmat/{sample}_merge.select.sort.mpmat.gz", sample=SAMPLES),
         expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES),
         expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES),
+        "../poisson_res/poisson_res_all.tsv.gz"
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # rule cutadapt
@@ -588,3 +589,13 @@ rule find_significant_mpmat:
             --lambda_method ctrl_max \
             --poisson_method mutation > {log} 2>&1
         """
+rule merge_poisson_res_table:
+    input:
+        expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES)
+    output:
+        "../poisson_res/poisson_res_all.tsv.gz"
+    params:
+        inputs=lambda wildcards, input: ",".join(input),
+        tags=lambda wildcards, input: ",".join([i.split('/')[-1].split('_vs_ctrl')[0] for i in input])
+    shell:
+        "bioat-table-merge-table from_tsv --inputs {params.inputs} --tags {params.tags} --output {output}"

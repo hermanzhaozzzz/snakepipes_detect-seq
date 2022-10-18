@@ -3,6 +3,7 @@
 ## envs
 ```shell
 conda install python=3.10 pysam pysamstats biopython
+pip install bioat --upgrade
 ```
 
 # conda environment setting
