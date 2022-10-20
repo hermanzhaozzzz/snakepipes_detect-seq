@@ -3,6 +3,7 @@
 
 import argparse
 import sys
+import gzip
 
 # Version information START ----------------------------------------------------
 VERSION_INFO = """
@@ -180,10 +181,10 @@ if __name__ == '__main__':
     if ARGS.output == "stdout":
         out_mpmat_file = sys.stdout
     else:
-        out_mpmat_file = open(ARGS.output, "w")
+        out_mpmat_file = open(ARGS.output, "wt") if not ARGS.output.endswith('.gz') else gzip.open(ARGS.output, "wt")
 
     # open input file
-    in_mpmat_file = open(ARGS.mpmat_table, "r")
+    in_mpmat_file = open(ARGS.mpmat_table, "rt") if not ARGS.mpmat_table.endswith('.gz') else gzip.open(ARGS.mpmat_table, "rt")
 
     # initial
     mpmat_line_a = in_mpmat_file.readline().strip()

@@ -96,6 +96,7 @@ rule all:
         expand("../pmat/{sample}_final_rmdup.pmat.gz", sample=SAMPLES),
         expand("../mpmat/{sample}_merge.select.sort.mpmat.gz", sample=SAMPLES),
         expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES),
+        "../mpmat/mpmat_all_rmdup.mpmat.gz",
         expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES),
         "../poisson_res/poisson_res_all.tsv.gz"
 
@@ -517,9 +518,14 @@ rule merge_mpmat2:
         expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES)
     output:
         temp("../mpmat/mpmat_all_before_rmdup.mpmat.gz")
+    params:
+        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai'
     shell:
-        "cat {input} > {output}"
-
+        """
+        cat {input} > {output}_temp.gz
+        {BEDTOOLS} sort -i {output}_temp.gz -g {params.ref} | uniq | gzip > {output}
+        rm {output}_temp.gz
+        """
 rule mpmat_all_rmdup:
     # ![](https://tva1.sinaimg.cn/large/008vxvgGly1h7bsh9t19dj30ku09q3z1.jpg)
     input:
@@ -527,15 +533,14 @@ rule mpmat_all_rmdup:
     output:
         "../mpmat/mpmat_all_rmdup.mpmat.gz"
     shell:
-        # TODO 这里如何 merge 是否需要考量？
-        "{BEDTOOLS} "
+        "python program/detect_seq/remove-overlap-mpmat.py -i {input} -o {output}"
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # run the Poisson enrichment test
 # ------------------------------------------------------------------->>>>>>>>>>
 rule find_significant_mpmat:
     input:
-        mpmat="../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
+        mpmat="../mpmat/mpmat_all_rmdup.mpmat.gz",
         bam="../bam/{sample}_final_rmdup.bam"
     output:
         "../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME
