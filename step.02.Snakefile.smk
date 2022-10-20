@@ -74,6 +74,7 @@ assert check_cmd("samtools")
 assert check_cmd("bwa")
 assert check_cmd("samclip")
 assert check_cmd("sambamba")
+assert check_cmd("bedtools")
 # manually set cmd path
 CUTADAPT = "cutadapt"
 HISAT3N = "hisat-3n"
@@ -81,6 +82,7 @@ SAMTOOLS = "samtools"
 BWA = "bwa"
 SAMCLIP = "samclip"
 SAMBAMBA = "sambamba"
+BEDTOOLS = "bedtools"
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # rule all
@@ -506,10 +508,27 @@ rule merge_mpmat:
         """
         cat {input[0]} {input[1]}  > {output[0]}
 
-        bedtools sort -i {output[0]} -g {params.ref} | uniq | gzip > {output[1]}
+        {BEDTOOLS} sort -i {output[0]} -g {params.ref} | uniq | gzip > {output[1]}
 
         gunzip -d -c {output[1]} | grep -v chrY | grep -v chrM | gzip > {output[2]}
         """
+rule merge_mpmat2:
+    input:
+        expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES)
+    output:
+        temp("../mpmat/mpmat_all_before_rmdup.mpmat.gz")
+    shell:
+        "cat {input} > {output}"
+
+rule mpmat_all_rmdup:
+    # ![](https://tva1.sinaimg.cn/large/008vxvgGly1h7bsh9t19dj30ku09q3z1.jpg)
+    input:
+        "../mpmat/mpmat_all_before_rmdup.mpmat.gz"
+    output:
+        "../mpmat/mpmat_all_rmdup.mpmat.gz"
+    shell:
+        # TODO 这里如何 merge 是否需要考量？
+        "{BEDTOOLS} "
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # run the Poisson enrichment test
