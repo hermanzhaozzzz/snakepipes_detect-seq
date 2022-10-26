@@ -454,6 +454,30 @@ rule pmat_merge_1:
             --InHeader True \
             --OutHeader False > {log.step2} 2>&1
         """
+# ------------------------------------------------------------------->>>>>>>>>>
+# python program/detect_seq/mpmat-select.py \
+#   -m SITEMUTNUM, --SiteMutNum SITEMUTNUM
+#                         Site-cutoff, mutation reads number, default=1
+#   -c SITECOVERNUM, --SiteCoverNum SITECOVERNUM
+#                         Site-cutoff, total cover reads number, default=5
+#   -r SITEMUTRATIO, --SiteMutRatio SITEMUTRATIO
+#   --RegionPassNum REGIONPASSNUM
+#                         Region-cutoff region should contain no-less than Pass site number,
+#                         default=3
+#   --RegionToleranceNum REGIONTOLERANCENUM
+#                         Region will tolerance how many number of sites within a reported
+#                         region that do not pass the filter default=1, if set as False,
+#                         don't consider this parameter
+#                         容忍一个报告region内没有通过过滤器default=1的sites的数量
+#                         这里写 10 基本上就不过滤了≈False
+#   --RegionMutNum REGIONMUTNUM
+#                         Region at least has this number of sites which carry mutation
+#                         info. Default=2
+#   --KeepOriginalIndex KEEPORIGINALINDEX
+#                         If keep raw region info or fix the start and end coordinate
+#                         according to filter,default=True
+# ------------------------------------------------------------------->>>>>>>>>>
+
 rule pmat_merge_2:
     input:
         "../pmat/{sample}_final_rmdup.pmat.gz"
@@ -569,6 +593,12 @@ rule find_significant_mpmat:
             --lambda_method ctrl_max \
             --poisson_method mutation > {log} 2>&1
         """
+# ------------------------------------------------------------------->>>>>>>>>>
+# poisson_method
+#  Can be set as 'mutation' OR 'all', default=mutation. 'mutation'
+#                         means only use mutation alignments to run Poisson test,'all' means
+#                         use all alignments to run Poisson, which similar to MACS2
+# ------------------------------------------------------------------->>>>>>>>>>
 rule merge_poisson_res_table:
     input:
         expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES)
