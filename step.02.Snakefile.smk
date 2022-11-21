@@ -82,6 +82,7 @@ SAMTOOLS = "samtools"
 BWA = "bwa"
 SAMCLIP = "samclip"
 SAMBAMBA = "sambamba"  # must > 0.7.1 on OSX
+# SAMBAMBA = '/usr/local/Caskroom/miniconda/base/envs/sambamba/bin/sambamba'  # must > 0.7.1 on OSX
 BEDTOOLS = "bedtools"
 
 # ------------------------------------------------------------------->>>>>>>>>>
