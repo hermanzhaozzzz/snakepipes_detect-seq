@@ -81,7 +81,7 @@ HISAT3N = "hisat-3n"
 SAMTOOLS = "samtools"
 BWA = "bwa"
 SAMCLIP = "samclip"
-SAMBAMBA = "sambamba"
+SAMBAMBA = "sambamba"  # must > 0.7.1 on OSX
 BEDTOOLS = "bedtools"
 
 # ------------------------------------------------------------------->>>>>>>>>>
@@ -282,8 +282,8 @@ rule remap_unmapped_and_lowmapq_reads:
         awk=r"""'@RG\tID:'{sample}'\tPL:%s\tSM:{sample}'""" % PLATFORM
     shell:
         """
-        {BWA} mem {params.ref} {input.R1} {input.R2} -t {THREAD} -M \
-            -R {params.awk} > {output} 2>{log}
+        {BWA} mem -t {THREAD} -M -R {params.awk} \
+            {params.ref} {input.R1} {input.R2}  > {output} 2>{log}
         """
 
 rule sam2bam_2:
