@@ -92,6 +92,7 @@ rule all:
     input:
         expand("../fastq/{sample}_%s.fastq.gz" % READ[0],sample=SAMPLES),
         expand("../bam/{sample}_final_rmdup.bam",sample=SAMPLES),
+        expand("../bam/{sample}_final_rmdup.bam.flagstats.tsv",sample=SAMPLES),
         expand("../mpileup/{sample}_final_rmdup.mpileup.gz",sample=SAMPLES),
         expand("../bmat/{sample}_final_rmdup.bmat.gz",sample=SAMPLES),
         expand("../pmat/{sample}_final_rmdup.pmat.gz", sample=SAMPLES),
@@ -356,6 +357,16 @@ rule sambamba_rmdup_and_build_index:
                 --show-progress \
                 --sort-buffer-size 8192 \
                 {input} {output[0]}
+        """
+# ------------------------------------------------------------------->>>>>>>>>>
+# to see mapping info use flagstats
+# ------------------------------------------------------------------->>>>>>>>>>
+rule flagstats:
+    input: "../bam/{sample}_final_rmdup.bam"
+    output: "../bam/{sample}_final_rmdup.bam.flagstats.tsv"
+    shell:
+        """
+        {SAMTOOLS} flagstats -@ {THREAD} -O tsv {input} > {output}
         """
 
 # ------------------------------------------------------------------->>>>>>>>>>
