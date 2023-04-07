@@ -4,6 +4,11 @@
 # E-mail: hermanzhaozzzz@gmail.com
 # Update log:
 #     2022-10-05: start project
+
+# test run:
+# ```shell
+# snakemake -pr -j 4 -s step.02.Snakefile.smk.py -n
+# ```
 # ——————————————————>>>>>>>>>>
 import os
 import json
