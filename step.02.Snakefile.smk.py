@@ -563,7 +563,6 @@ rule merge_mpmat2:
         rm {output}_temp.gz
         """
 rule mpmat_all_rmdup:
-    # ![](https://tva1.sinaimg.cn/large/008vxvgGly1h7bsh9t19dj30ku09q3z1.jpg)
     input:
         "../mpmat/mpmat_all_before_rmdup.mpmat.gz"
     output:
