@@ -101,11 +101,8 @@ rule all:
         expand("../mpileup/{sample}_final_rmdup.mpileup.gz",sample=SAMPLES),
         expand("../bmat/{sample}_final_rmdup.bmat.gz",sample=SAMPLES),
         expand("../pmat/{sample}_final_rmdup.pmat.gz", sample=SAMPLES),
-        expand("../mpmat/{sample}_merge.select.sort.mpmat.gz", sample=SAMPLES),
-        expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES),
-        "../mpmat/mpmat_all_rmdup.mpmat.gz",
-        expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES),
-        "../poisson_res/poisson_res_all.tsv.gz"
+        expand("../pmat/{sample}_CT.mpmat.gz", sample=SAMPLES),
+        expand("../pmat/{sample}_GA.mpmat.gz", sample=SAMPLES)
 
 # ------------------------------------------------------------------->>>>>>>>>>
 # rule cutadapt
@@ -434,15 +431,15 @@ rule pmat_merge_1:
     input:
         "../pmat/{sample}_final_rmdup.pmat.gz"
     output:
-        raw=temp("../pmat/{sample}_CT.mpmat.gz"),
-        filtered=temp("../pmat/{sample}_CT_select.mpmat.gz")
+        "../pmat/{sample}_CT.mpmat.gz"
+        
     params:
         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
         f='C',
         t='T'
     log:
-        step1="../pmat/{sample}_CT.mpmat.gz.log",
-        step2="../pmat/{sample}_CT_select.mpmat.gz.log"
+        "../pmat/{sample}_CT.mpmat.gz.log"
+
     shell:
         """
         python program/detect_seq/pmat-merge.py \
@@ -454,60 +451,22 @@ rule pmat_merge_1:
             --MaxRegionDistance 100 \
             --NoMutNumCutoff 2 \
             --OmitTandemNumCutoff 2 \
-            --Output {output.raw} \
-            --SNP {SNP_LIST} > {log.step1} 2>&1
-
-        python program/detect_seq/mpmat-select.py \
-            -i {output.raw} \
-            -o {output.filtered} \
-            -f {params.f} \
-            -t {params.t} \
-            -m 4 \
-            -c 6 \
-            -r 0.01 \
-            --RegionPassNum 1 \
-            --RegionToleranceNum 10 \
-            --RegionMutNum 2 \
-            --InHeader True \
-            --OutHeader False > {log.step2} 2>&1
+            --Output {output} \
+            --SNP {SNP_LIST} > {log} 2>&1
         """
-# ------------------------------------------------------------------->>>>>>>>>>
-# python program/detect_seq/mpmat-select.py \
-#   -m SITEMUTNUM, --SiteMutNum SITEMUTNUM
-#                         Site-cutoff, mutation reads number, default=1
-#   -c SITECOVERNUM, --SiteCoverNum SITECOVERNUM
-#                         Site-cutoff, total cover reads number, default=5
-#   -r SITEMUTRATIO, --SiteMutRatio SITEMUTRATIO
-#   --RegionPassNum REGIONPASSNUM
-#                         Region-cutoff region should contain no-less than Pass site number,
-#                         default=3
-#   --RegionToleranceNum REGIONTOLERANCENUM
-#                         Region will tolerance how many number of sites within a reported
-#                         region that do not pass the filter default=1, if set as False,
-#                         don't consider this parameter
-#                         容忍一个报告region内没有通过过滤器default=1的sites的数量
-#                         这里写 10 基本上就不过滤了≈False
-#   --RegionMutNum REGIONMUTNUM
-#                         Region at least has this number of sites which carry mutation
-#                         info. Default=2
-#   --KeepOriginalIndex KEEPORIGINALINDEX
-#                         If keep raw region info or fix the start and end coordinate
-#                         according to filter,default=True
-# ------------------------------------------------------------------->>>>>>>>>>
-
 rule pmat_merge_2:
     input:
         "../pmat/{sample}_final_rmdup.pmat.gz"
     output:
-        raw=temp("../pmat/{sample}_GA.mpmat.gz"),
-        filtered=temp("../pmat/{sample}_GA_select.mpmat.gz")
+        "../pmat/{sample}_GA.mpmat.gz"
+        
     params:
         ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa',
         f='G',
         t='A'
     log:
-        step1="../pmat/{sample}_GA.mpmat.gz.log",
-        step2="../pmat/{sample}_GA_select.mpmat.gz.log"
+        "../pmat/{sample}_GA.mpmat.gz.log"
+
     shell:
         """
         python program/detect_seq/pmat-merge.py \
@@ -519,109 +478,6 @@ rule pmat_merge_2:
             --MaxRegionDistance 100 \
             --NoMutNumCutoff 2 \
             --OmitTandemNumCutoff 2 \
-            --Output {output.raw} \
-            --SNP {SNP_LIST} > {log.step1} 2>&1
-
-        python program/detect_seq/mpmat-select.py \
-            -i {output.raw} \
-            -o {output.filtered} \
-            -f {params.f} \
-            -t {params.t} \
-            -m 4 \
-            -c 6 \
-            -r 0.01 \
-            --RegionPassNum 1 \
-            --RegionToleranceNum 10 \
-            --RegionMutNum 2 \
-            --InHeader True \
-            --OutHeader False > {log.step2} 2>&1
+            --Output {output} \
+            --SNP {SNP_LIST} > {log} 2>&1
         """
-rule merge_mpmat:
-    input:
-        "../pmat/{sample}_CT_select.mpmat.gz",
-        "../pmat/{sample}_GA_select.mpmat.gz"
-    output:
-        temp("../mpmat/{sample}_merge.select.mpmat.gz"),
-        "../mpmat/{sample}_merge.select.sort.mpmat.gz",
-        "../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz",
-    params:
-        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai'
-    shell:
-        """
-        cat {input[0]} {input[1]}  > {output[0]}
-
-        {BEDTOOLS} sort -i {output[0]} -g {params.ref} | uniq | gzip > {output[1]}
-
-        gunzip -d -c {output[1]} | grep -v chrY | grep -v chrM | gzip > {output[2]}
-        """
-rule merge_mpmat2:
-    input:
-        expand("../mpmat/{sample}_merge.select.sort_rmchrYM.mpmat.gz", sample=SAMPLES)
-    output:
-        temp("../mpmat/mpmat_all_before_rmdup.mpmat.gz")
-    params:
-        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa.fai'
-    shell:
-        """
-        cat {input} > {output}_temp.gz
-        {BEDTOOLS} sort -i {output}_temp.gz -g {params.ref} | uniq | gzip > {output}
-        rm {output}_temp.gz
-        """
-rule mpmat_all_rmdup:
-    input:
-        "../mpmat/mpmat_all_before_rmdup.mpmat.gz"
-    output:
-        "../mpmat/mpmat_all_rmdup.mpmat.gz"
-    shell:
-        "python program/detect_seq/remove-overlap-mpmat.py -i {input} -o {output}"
-
-# ------------------------------------------------------------------->>>>>>>>>>
-# run the Poisson enrichment test
-# ------------------------------------------------------------------->>>>>>>>>>
-rule find_significant_mpmat:
-    input:
-        mpmat="../mpmat/mpmat_all_rmdup.mpmat.gz",
-        bam="../bam/{sample}_final_rmdup.bam"
-    output:
-        "../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME
-    params:
-        ref=GENOME_HISAT3N_INDEX.split('.fa.')[0] + '.fa'
-    log:
-        "../poisson_res/{sample}_vs_ctrl_%s.select.log" % CTRL_NAME
-    shell:
-        """
-        python program/detect_seq/find-significant-mpmat.py \
-            -p {THREAD} \
-            -i {input.mpmat} \
-            -o {output} \
-            -c {CTRL_BAM} \
-            -t {input.bam} \
-            -r {params.ref} \
-            --query_mutation_type {QMT}  \
-            --mpmat_filter_info_col_index -1 \
-            --mpmat_block_info_col_index -1  \
-            --region_block_mut_num_cutoff 2  \
-            --query_mut_min_cutoff 2  \
-            --query_mut_max_cutoff 16  \
-            --total_mut_max_cutoff 16  \
-            --other_mut_max_cutoff 6   \
-            --seq_reads_length 150  \
-            --lambda_method ctrl_max \
-            --poisson_method mutation > {log} 2>&1
-        """
-# ------------------------------------------------------------------->>>>>>>>>>
-# poisson_method
-#  Can be set as 'mutation' OR 'all', default=mutation. 'mutation'
-#                         means only use mutation alignments to run Poisson test,'all' means
-#                         use all alignments to run Poisson, which similar to MACS2
-# ------------------------------------------------------------------->>>>>>>>>>
-rule merge_poisson_res_table:
-    input:
-        expand("../poisson_res/{sample}_vs_ctrl_%s.select.pvalue_table" % CTRL_NAME, sample=SAMPLES)
-    output:
-        "../poisson_res/poisson_res_all.tsv.gz"
-    params:
-        inputs=lambda wildcards, input: ",".join(input),
-        tags=lambda wildcards, input: ",".join([i.split('/')[-1].split('_vs_ctrl')[0] for i in input])
-    shell:
-        "bioat-table-merge-table from_tsv --inputs {params.inputs} --tags {params.tags} --output {output}"

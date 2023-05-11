@@ -295,10 +295,10 @@ if __name__ == '__main__':
                     out_str = "\t".join(map(str, out_list))
                     output_file.write(out_str + "\n")
 
-# close file
-in_mpmat_file.close()
+    # close file
+    in_mpmat_file.close()
 
-if output_file_path != "stdout":
-    output_file.close()
+    if output_file_path != "stdout":
+        output_file.close()
 
-# 2022-07-26
+    # 2022-07-26
