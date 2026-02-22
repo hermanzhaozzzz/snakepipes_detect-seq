@@ -407,7 +407,7 @@ rule mpileup2bmat:
         "../bmat/{sample}_final_rmdup.bmat.log"
     shell:
         """
-        python program/detect_seq/parse-mpileup.py -i {input} -o {output} -p {THREAD} -n 0 > {log} 2>&1
+        bioat bam mpileup2table {input} -o {output} --threads {THREAD} -m 0 > {log} 2>&1
         """
 
 rule select_bmat2pmat:
